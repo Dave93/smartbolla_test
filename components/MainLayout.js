@@ -157,7 +157,6 @@ var _rollbarConfig = {
           style={{ background: backgroundColor }}
           className={`${pathname == "/" ? "flex flex-row" : ""}`}
         >
-          <MainLeftSide className="fixed left-0 z-30">
             <div>
               <Link href="/" prefetch={false}>
                 <a className="flex flex-row items-center">
@@ -168,7 +167,6 @@ var _rollbarConfig = {
                 </a>
               </Link>
             </div>
-          </MainLeftSide>
           <MainRightSide className="fixed right-0.5 top-0 z-30">
             <header
               className={`${styles.header} ${

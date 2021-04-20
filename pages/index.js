@@ -31,7 +31,7 @@ function Home({ projects, counter, products, mainLayoutSocial }) {
     media: translation("media"),
     contact: translation("contact"),
     profile: translation("profile"),
-    investors: translation("investors")
+    investors: translation("investors"),
   };
 
   const countLang = {
@@ -63,21 +63,6 @@ function Home({ projects, counter, products, mainLayoutSocial }) {
     }
   });
 
-  const scrollDown = () => {
-    setIsAllowScroll(true);
-    setTimeout(() => {
-      fullpage_api.moveSectionDown();
-      setIsAllowScroll(false);
-    });
-  };
-
-  const scrollUp = () => {
-    setIsAllowScroll(true);
-    setTimeout(() => {
-      fullpage_api.moveSectionUp();
-      setIsAllowScroll(false);
-    });
-  };
   let youtubeOptions = {
     height: "60%",
     width: "90%",
@@ -96,146 +81,48 @@ function Home({ projects, counter, products, mainLayoutSocial }) {
         footerLang={footerLang}
         mainLayoutSocial={mainLayoutSocial}
       >
-        <ReactFullpage
-          //fullpage options
-          licenseKey={""}
-          scrollingSpeed={1000} /* Options here */
-          navigation={true}
-          navigationPosition={"left"}
-          sectionsColor={sectionsColor}
-          lazyLoading={true}
-          onLoad={() => {
-            setIsAllowScroll(false);
-          }}
-          onLeave={(origin, destination, direction) => {
-            if (!isAllowScroll) {
-              return false;
-            }
-          }}
-          render={({ state, fullpageApi }) => {
-            return (
-              <ReactFullpage.Wrapper className="">
-                {["browser", "tablet"].includes(deviceType) ? (
-                  <div className="section pl-24">
-                    <div className="flex h-full items-center">
-                      <div className="grid grid-cols-2 h-full w-full pt-20">
-                        <div className="flex h-100 items-center">
-                          <div className="absolute h-5/6 left-0 w-9/12 w-90 z-10">
-                            <Image src="/img/portrait.webp" layout="fill" />
-                          </div>
-                          <div className="absolute bg-black bottom-0 jsx-1377087279 p-4 w-2/4 z-20">
-                            <h1 className="font-black uppercase text-5xl">
-                              {translation("yourTime")}
-                            </h1>
-                            <h1 className="font-black uppercase text-5xl">
-                              {translation("yourGoals")}
-                            </h1>
-                            <h1 className="font-black uppercase text-5xl">
-                              {translation("yourBoss")}
-                            </h1>
-                            <span className="text-2xl font-weight-light">
-                              {translation("yourInvest")}
-                            </span>
-                          </div>
-                        </div>
-                        <div className="flex h-100 mt-16 z-20 justify-around pr-5">
-                          <ProductsSlider
-                            products={products}
-                            investLang={translation("invest")}
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      className="ct-btn-scroll z-50 ct-js-btn-scroll cursor-pointer ct-btn-scroll-bottom"
-                      onClick={() => scrollDown()}
-                    >
-                      <span></span>
-                      <span></span>
-                      <span></span>
-                    </div>
-                  </div>
-                ) : (
-                  <div className="section pl-10">
-                    <div className="h-50">
-                      <div className="w-full">
-                        <div className="flex w-10/12 z-20">
-                          <ProductsSlider
-                            products={products}
-                            investLang={translation("invest")}
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    <div
-                      className="ct-btn-scroll z-50 ct-js-btn-scroll cursor-pointer ct-btn-scroll-bottom"
-                      onClick={() => scrollDown()}
-                    >
-                      <span></span>
-                      <span></span>
-                      <span></span>
-                    </div>
-                  </div>
-                )}
-                {projects.map((project) => (
-                  <div
-                    className={`section ${
-                      ["browser", "tablet"].includes(deviceType)
-                        ? "pl-24 pt-20"
-                        : "pl-10"
-                    }`}
-                    key={project.ID}
-                  >
-                    <Project
-                      project={project}
-                      onShowYoutube={(id) => {
-                        setYoutubeId(id);
-                      }}
-                    />
-                    <div
-                      className="ct-btn-scroll z-50 ct-js-btn-scroll cursor-pointer ct-btn-scroll-top"
-                      onClick={() => scrollUp()}
-                    >
-                      <span></span>
-                      <span></span>
-                      <span></span>
-                    </div>
-                    <div
-                      className="ct-btn-scroll z-50 ct-js-btn-scroll cursor-pointer ct-btn-scroll-bottom"
-                      onClick={() => scrollDown()}
-                    >
-                      <span></span>
-                      <span></span>
-                      <span></span>
-                    </div>
-                  </div>
-                ))}
-                <div
-                  className={`section ${
-                    ["browser", "tablet"].includes(deviceType)
-                      ? "pl-24 pt-30"
-                      : "pl-10"
-                  }`}
-                >
-                  <CounterList counter={counter} countLang={countLang} />
-                  <CustomView
-                    condition={["browser", "tablet"].includes(deviceType)}
-                  >
-                    <Footer footerLang={footerLang} />
-                  </CustomView>
-                  <div
-                    className="ct-btn-scroll z-50 ct-js-btn-scroll cursor-pointer ct-btn-scroll-top"
-                    onClick={() => scrollUp()}
-                  >
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </div>
-                </div>
-              </ReactFullpage.Wrapper>
-            );
-          }}
-        />
+        {["browser", "tablet"].includes(deviceType) ? (
+          <div>
+            <ProductsSlider
+              products={products}
+              investLang={translation("invest")}
+            />
+          </div>
+        ) : (
+          <div>
+            <ProductsSlider
+              products={products}
+              investLang={translation("invest")}
+            />
+          </div>
+        )}
+        {projects.map((project) => (
+          <div
+            className={`section ${
+              ["browser", "tablet"].includes(deviceType)
+                ? ""
+                : "pl-10"
+            }`}
+            key={project.ID}
+          >
+            <Project
+              project={project}
+              onShowYoutube={(id) => {
+                setYoutubeId(id);
+              }}
+            />
+          </div>
+        ))}
+        <div
+          className={`section ${
+            ["browser", "tablet"].includes(deviceType) ? "pl-24 pt-30" : "pl-10"
+          }`}
+        >
+          <CounterList counter={counter} countLang={countLang} />
+          <CustomView condition={["browser", "tablet"].includes(deviceType)}>
+            <Footer footerLang={footerLang} />
+          </CustomView>
+        </div>
         {currentProject && (
           <div className="z-[9999] text-black fixed w-full h-full top-0 left-0 flex items-center justify-center">
             <div className="modal-overlay absolute w-full h-full bg-gray-900 opacity-50 z-[10000]"></div>
