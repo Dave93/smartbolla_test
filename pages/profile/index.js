@@ -92,7 +92,7 @@ function Profile({ mainLayoutSocial, balance }) {
                         {order.PAYED == "N" && (
                           <Link href={`/order/${order.ID}`}>
                             <a className="active:shadow-none bg-green-100 font-semibold hover:shadow-md hover:text-green-800 inline-flex leading-5 px-5 py-2 rounded-2xl text-decoration-none text-green-800 text-xs">
-                              Pay
+                              {t("pay")}
                             </a>
                           </Link>
                         )}
