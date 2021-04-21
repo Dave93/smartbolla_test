@@ -58,32 +58,11 @@ export default function ProductsSlider({ products, investLang }) {
 
   return (
     <div className={`${styles.roundSlider} flex flex-col m-auto relative`}>
-      <CircularSlider
-        label=" &nbsp;&nbsp;"
-        prependToValue="$"
-        labelColor="#005a58"
-        valueFontSize="4rem"
-        knobColor="#c4c4c4"
-        knobPosition="bottom"
-        progressColorFrom="#ff8500"
-        progressColorTo="#a15400"
-        verticalOffset="1rem"
-        progressSize={8}
-        trackColor="#eeeeee"
-        trackSize={20}
-        data={sliderValues} //...
-        dataIndex={0}
-        onChange={(value) => {
-          setcurrentSliderValue(value);
-        }}
-      >
-        <CircleIcon x="22" y="22" width="28px" height="28px" />
-      </CircularSlider>
+      <div>
+        Non sit amet sunt tempor veniam voluptate sint est cupidatat sit nulla
+      </div>
       <button
-        style={{
-          backgroundColor: currentProduct ? currentProduct.COLOR : "#c2c2c2",
-        }}
-        className="uppercase flex justify-center text-black font-bold mt-5 py-2 px-4 rounded"
+        className="uppercase flex  font-bold mt-5 py-2 px-4 rounded"
         onClick={() => {
           addBasket();
         }}
