@@ -153,8 +153,7 @@ var _rollbarConfig = {
 
       <CustomView condition={["browser", "tablet"].includes(deviceType)}>
         <header
-          className="flex items-center border-b col"
-          style={{ background: backgroundColor }}
+          className={`${styles.headerBack} flex border-b col align-items-center`}
         >
           <HeaderMenu commonLang={commonLang} />
           <Lang />

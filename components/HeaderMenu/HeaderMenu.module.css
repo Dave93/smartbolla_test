@@ -17,7 +17,6 @@
 
 .headerMenuItem a span {
   transition: all 0.3s linear;
-  margin-bottom: 5px;
 }
 
 .headerMenuItem a.isActive span {

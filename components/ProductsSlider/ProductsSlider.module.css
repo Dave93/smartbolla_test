@@ -1,33 +1,8 @@
-.roundSlider code {
-  color: #fff;
-  position: relative;
-}
-
-.roundSlider code span {
-  position: relative !important;
-}
-
-.circle,
-.circle div {
-  width: 24px;
-  height: 340px;
-  position: absolute;
-  left: 45%;
-  top: -30px;
-}
-.circle:before,
-.circle div:before {
-  content: "";
-  display: block;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #fff;
-  border-radius: 100%;
-}
-.circle div {
-  top: 0;
-  left: 0;
-  -webkit-transform: rotate(24deg);
-  -ms-transform: rotate(24deg);
-  transform: rotate(24deg);
+.textbackg {
+    background: hsla(0,0%,100%,.05);
+    box-shadow: 0 8px 32px 0 rgb(31 38 135 / 37%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 10px;
+    padding: 20px;
 }

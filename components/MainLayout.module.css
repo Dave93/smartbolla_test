@@ -4,7 +4,7 @@
 }
 
 .headerBack {
-  background: linear-gradient(270deg, rgb(12, 14, 18) 0.14%, rgb(34, 42, 60) 100%);
+  background: linear-gradient(270deg, rgb(101 110 130) 0.14%, rgb(34 42 60 / 23%) 100%);
 }
 
 .minHeight {

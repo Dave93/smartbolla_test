@@ -42,27 +42,19 @@ export default function ProductsSlider({ products, investLang }) {
     }
   };
 
-  let sliderCount = sliderValues.length;
-  const RenderCircular = () => {
-    if (sliderCount > 0) {
-      sliderCount--;
-      return (
-        <div>
-          <RenderCircular />
-        </div>
-      );
-    } else {
-      return null;
-    }
-  };
-
   return (
-    <div className={`${styles.roundSlider} flex flex-col m-auto relative`}>
-      <div>
+    <div className={`flex flex-col m-auto relative top-20`}>
+      <div className={`${styles.textbackg} col-4 p-4`}>
+        <div className="uppercase text-4xl mb-3">smartbolla</div>
+        Non sit amet sunt tempor veniam voluptate sint est cupidatat sit nulla
+        Non sit amet sunt tempor veniam voluptate sint est cupidatat sit nulla
+        Non sit amet sunt tempor veniam voluptate sint est cupidatat sit nulla
+        Non sit amet sunt tempor veniam voluptate sint est cupidatat sit nulla
+        Non sit amet sunt tempor veniam voluptate sint est cupidatat sit nulla
         Non sit amet sunt tempor veniam voluptate sint est cupidatat sit nulla
       </div>
       <button
-        className="uppercase flex  font-bold mt-5 py-2 px-4 rounded"
+        className="btn-danger btn-lg col-4 mt-3 uppercase"
         onClick={() => {
           addBasket();
         }}
@@ -91,6 +83,14 @@ export default function ProductsSlider({ products, investLang }) {
         )}
         {!isLoadingBasket && investLang}
       </button>
+      <div>
+        <button className={`${styles.textbackg} mt-3 uppercase col-2`}>
+          About us
+        </button>
+        <button className={`${styles.textbackg} mt-3 uppercase col-2`}>
+          About tokens
+        </button>
+      </div>
       {/*<div className={styles.circle}>
           <RenderCircular />
         </div>*/}

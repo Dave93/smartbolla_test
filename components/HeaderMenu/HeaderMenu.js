@@ -26,7 +26,7 @@ export default function HeaderMenu({ commonLang }) {
   const { pathname } = useRouter();
   return (
     <>
-      <nav className="flex">
+      <nav className="flex flex-auto justify-content-between">
         <div>
           <Link href="/" prefetch={false}>
             <a className="flex flex-row items-center text-decoration-none">
