@@ -45,7 +45,7 @@ export default function ProductsSlider({ products, investLang }) {
   return (
     <div className={`flex flex-col m-auto relative top-20`}>
       <div className={`${styles.textbackg} col-4 p-4`}>
-        <div className="uppercase text-4xl mb-3">smartbolla</div>
+        <div className="uppercase text-2xl mb-3">smartbolla</div>
         Non sit amet sunt tempor veniam voluptate sint est cupidatat sit nulla
         Non sit amet sunt tempor veniam voluptate sint est cupidatat sit nulla
         Non sit amet sunt tempor veniam voluptate sint est cupidatat sit nulla
@@ -83,11 +83,13 @@ export default function ProductsSlider({ products, investLang }) {
         )}
         {!isLoadingBasket && investLang}
       </button>
-      <div>
-        <button className={`${styles.textbackg} mt-3 uppercase col-2`}>
+      <div className="col-8">
+        <button
+          className={`${styles.textbackg} col-3 ml-lg-n3 ml-md-n3 mr-3 mt-3 uppercase`}
+        >
           About us
         </button>
-        <button className={`${styles.textbackg} mt-3 uppercase col-2`}>
+        <button className={`${styles.textbackg} col-3 mr-3 mt-3 uppercase`}>
           About tokens
         </button>
       </div>

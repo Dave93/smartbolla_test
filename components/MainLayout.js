@@ -159,7 +159,11 @@ var _rollbarConfig = {
           <Lang />
         </header>
         <div
-          style={{ background: backgroundColor }}
+          style={
+            pathname !== "/"
+              ? { background: backgroundColor }
+              : { background: "none" }
+          }
           className="col-auto text-white"
         >
           {pathname !== "/" && <FullPageSectionTitle title={title} />}
