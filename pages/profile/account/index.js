@@ -1,9 +1,9 @@
-import { MainLayout } from "../../components/MainLayout";
-import ProfileMenu from "../../components/ProfileMenu/ProfileMenu";
-import styles from "./Profile.module.css";
+import { MainLayout } from "../../../components/MainLayout";
+import ProfileMenu from "../../../components/ProfileMenu/ProfileMenu";
+import styles from "../Profile.module.css";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { parseCookies } from "../../helpers/";
+import { parseCookies } from "../../../helpers/";
 import { isMobile } from "react-device-detect";
 import { Table, Thead, Tbody, Tr, Th, Td } from "react-super-responsive-table";
 import Link from "next/link";
