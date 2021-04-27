@@ -3,8 +3,6 @@ import React, { useEffect, useState } from "react";
 import ProductsSlider from "../components/ProductsSlider/ProductsSlider";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { deviceType, CustomView } from "react-device-detect";
-import Footer from "../components/Footer/Footer";
 
 function Home({ products, mainLayoutSocial }) {
   const { t: translation } = useTranslation("indexPage");
@@ -30,7 +28,7 @@ function Home({ products, mainLayoutSocial }) {
         autoPlay
         loop
         muted
-        className="opacity-50 position-fixed"
+        className="position-fixed w-full"
       >
         <source src="/sample.mp4/" type="video/mp4" />
       </video>
@@ -40,15 +38,10 @@ function Home({ products, mainLayoutSocial }) {
         footerLang={footerLang}
         mainLayoutSocial={mainLayoutSocial}
       >
-        <div>
-          <ProductsSlider
-            products={products}
-            investLang={translation("invest")}
-          />
-        </div>
-        <CustomView condition={["browser", "tablet"].includes(deviceType)}>
-          <Footer footerLang={footerLang} />
-        </CustomView>
+        <ProductsSlider
+          products={products}
+          investLang={translation("invest")}
+        />
         <style jsx global>
           {`
             #fp-nav {

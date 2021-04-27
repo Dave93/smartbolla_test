@@ -15,6 +15,8 @@ import React, { useEffect } from "react";
 import ReactGA from "react-ga";
 import { YMInitializer } from "react-yandex-metrika";
 import getConfig from "next/config";
+import MainLeftLogo from "./MainLeftLogo/MainLeftLogo";
+
 const { publicRuntimeConfig } = getConfig();
 
 export function MainLayout({
@@ -172,6 +174,38 @@ var _rollbarConfig = {
             <Social mainLayoutSocial={mainLayoutSocial} />
           )}
         </div>
+      </CustomView>
+      <CustomView condition={!["browser", "tablet"].includes(deviceType)}>
+        <header
+          className={`${styles.headerMob} flex flex-row items-end justify-around w-full z-10`}
+        >
+          <Link href="/" prefetch={false}>
+            <a className="flex flex-row items-center">
+              <MainLeftLogo />
+              <div className="font-bold ml-3 text-white uppercase text-2x1">
+                SmartBolla
+              </div>
+            </a>
+          </Link>
+          <Lang />
+        </header>
+        <div
+          className={`main-content ${pathname == "/" ? "" : "pt-10"} ${
+            pathname == "/contacts" ? "" : ""
+          }`}
+          style={{ background: backgroundColor }}
+        >
+          {pathname !== "/" && (
+            <div className="pt-10 m-auto col-10 pb-2">
+              {pathname !== "/" && <FullPageSectionTitle title={title} />}
+            </div>
+          )}
+          {children}
+          {pathname != "/contacts" && (
+            <Social mainLayoutSocial={mainLayoutSocial} />
+          )}
+        </div>
+        <Footer footerLang={footerLang} commonLang={commonLang} />
       </CustomView>
 
       <style jsx global>{`
