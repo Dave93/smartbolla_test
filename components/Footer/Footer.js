@@ -6,10 +6,10 @@ export default function Footer({ commonLang, footerLang }) {
   return (
     <>
       <CustomView condition={!["browser", "tablet"].includes(deviceType)}>
-        <FooterMobile commonLang={commonLang} />
+        <FooterMobile commonLang={commonLang} footerLang={footerLang} />
       </CustomView>
       <CustomView condition={["browser", "tablet"].includes(deviceType)}>
-        <FooterDesktop footerLang={footerLang} />
+        {/* <FooterDesktop footerLang={footerLang} /> */}
       </CustomView>
     </>
   );

@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Head from "next/head";
 import MainLeftSide from "./MainLeftSide/MainLeftSide";
-import MainLeftLogo from "./MainLeftLogo/MainLeftLogo";
 import HeaderMenu from "./HeaderMenu/HeaderMenu";
 import { useSelector } from "react-redux";
 import Lang from "./Lang/Lang";
@@ -16,6 +15,8 @@ import React, { useEffect } from "react";
 import ReactGA from "react-ga";
 import { YMInitializer } from "react-yandex-metrika";
 import getConfig from "next/config";
+import MainLeftLogo from "./MainLeftLogo/MainLeftLogo";
+
 const { publicRuntimeConfig } = getConfig();
 
 export function MainLayout({
@@ -153,61 +154,41 @@ var _rollbarConfig = {
       </Head>
 
       <CustomView condition={["browser", "tablet"].includes(deviceType)}>
-        <div
-          style={{ background: backgroundColor }}
-          className={`${pathname == "/" ? "flex flex-row" : ""}`}
+        <header
+          className={`${styles.headerBack} flex border-b col align-items-center`}
         >
-          <MainLeftSide className="fixed left-0 z-30">
-            <div>
-              <Link href="/" prefetch={false}>
-                <a className="flex flex-row items-center">
-                  <MainLeftLogo />
-                  <div className="font-bold ml-3 text-white uppercase text-2x1">
-                    SmartBolla
-                  </div>
-                </a>
-              </Link>
-            </div>
-          </MainLeftSide>
-          <MainRightSide className="fixed right-0.5 top-0 z-30">
-            <header
-              className={`${styles.header} ${
-                pathname == "/" ? "" : styles.headerBack
-              } flex flex-row items-end justify-between`}
-            >
-              <HeaderMenu commonLang={commonLang} />
-              <Lang />
-            </header>
-          </MainRightSide>
-          <div
-            className={`main-content ${
-              pathname == "/" ? "" : `${styles.minHeight} py-24 pl-24 pr-10`
-            }`}
-          >
-            {pathname !== "/" && <FullPageSectionTitle title={title} />}
-            {children}
-            {pathname != "/contacts" && (
-              <Social mainLayoutSocial={mainLayoutSocial} />
-            )}
-          </div>
+          <HeaderMenu commonLang={commonLang} />
+          <Lang />
+        </header>
+        <div
+          style={
+            pathname !== "/"
+              ? { background: backgroundColor }
+              : { background: "none" }
+          }
+          className="col-auto text-white"
+        >
+          {pathname !== "/" && <FullPageSectionTitle title={title} />}
+          {children}
+          {pathname != "/contacts" && (
+            <Social mainLayoutSocial={mainLayoutSocial} />
+          )}
         </div>
       </CustomView>
       <CustomView condition={!["browser", "tablet"].includes(deviceType)}>
-        <MainRightSide className="fixed w-100 top-0 z-30">
-          <header
-            className={`${styles.headerMob} flex flex-row items-end justify-around w-full z-10`}
-          >
-            <Link href="/" prefetch={false}>
-              <a className="flex flex-row items-center">
-                <MainLeftLogo />
-                <div className="font-bold ml-3 text-white uppercase text-2x1">
-                  SmartBolla
-                </div>
-              </a>
-            </Link>
-            <Lang />
-          </header>
-        </MainRightSide>
+        <header
+          className={`${styles.headerMob} flex flex-row items-end justify-around w-full z-10`}
+        >
+          <Link href="/" prefetch={false}>
+            <a className="flex flex-row items-center">
+              <MainLeftLogo />
+              <div className="font-bold ml-3 text-white uppercase text-2x1">
+                SmartBolla
+              </div>
+            </a>
+          </Link>
+          <Lang />
+        </header>
         <div
           className={`main-content ${pathname == "/" ? "" : "pt-10"} ${
             pathname == "/contacts" ? "" : ""
@@ -224,8 +205,9 @@ var _rollbarConfig = {
             <Social mainLayoutSocial={mainLayoutSocial} />
           )}
         </div>
-        <Footer commonLang={commonLang} />
+        <Footer footerLang={footerLang} commonLang={commonLang} />
       </CustomView>
+
       <style jsx global>{`
         html,
         body {

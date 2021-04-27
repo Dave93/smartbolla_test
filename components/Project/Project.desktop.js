@@ -84,7 +84,7 @@ function Project({ project, onShowYoutube }) {
         </div>
         <motion.div initial="hidden" animate={controls} variants={logoBlock}>
           <div className="flex items-center h-full justify-around relative z-20">
-            <img data-src={project.DETAIL_PICTURE} className="w-8/12" />
+            <img src={project.DETAIL_PICTURE} className="w-8/12" />
             {project.PROPERTY_YOUTUBE_LINK_VALUE && (
               <div
                 className="absolute"

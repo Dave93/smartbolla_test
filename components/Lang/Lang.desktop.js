@@ -28,15 +28,12 @@ export default function Lang() {
   });
 
   return (
-    <div
-      ref={ref}
-      className="relative inline-block float-right mb-2 mr-16 text-3x1"
-    >
+    <div ref={ref} className="relative inline-block float-right text-3x1">
       <button
         type="button"
         className={`${
           isLandDropActive ? "bg-blue-800 border" : ""
-        } focus:outline-none outline-none font-medium hover:bg-blue-800 inline-flex justify-center px-4 py-2 rounded-md shadow-sm text-gray-700`}
+        } focus:outline-none outline-none font-medium hover:bg-blue-800 inline-flex justify-center px-4 py-2 rounded-md shadow-sm text-gray-700 text-2xl`}
         id="langs-menu"
         aria-haspopup="true"
         aria-expanded="true"
