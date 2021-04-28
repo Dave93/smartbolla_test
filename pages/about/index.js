@@ -16,6 +16,7 @@ function About({ aboutText, mainLayoutSocial, team, cofounder }) {
     contact: t("contact"),
     profile: t("profile"),
     investors: t("investors"),
+    projects: t("projects"),
   };
 
   const footerLang = {

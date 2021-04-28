@@ -21,6 +21,7 @@ function Profile({ mainLayoutSocial, balance }) {
     contact: t("contact"),
     profile: t("profile"),
     investors: t("investors"),
+    projects: t("projects"),
   };
 
   const footerLang = {
@@ -117,16 +118,22 @@ function Profile({ mainLayoutSocial, balance }) {
 }
 
 export async function getServerSideProps({ locale, req, res }) {
+
   const cookieData = parseCookies(req);
-  let authPage = "/auth";
-  if (locale != "en") {
+  let authPage = "/auth?backUrl=/profile";
+  
+  if (locale != "ru") {
     authPage =
       "/" + locale + authPage + "?backUrl=" + "/" + locale + "/profile";
   }
-
+  
   if (res && !cookieData.userAuthToken) {
-    res.writeHead(302, { Location: authPage });
-    return res.end();
+    return {
+      redirect: {
+        destination: authPage,
+        permanent: false,
+      },
+    };
   } else {
     const profileBalance = await fetch("https://api.smartbolla.com/api/", {
       method: "POST",
@@ -143,8 +150,12 @@ export async function getServerSideProps({ locale, req, res }) {
 
     const { data: tokenData } = await profileBalance.json();
     if (!tokenData.result) {
-      res.writeHead(302, { Location: authPage });
-      return res.end();
+      return {
+        redirect: {
+          destination: authPage,
+          permanent: false,
+        },
+      };
     }
   }
 
@@ -174,12 +185,15 @@ export async function getServerSideProps({ locale, req, res }) {
       ApiToken: "e7r8uGk5KcwrzT6CanBqRbPVag8ILXFC",
     },
   });
+
   let { data: balance } = await profileBalance.json();
   let { data: mainLayoutSocial } = await socials.json();
+
   return {
     props: {
       balance,
       mainLayoutSocial,
+      cookieData,
       ...(await serverSideTranslations(locale, ["profilePage"])),
     },
   };

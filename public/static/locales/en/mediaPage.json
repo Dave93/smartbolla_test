@@ -1,10 +1,11 @@
 {
-    "about": "About us",
-    "media": "Media",
-    "contact": "Contact",
-    "title": "Media",
-    "profile": "Profle",
-    "investors" : "Investors",
-    "allRightsRes": "All rights reserved.",
-    "weWoldLike": "We would like to hear from you"
+  "about": "About us",
+  "media": "Media",
+  "contact": "Contact",
+  "projects": "Projects",
+  "title": "Media",
+  "profile": "Profle",
+  "investors": "Investors",
+  "allRightsRes": "All rights reserved.",
+  "weWoldLike": "We would like to hear from you"
 }

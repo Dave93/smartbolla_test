@@ -22,6 +22,11 @@ export default function HeaderMenu({ commonLang }) {
       label: commonLang.contact,
       path: "/contacts",
     },
+
+    {
+      label: commonLang.profile,
+      path: "/profile",
+    },
   ];
   const { pathname } = useRouter();
   return (

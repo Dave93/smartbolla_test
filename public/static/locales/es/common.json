@@ -1,7 +1,8 @@
 {
-    "about": "Sobre nosotros",
-    "media": "Medios de comunicación",
-    "contact": "Contactos",
-    "profile": "Perfil",
-    "investors" : "Inversores"
+  "about": "Sobre nosotros",
+  "media": "Medios de comunicación",
+  "contact": "Contactos",
+  "profile": "Perfil",
+  "projects": "proyectos",
+  "investors": "Inversores"
 }
