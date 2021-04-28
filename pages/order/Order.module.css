@@ -30,7 +30,7 @@
 
 .orderFileButton {
   display: inline-block;
-  width: 100%;
+  width: 50%;
   height: 3.125rem;
   border: 1px solid #f6c886;
   border-radius: 0.375rem;
@@ -48,4 +48,10 @@
   border: 1px solid #f6c886;
   background-color: transparent;
   color: #f6c886;
+}
+
+@media only screen and (max-width: 600px) {
+  .orderFileButton {
+    width: 100%;
+  }
 }

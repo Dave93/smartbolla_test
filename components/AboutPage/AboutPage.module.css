@@ -2,11 +2,11 @@
   content: "";
   display: block;
   width: 1px;
-  height: 40%;
+  height: 15%;
   background: #fff;
   position: absolute;
-  right: 48%;
-  top: 30%;
+  right: 50%;
+  top: 9%;
 }
 
 .a {

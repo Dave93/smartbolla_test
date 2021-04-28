@@ -1,11 +1,8 @@
-import CircularSlider from "@fseehawer/react-circular-slider";
 import { useState } from "react";
-import ProductsSliderItem from "./ProductsSliderItem";
-import CircleIcon from "../../public/img/circleDragIcon.svg";
 import styles from "./ProductsSlider.module.css";
-import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 import { useCookies } from "react-cookie";
+import { useTranslation } from "next-i18next";
 import Link from "next/link";
 
 function thousands_separators(num) {
@@ -16,14 +13,12 @@ function thousands_separators(num) {
 
 export default function ProductsSliderDesktop({ products, investLang }) {
   const router = useRouter();
+  const { t: translation } = useTranslation("indexPage");
 
   const idsByPrice = {};
   products.map((product) => {
     idsByPrice[thousands_separators(+product.PRICE)] = product;
   });
-  const sliderValues = products.map((product) =>
-    thousands_separators(+product.PRICE)
-  );
 
   const [currentSliderValue, setcurrentSliderValue] = useState(100);
 
@@ -89,12 +84,12 @@ export default function ProductsSliderDesktop({ products, investLang }) {
           <button
             className={`${styles.textbackg} col-3 ml-lg-n3 ml-md-n3 mr-3 mt-3 uppercase`}
           >
-            About us
+            {translation("about")}
           </button>
         </Link>
         <Link href="/tokens">
           <button className={`${styles.textbackg} col-3 mr-3 mt-3 uppercase`}>
-            About tokens
+            {translation("aboutTokens")}
           </button>
         </Link>
       </div>

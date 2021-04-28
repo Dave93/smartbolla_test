@@ -1,7 +1,8 @@
 {
-    "about": "About us",
-    "media": "Media",
-    "contact": "Contact",
-    "profile": "Profle",
-    "investors" : "Investors"
+  "about": "About us",
+  "media": "Media",
+  "contact": "Contact",
+  "projects": "Projects",
+  "profile": "Profle",
+  "investors": "Investors"
 }

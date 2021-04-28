@@ -14,11 +14,6 @@ import { useTranslation } from "next-i18next";
 export default function Footer({ commonLang }) {
   const navButtons = [
     {
-      label: commonLang.about,
-      path: "/about",
-      icon: faAddressCard,
-    },
-    {
       label: commonLang.media,
       path: "/media",
       icon: faPhotoVideo,
@@ -29,14 +24,14 @@ export default function Footer({ commonLang }) {
       icon: faMapMarkerAlt,
     },
     {
-      label: commonLang.profile,
-      path: "/profile",
-      icon: faUser,
-    },
-    {
       label: commonLang.investors,
       path: "/investors",
       icon: faUsers,
+    },
+    {
+      label: commonLang.profile,
+      path: "/profile",
+      icon: faUser,
     },
   ];
   const { pathname } = useRouter();

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./ProductsSlider.module.css";
+import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import { useCookies } from "react-cookie";
 import Link from "next/link";
@@ -12,6 +13,7 @@ function thousands_separators(num) {
 
 export default function ProductsSliderMobile({ products, investLang }) {
   const router = useRouter();
+  const { t: translation } = useTranslation("indexPage");
 
   const idsByPrice = {};
   products.map((product) => {
@@ -49,7 +51,7 @@ export default function ProductsSliderMobile({ products, investLang }) {
         formaeque aera ventis.va et fabricato
       </div>
       <button
-        className="btn-danger btn-lg mt-3 uppercase"
+        className="btn-danger btn-lg mt-3 uppercase col"
         onClick={() => {
           addBasket();
         }}
@@ -78,17 +80,15 @@ export default function ProductsSliderMobile({ products, investLang }) {
         )}
         {!isLoadingBasket && investLang}
       </button>
-      <div className="">
+      <div className="flex">
         <Link href="/about">
-          <button
-            className={`${styles.textbackg}  ml-lg-n3 ml-md-n3 mr-3 mt-3 uppercase`}
-          >
-            About us
+          <button className={`${styles.textbackg}  col mr-3 mt-3 uppercase`}>
+            {translation("about")}
           </button>
         </Link>
         <Link href="/tokens">
-          <button className={`${styles.textbackg} mr-3 mt-3 uppercase`}>
-            About tokens
+          <button className={`${styles.textbackg} col mr-3 mt-3 uppercase`}>
+            {translation("aboutTokens")}
           </button>
         </Link>
       </div>

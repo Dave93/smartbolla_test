@@ -1,10 +1,11 @@
 {
-    "about": "معلومات عنا",
-    "media": "وسائط",
-    "contact": "اتصل بنا",
-    "title": "وسائط",
-    "profile": "حساب تعريفي",
-    "investors": "المستثمرين",
-    "allRightsRes": "تم استلام جميع الحقوق.",
-    "weWoldLike": "نود أن نسمع منك"
+  "about": "معلومات عنا",
+  "media": "وسائط",
+  "contact": "اتصل بنا",
+  "projects": "المشاريع",
+  "title": "وسائط",
+  "profile": "حساب تعريفي",
+  "investors": "المستثمرين",
+  "allRightsRes": "تم استلام جميع الحقوق.",
+  "weWoldLike": "نود أن نسمع منك"
 }

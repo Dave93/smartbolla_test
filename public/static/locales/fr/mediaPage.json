@@ -1,10 +1,11 @@
 {
-    "about": "À propos de nous",
-    "media": "Médias",
-    "contact": "Contacts",
-    "title": "Médias",
-    "profile": "Profil",
-    "investors": "Investisseurs",
-    "allRightsRes": "Tous droits reçus.",
-    "weWoldLike": "Nous aimerions recevoir vos commentaires"
+  "about": "À propos de nous",
+  "media": "Médias",
+  "contact": "Contacts",
+  "title": "Médias",
+  "profile": "Profil",
+  "projects": "projets",
+  "investors": "Investisseurs",
+  "allRightsRes": "Tous droits reçus.",
+  "weWoldLike": "Nous aimerions recevoir vos commentaires"
 }

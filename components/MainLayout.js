@@ -152,7 +152,6 @@ var _rollbarConfig = {
           }}
         />
       </Head>
-
       <CustomView condition={["browser", "tablet"].includes(deviceType)}>
         <header
           className={`${styles.headerBack} flex border-b col align-items-center`}
@@ -207,7 +206,6 @@ var _rollbarConfig = {
         </div>
         <Footer footerLang={footerLang} commonLang={commonLang} />
       </CustomView>
-
       <style jsx global>{`
         html,
         body {
