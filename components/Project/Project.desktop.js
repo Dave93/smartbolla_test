@@ -46,19 +46,6 @@ function Project({ project, onShowYoutube }) {
 
   return (
     <div ref={ref} className={`flex h-full items-center`}>
-      <div className={`absolute h-full ${styles.projectRandomObjects} w-full`}>
-        {project.PROPERTY_PHOTOS &&
-          project.PROPERTY_PHOTOS.map((img, i) => (
-            <img
-              key={i}
-              data-src={img}
-              style={{
-                left: `${Math.floor(Math.random() * 80) + 1}%`,
-                top: `${Math.floor(Math.random() * 80) + 1}%`,
-              }}
-            />
-          ))}
-      </div>
       <div
         key={project.ID}
         className="grid grid-cols-3 items-center overflow-hidden"
@@ -83,7 +70,7 @@ function Project({ project, onShowYoutube }) {
           </motion.div>
         </div>
         <motion.div initial="hidden" animate={controls} variants={logoBlock}>
-          <div className="flex items-center h-full justify-around relative z-20">
+          <div className="flex items-center h-full justify-around relative ">
             <img src={project.DETAIL_PICTURE} className="w-8/12" />
             {project.PROPERTY_YOUTUBE_LINK_VALUE && (
               <div
