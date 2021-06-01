@@ -14,7 +14,8 @@ function Investors({ aboutText, mainLayoutSocial, investors }) {
     media: t("media"),
     contact: t("contact"),
     profile: t("profile"),
-    investors: t('investors')
+    investors: t('investors'),
+    policies: t("policies")
   };
 
   const footerLang = {
@@ -23,7 +24,7 @@ function Investors({ aboutText, mainLayoutSocial, investors }) {
   };
   return (
     <MainLayout
-      title={t("title")}
+      title={t("investors")}
       commonLang={commonLang}
       footerLang={footerLang}
       mainLayoutSocial={mainLayoutSocial}

@@ -87,7 +87,7 @@ export default function ProductsSliderMobile({ products, investLang }) {
           </button>
         </Link>
         <Link href="/tokens">
-          <button className={`${styles.textbackg} col mr-3 mt-3 uppercase`}>
+          <button className={`${styles.textbackg} col  mt-3 uppercase`}>
             {translation("aboutTokens")}
           </button>
         </Link>

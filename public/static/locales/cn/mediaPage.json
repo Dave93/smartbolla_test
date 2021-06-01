@@ -1,11 +1,11 @@
 {
-  "about": "关于我们",
-  "media": "媒体",
-  "contact": "联系我们",
-  "projects": "专案",
-  "title": "媒体",
-  "profile": "轮廓",
-  "investors": "投资人",
-  "allRightsRes": "保留所有权利.",
-  "weWoldLike": "我们希望收到你的来信"
+    "about": "关于我们",
+    "media": "媒体",
+    "contact": "联系我们",
+    "title": "媒体",
+    "profile": "轮廓",
+    "investors": "投资人",
+    "allRightsRes": "保留所有权利.",
+    "weWoldLike": "我们希望收到你的来信",
+    "policies": "政策规定"
 }

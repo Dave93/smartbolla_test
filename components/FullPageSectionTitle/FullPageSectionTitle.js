@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import styles from "./FullPageSectionTitle.module.css";
 import styled from "styled-components";
+import { isMobile } from 'react-device-detect';
 
 export default function FullPageSectionTitle({ title }) {
   const controls = useAnimation();
@@ -29,13 +30,15 @@ export default function FullPageSectionTitle({ title }) {
   };
 
   return (
-    <div ref={ref}>
+    <div ref={ref} className="pb-2">
       <motion.h1
         initial="hidden"
         transition={{ duration: 0.6 }}
         animate={controls}
         variants={boxVariants}
-        className={`font-extrabold uppercase ${styles.title}`}
+        className={`${isMobile ? "" : "font-extrabold uppercase pt-10"} ${
+          styles.title
+        }`}
       >
         {title}
       </motion.h1>

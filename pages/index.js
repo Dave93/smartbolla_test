@@ -14,6 +14,7 @@ function Home({ products, mainLayoutSocial }) {
     contact: translation("contact"),
     profile: translation("profile"),
     investors: translation("investors"),
+    policies: translation("policies")
   };
 
   const footerLang = {

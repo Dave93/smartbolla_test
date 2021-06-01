@@ -5,7 +5,6 @@
   "profile": "Profil",
   "investors": "Investisseurs",
   "title": "Autorisation",
-  "projects": "projets",
   "allRightsRes": "Tous droits reçus.",
   "weWoldLike": "Nous aimerions recevoir vos commentaires",
   "phoneFilled": "Le champ de téléphone est obligatoire",
@@ -18,5 +17,10 @@
   "codeFromSms": "Code d'autorisation de SMS",
   "resendCode": "Vous pourrez à nouveau envoyer le code via",
   "resendCodeSek": "seconde",
-  "sendCode": "Renvoyer le code"
+  "sendCode": "Renvoyer le code",
+  "policies": "Stratégies",
+  "incorrect": "Le téléphone introuvable ou le mot de passe est incorrect",
+  "phoneNotFound": "Téléphone introuvable",
+  "password": "Mot de passe",
+  "resetPass": "Réinitialisez le mot de passe"
 }

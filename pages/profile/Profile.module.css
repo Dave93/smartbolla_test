@@ -1,69 +1,84 @@
 .profileTable {
-    background-color: rgb(246 200 134);
-    color: #333;
-    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 69%);
-    border-radius: 15px;
+  background-color: rgb(246 200 134);
+  color: #333;
+  box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 69%);
+  border-radius: 15px;
 }
 
 .profileTable th {
-    padding: 20px;
+  padding: 20px;
 }
 
 .profileTable td {
-    padding: 20px;
+  padding: 20px;
 }
 
-.tokenCount{
-    color: #333;
-    background-color: #f6c886;
-    border-radius: 15px;
-    padding: 20px;
-    display: flex;
-    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 69%);
+.tokenCount {
+  color: #333;
+  background-color: #f6c886;
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 69%);
 }
 
 .accountSubmitButton {
-    display: inline-block;
-    width: 100%;
-    height: 3.125rem;
-    border: 1px solid #f6c886;
-    border-radius: 0.375rem;
-    background-color: #f6c886;
-    color: #0d0f13;
-    font: 600 1.5rem/0 "Open Sans", sans-serif;
-    cursor: pointer;
-    transition: all 0.2s;
-    border-radius: 0.3rem
+  display: inline-block;
+  width: 100%;
+  height: 3.125rem;
+  border: 1px solid #f6c886;
+  border-radius: 0.375rem;
+  background-color: #f6c886;
+  color: #0d0f13;
+  font: 600 1.5rem/0 "Open Sans", sans-serif;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-radius: 0.3rem;
 }
 
 .accountSubmitButton:hover {
-    border: 1px solid #f6c886;
-    background-color: transparent;
-    color: #f6c886;
+  border: 1px solid #f6c886;
+  background-color: transparent;
+  color: #f6c886;
 }
 
 .accountFileButton {
-    display: inline-block;
-    width: 100%;
-    height: 3.125rem;
-    border: 1px solid #f6c886;
-    border-radius: 0.375rem;
-    background-color: #f6c886;
-    color: #0d0f13;
-    font: 600 1rem/0 "Open Sans", sans-serif;
-    cursor: pointer;
-    transition: all 0.2s;
-    border-radius: 0.3rem;
-    padding: 25px 40px;
-    text-align: center;
+  display: inline-block;
+  width: 50%;
+  height: 3.125rem;
+  border: 1px solid #f6c886;
+  border-radius: 0.375rem;
+  background-color: #f6c886;
+  color: #0d0f13;
+  font: 600 1rem/0 "Open Sans", sans-serif;
+  cursor: pointer;
+  transition: all 0.2s;
+  border-radius: 0.3rem;
+  padding: 25px 40px;
+  text-align: center;
 }
 
 .accountFileButton:hover {
-    border: 1px solid #f6c886;
-    background-color: transparent;
-    color: #f6c886;
+  border: 1px solid #f6c886;
+  background-color: transparent;
+  color: #f6c886;
 }
 
 .profileTable tbody tr {
-    border: none
+  border: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .accountFileButton {
+    width: 100%;
+  }
+}
+.isAuthLoading:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #ffffffc4;
+  z-index: 99999999;
+  position: absolute;
 }

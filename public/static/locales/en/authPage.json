@@ -4,7 +4,6 @@
   "media": "Media",
   "contact": "Contact",
   "profile": "Profle",
-  "projects": "Projects",
   "investors": "Investors",
   "allRightsRes": "All rights reserved.",
   "weWoldLike": "We would like to hear from you",
@@ -18,5 +17,10 @@
   "codeFromSms": "Authorization code from SMS",
   "resendCode": "You will be able to send the code again through",
   "resendCodeSek": "sec",
-  "sendCode": "Resend code"
+  "sendCode": "Resend code",
+  "policies": "policies",
+  "incorrect": "Phone not found or password is incorrect",
+  "phoneNotFound": "Phone not found",
+  "password": "Password",
+  "resetPass": "Reset the password"
 }

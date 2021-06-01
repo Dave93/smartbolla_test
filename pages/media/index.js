@@ -29,6 +29,7 @@ function Media({ mainLayoutSocial, photoData }) {
     profile: t("profile"),
     investors: t("investors"),
     projects: t("projects"),
+    policies: t("policies")
   };
 
   const footerLang = {
