@@ -3,7 +3,6 @@
   "media": "Medios de comunicación",
   "contact": "Contactos",
   "profile": "Perfil",
-  "projects": "proyectos",
   "investors": "Inversores",
   "title": "Autorización",
   "allRightsRes": "Reservados todos los derechos.",
@@ -18,5 +17,10 @@
   "codeFromSms": "Código de autorización de SMS",
   "resendCode": "Podrás volver a enviar el código a través de",
   "resendCodeSek": "segundo",
-  "sendCode": "Reenviar codigo"
+  "sendCode": "Reenviar codigo",
+  "policies": "politicas",
+  "incorrect": "El teléfono no encontrado o la contraseña es incorrecta",
+  "phoneNotFound": "Teléfono no encontrado",
+  "password": "Contraseña",
+  "resetPass": "Restablecer la contraseña"
 }

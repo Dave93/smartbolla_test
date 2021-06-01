@@ -1,6 +1,8 @@
 {
-    "projects": "Проекты",
     "about": "О нас",
     "media": "Медиа",
-    "contact": "Контакты"
+    "contact": "Контакты",
+    "profile": "Профиль",
+    "investors": "Инвесторы",
+    "policies": "Политика"
 }

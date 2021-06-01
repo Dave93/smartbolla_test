@@ -1,11 +1,11 @@
 {
-  "about": "Sobre nosotros",
-  "media": "Medios de comunicación",
-  "contact": "Contactos",
-  "title": "Medios de comunicación",
-  "profile": "Perfil",
-  "projects": "proyectos",
-  "investors": "Inversores",
-  "allRightsRes": "Reservados todos los derechos.",
-  "weWoldLike": "Nos gustaría recibir sus comentarios"
+    "about": "Sobre nosotros",
+    "media": "Medios de comunicación",
+    "contact": "Contactos",
+    "title": "Medios de comunicación",
+    "profile": "Perfil",
+    "investors" : "Inversores",
+    "allRightsRes": "Reservados todos los derechos.",
+    "weWoldLike": "Nos gustaría recibir sus comentarios",
+    "policies": "politicas"
 }

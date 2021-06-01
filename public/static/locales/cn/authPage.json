@@ -5,7 +5,6 @@
   "contact": "联系我们",
   "profile": "轮廓",
   "investors": "投资人",
-  "projects": "专案",
   "allRightsRes": "保留所有权利.",
   "weWoldLike": "我们希望收到你的来信",
   "phoneFilled": "电话字段为必填项",
@@ -18,5 +17,10 @@
   "codeFromSms": "来自SMS的授权码",
   "resendCode": "您将能够通过以下方式再次发送代码",
   "resendCodeSek": "秒",
-  "sendCode": "重新发送验证码"
+  "sendCode": "重新发送验证码",
+  "policies": "政策规定",
+  "incorrect": "未找到手机或密码不正确",
+  "phoneNotFound": "找不到电话",
+  "password": "密码",
+  "resetPass": "重设密码"
 }

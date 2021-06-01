@@ -33,6 +33,7 @@ function Contacts({ contactAddress, social }) {
     profile: t("profile"),
     investors: t("investors"),
     projects: t("projects"),
+    policies: t("policies"),
   };
 
   const footerLang = {

@@ -1,5 +1,6 @@
 import { MainLayout } from "../../../components/MainLayout";
 import styles from "../Profile.module.css";
+import { useState } from "react";
 import { Formik, Field, Form } from "formik";
 import ProfileMenu from "../../../components/ProfileMenu/ProfileMenu";
 import { useTranslation } from "next-i18next";
@@ -13,6 +14,10 @@ function Account({ orderProps, mainLayoutSocial, userAuthToken }) {
   const balance = t("balance");
   const accountSetings = t("accountSetings");
   const logOut = t("logOut");
+
+  const [isAjaxLoading, setIsAjaxLoading] = useState(false);
+
+  const [passportName, setPassportName] = useState("");
 
   const commonLang = {
     about: t("about"),
@@ -52,10 +57,24 @@ function Account({ orderProps, mainLayoutSocial, userAuthToken }) {
           <>
             <label
               htmlFor={field.CODE}
-              className={`${styles.accountFileButton} cursor-pointer`}
+              className={`${styles.accountFileButton} cursor-pointer mb-4`}
             >
               {t("downloadButtonText")}
             </label>
+            <span className="flex justify-center p-3">{passportName}</span>
+            {values[field.ID] && (
+              <div>
+                <img
+                  src={`https://api.smartbolla.com${values[field.ID].URL}`}
+                />
+                <a
+                  href={`https://api.smartbolla.com${values[field.ID].URL}`}
+                  target="_blank"
+                >
+                  {values[field.ID].NAME}
+                </a>
+              </div>
+            )}
             <input
               type={"file"}
               name={field.ID}
@@ -63,6 +82,7 @@ function Account({ orderProps, mainLayoutSocial, userAuthToken }) {
               style={{ visibility: "hidden" }}
               required
               onChange={(event) => {
+                setPassportName(event.currentTarget.files[0].name);
                 setFieldValue(field.ID, event.currentTarget.files[0]);
               }}
               className="dark:bg-gray-700 dark:border-gray-600 dark:focus:border-gray-500 dark:focus:ring-gray-900 dark:placeholder-gray-500 dark:text-white focus:border-indigo-300 focus:outline-none focus:ring focus:ring-indigo-100 placeholder-gray-300 px-3 py-2 rounded-md w-full"
@@ -97,7 +117,11 @@ function Account({ orderProps, mainLayoutSocial, userAuthToken }) {
       mainLayoutSocial={mainLayoutSocial}
     >
       <div className={`${isMobile ? "col" : "grid grid-cols-3"}`}>
-        <div className={`${isMobile ? "col" : "col-span-2"}`}>
+        <div
+          className={`${isAjaxLoading ? styles.isAuthLoading : ""} ${
+            isMobile ? "col" : "col-span-2"
+          }`}
+        >
           <Formik
             initialValues={initialValues}
             validate={(values) => {
@@ -123,6 +147,7 @@ function Account({ orderProps, mainLayoutSocial, userAuthToken }) {
             }}
             onSubmit={async (values, { setSubmitting }) => {
               try {
+                setIsAjaxLoading(true);
                 await asyncForEach(
                   orderProps["ORDER_PROP_FIELDS"],
                   async (prop) => {
@@ -146,6 +171,7 @@ function Account({ orderProps, mainLayoutSocial, userAuthToken }) {
                 });
 
                 setSubmitting(false);
+                setIsAjaxLoading(false);
               } catch (error) {
                 console.log(error);
               }
@@ -216,15 +242,21 @@ function Account({ orderProps, mainLayoutSocial, userAuthToken }) {
 
 export async function getServerSideProps({ locale, req, res }) {
   const cookieData = parseCookies(req);
-  let authPage = "/auth";
-  if (locale != "en") {
+  let authPage = "/auth?backUrl=/profile/account";
+
+  if (locale != "ru") {
     authPage =
       "/" + locale + authPage + "?backUrl=" + "/" + locale + "/profile/account";
   }
 
   if (res && !cookieData.userAuthToken) {
-    res.writeHead(302, { Location: authPage });
-    return res.end();
+    console.log("davr");
+    return {
+      redirect: {
+        destination: authPage,
+        permanent: false,
+      },
+    };
   } else {
     const profileBalance = await fetch("https://api.smartbolla.com/api/", {
       method: "POST",
@@ -241,8 +273,12 @@ export async function getServerSideProps({ locale, req, res }) {
 
     const { data: tokenData } = await profileBalance.json();
     if (!tokenData.result) {
-      res.writeHead(302, { Location: authPage });
-      return res.end();
+      return {
+        redirect: {
+          destination: authPage,
+          permanent: false,
+        },
+      };
     }
   }
   const resProps = await fetch("https://api.smartbolla.com/api/", {
@@ -274,6 +310,7 @@ export async function getServerSideProps({ locale, req, res }) {
   let { data: mainLayoutSocial } = await socials.json();
 
   let { data: orderProps } = await resProps.json();
+  console.log(orderProps);
   orderProps = orderProps || [];
 
   return {

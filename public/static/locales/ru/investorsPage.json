@@ -1,14 +1,14 @@
 {
-  "about": "О нас",
-  "media": "Медиа",
-  "contact": "Контакты",
-  "profile": "Профиль",
-  "projects": "Проекты",
-  "investors": "Инвесторы",
-  "title": "Инвесторы",
-  "documentTitle": "Документы",
-  "documentCertif": "SmartBolla DMCC Свидетельство о регистрации",
-  "documentLicen": "SmartBolla DMCC Лицензия на обслуживание",
-  "allRightsRes": "Все права защищены.",
-  "weWoldLike": "Мы бы хотели получить от Вас отзывы"
+    "about": "О нас",
+    "media": "Медиа",
+    "contact": "Контакты",
+    "profile": "Профиль",
+    "investors": "Инвесторы",
+    "title": "Инвесторы",
+    "documentTitle": "Документы",
+    "documentCertif": "SmartBolla DMCC Свидетельство о регистрации",
+    "documentLicen": "SmartBolla DMCC Лицензия на обслуживание",
+    "allRightsRes": "Все права защищены.",
+    "weWoldLike": "Мы бы хотели получить от Вас отзывы",
+    "policies": "Политика"
 }
