@@ -23,6 +23,7 @@ function AuthPage({ mainLayoutSocial }) {
     profile: t("profile"),
     investors: t("investors"),
     policies: t("policies"),
+    projects: t("projects"),
   };
 
   const footerLang = {

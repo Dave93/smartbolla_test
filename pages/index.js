@@ -3,23 +3,24 @@ import React, { useEffect, useState } from "react";
 import ProductsSlider from "../components/ProductsSlider/ProductsSlider";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import Project from "../components/Project/Project";
 
-function Home({ products, mainLayoutSocial }) {
-  const { t: translation } = useTranslation("indexPage");
+function Home({ products, mainLayoutSocial, projects }) {
+  const { t } = useTranslation("projectsPage");
 
   const commonLang = {
-    projects: translation("projects"),
-    about: translation("about"),
-    media: translation("media"),
-    contact: translation("contact"),
-    profile: translation("profile"),
-    investors: translation("investors"),
-    policies: translation("policies")
+    projects: t("projects"),
+    about: t("about"),
+    media: t("media"),
+    contact: t("contact"),
+    profile: t("profile"),
+    investors: t("investors"),
+    policies: t("policies")
   };
 
   const footerLang = {
-    allRightsRes: translation("allRightsRes"),
-    weWoldLike: translation("weWoldLike"),
+    allRightsRes: t("allRightsRes"),
+    weWoldLike: t("weWoldLike"),
   };
 
   return (
@@ -39,10 +40,17 @@ function Home({ products, mainLayoutSocial }) {
         footerLang={footerLang}
         mainLayoutSocial={mainLayoutSocial}
       >
-        <ProductsSlider
-          products={products}
-          investLang={translation("invest")}
-        />
+        <ProductsSlider products={products} investLang={t("invest")} />
+        {projects.map((project) => (
+          <div key={project.ID}>
+            <Project
+              project={project}
+              onShowYoutube={(id) => {
+                setYoutubeId(id);
+              }}
+            />
+          </div>
+        ))}
         <style jsx global>
           {`
             #fp-nav {
@@ -167,6 +175,20 @@ export async function getServerSideProps({ locale }) {
     },
   });
 
+  const resProjects = await fetch("https://api.smartbolla.com/api/", {
+    method: "POST",
+    body: JSON.stringify({
+      method: "get.projects.list",
+      data: {
+        locale,
+      },
+    }),
+    headers: {
+      ApiToken: "e7r8uGk5KcwrzT6CanBqRbPVag8ILXFC",
+    },
+  });
+
+  let { data: projects } = await resProjects.json();
   let { data: mainLayoutSocial } = await socials.json();
   let { data: products } = await resProducts.json();
   return {
@@ -174,6 +196,7 @@ export async function getServerSideProps({ locale }) {
       mainLayoutSocial,
       products,
       ...(await serverSideTranslations(locale, ["indexPage"])),
+      projects
     },
   };
 }

@@ -22,6 +22,7 @@ function Profile({ mainLayoutSocial, balance }) {
     profile: t("profile"),
     investors: t("investors"),
     policies: t("policies"),
+    projects: t("projects"),
   };
 
   const footerLang = {
@@ -32,7 +33,7 @@ function Profile({ mainLayoutSocial, balance }) {
   return (
     <MainLayout
       commonLang={commonLang}
-      title={t("title")}
+      title={t("profile")}
       mainLayoutSocial={mainLayoutSocial}
       footerLang={footerLang}
     >
