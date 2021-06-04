@@ -191,7 +191,7 @@ src="https://www.facebook.com/tr?id=949121602542823&ev=PageView&noscript=1"
               ? { background: backgroundColor }
               : { background: "none" }
           }
-          className="col-auto text-white"
+          className="text-white"
         >
           {pathname !== "/" && <FullPageSectionTitle title={title} />}
           {children}

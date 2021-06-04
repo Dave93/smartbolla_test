@@ -43,10 +43,22 @@
     drop-shadow(4.5px 4.5px 8px #a6abbd);
 }
 
-.title {
+.title1 {
   font-weight: 900;
   position: absolute;
   left: 136px;
+  font-size: 64px;
+  line-height: 62px;
+  color: #333333;
+  text-shadow: -16px -16px 32px #fafbff, 16px 16px 32px #a6abbd;
+  text-transform: uppercase;
+  margin-top: 20px;
+}
+
+.title2 {
+  font-weight: 900;
+  position: absolute;
+  left: -24px;
   font-size: 64px;
   line-height: 62px;
   color: #333333;
@@ -65,7 +77,7 @@
   margin-top: 100px;
 }
 
-.rightBlock {
+.rightBlock1 {
   background: #f2f2f2;
   border: 0.5px solid #f2f2f2;
   box-sizing: border-box;
@@ -78,6 +90,34 @@
   position: absolute;
 }
 
+.leftBlock1 {
+  color: #000000;
+  width: 600px;
+  margin-left: 10%;
+  margin-top: 20px;
+}
+
+.rightBlock2 {
+  position: absolute;
+  width: 619px;
+  color: #000000;
+  right: 10%;
+  box-sizing: border-box;
+}
+
+.leftBlock2 {
+  position: absolute;
+  width: 500px;
+  height: 358px;
+  top: 10%;
+  background: #f2f2f2;
+  border: 0.5px solid #f2f2f2;
+  box-sizing: border-box;
+  box-shadow: -9px -9px 16px #fafbff, 9px 9px 16px #a6abbd;
+  border-radius: 64px 0px 0px 64px;
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+
 .logoBox {
   width: 300px;
   height: 300px;
@@ -87,6 +127,7 @@
   top: 29px;
   left: 40px;
   position: absolute;
+  cursor: pointer;
 }
 
 .logoRight {
@@ -94,14 +135,29 @@
   position: absolute;
   top: 12px;
 }
-.leftBlock {
-  color: #000000;
-  width: 600px;
-  margin-left: 20%;
+
+.rectangle1 {
+  height: 111.78px;
+  background: #007d88;
+  opacity: 0.2;
+  transform: rotate(-16.22deg);
+  position: absolute;
+  width: 108%;
+  left: -4%;
+  top: 68%;
 }
 
-.rectangle {
+.rectangle2 {
+  height: 111.78px;
+  background: #ED0889;
+  opacity: 0.2;
+  transform: rotate(16.22deg);
   position: absolute;
-  top: 5%;
-  left: 0%
+  width: 108%;
+  left: -4%;
+  top: 68%;
+}
+
+.body {
+  height: 1200px;
 }
