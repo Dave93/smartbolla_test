@@ -2,17 +2,17 @@ import styles from "./Project.module.css";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import SecureLogo from "../../public/secure.svg";
-import GroupLogo from "../../public/Group.svg"
+import GroupLogo from "../../public/Group.svg";
 import Rectangle from "../../public/Rectangle79.svg";
 
 library.add(faYoutube, faArrowLeft);
 
 function Project({ project, onShowYoutube }) {
+  console.log(project)
   const controls = useAnimation();
   const { ref, inView } = useInView();
 
@@ -25,40 +25,18 @@ function Project({ project, onShowYoutube }) {
       controls.start("hidden");
     }
   }, [controls, inView]);
-  const textBlock = {
-    hidden: {
-      x: -2000,
-      opacity: 0,
-    },
-    visible: {
-      x: 0,
-      opacity: 1,
-    },
-  };
-
-  const logoBlock = {
-    hidden: {
-      opacity: 0,
-      scale: 0,
-    },
-    visible: {
-      opacity: 1,
-      scale: [0, 1.4, 1],
-    },
-  };
 
   return (
-    <div ref={ref} className={`flex h-full items-center`}>
+    <div ref={ref}>
       <div
         key={project.ID}
-        className="grid grid-cols-2 gap-4 items-center overflow-hidden mb-10"
+        className={`${styles.body} overflow-hidden relative`}
       >
-        <div className={styles.leftBlock}>
+        <div className={styles.leftBlock1}>
           <div className={styles.border}>
-            <div className={styles.title}>Paycent</div>
+            <div className={styles.title1}>{project.NAME}</div>
             <div className={`${styles.description} p-3`}>
-              A payment system that will combine all the best features payment
-              systems on the market.
+              {project.PREVIEW_TEXT}
             </div>
           </div>
           <div className={`${styles.border} mt-1 flex`}>
@@ -86,9 +64,8 @@ function Project({ project, onShowYoutube }) {
             </div>
           </div>
         </div>
-        <div className={styles.rightBlock}>
+        <div className={styles.rightBlock1}>
           <div className={styles.logoBox}>
-            <GroupLogo className={styles.logoRight} />
             {project.PROPERTY_YOUTUBE_LINK_VALUE && (
               <div
                 className="absolute"
@@ -96,35 +73,68 @@ function Project({ project, onShowYoutube }) {
                   onShowYoutube(project.PROPERTY_YOUTUBE_LINK_VALUE);
                 }}
               >
-                <FontAwesomeIcon
-                  icon={faYoutube}
-                  size="lg"
-                  className="cursor-pointer text-red-500 w-12"
-                />
+                <GroupLogo className={styles.logoRight} />
               </div>
             )}
           </div>
-          {/* <motion.div initial="hidden" animate={controls} variants={logoBlock}> */}
-          {/* <div className="items-center h-full justify-around relative "> */}
-          {/* <img src={project.DETAIL_PICTURE} className="w-50" /> */}
-          {/* {project.PROPERTY_YOUTUBE_LINK_VALUE && (
-                <div
-                  className="absolute"
-                  onClick={() => {
-                    onShowYoutube(project.PROPERTY_YOUTUBE_LINK_VALUE);
-                  }}
-                >
-                  <FontAwesomeIcon
-                    icon={faYoutube}
-                    size="lg"
-                    className="cursor-pointer text-red-500 w-12"
-                  />
-                </div>
-              )} */}
-          {/* </div> */}
-          {/* </motion.div> */}
         </div>
-        <Rectangle className={styles.rectangle}/>
+        <div>
+          <Rectangle className={styles.rectangle1} />
+        </div>
+      </div>
+      <div
+        key={project.ID}
+        className={`${styles.body} overflow-hidden relative`}
+      >
+        <div className={styles.leftBlock2}>
+          <div className={styles.logoBox}>
+            {project.PROPERTY_YOUTUBE_LINK_VALUE && (
+              <div
+                className="absolute"
+                onClick={() => {
+                  onShowYoutube(project.PROPERTY_YOUTUBE_LINK_VALUE);
+                }}
+              >
+                <GroupLogo className={styles.logoRight} />
+              </div>
+            )}
+          </div>
+        </div>
+        <div className={styles.rightBlock2}>
+          <div className={styles.border}>
+            <div className={styles.title2}>{project.NAME}</div>
+            <div className={`${styles.description} p-3`}>
+              {project.PREVIEW_TEXT}
+            </div>
+          </div>
+          <div className={`${styles.border} mt-1 flex`}>
+            <div className="p-3 align-items-center flex">
+              <SecureLogo />
+              Secure transactions that do not require confidants
+            </div>
+          </div>
+          <div className={`${styles.border} mt-1 flex`}>
+            <div className="p-3 align-items-center flex">
+              <SecureLogo />
+              Secure transactions that do not require confidants
+            </div>
+          </div>
+          <div className={`${styles.border} mt-1 flex`}>
+            <div className="p-3 align-items-center flex">
+              <SecureLogo />
+              Secure transactions that do not require confidants
+            </div>
+          </div>
+          <div className={`${styles.border} mt-1 flex`}>
+            <div className="p-3 align-items-center flex">
+              <SecureLogo />
+              Secure transactions that do not require confidants
+            </div>
+          </div>
+        </div>
+        <div>
+          <Rectangle className={styles.rectangle2} />
+        </div>
       </div>
     </div>
   );
