@@ -173,13 +173,21 @@ src="https://www.facebook.com/tr?id=949121602542823&ev=PageView&noscript=1"
       <CustomView condition={["browser", "tablet"].includes(deviceType)}>
         <header
           className={`${styles.headerBack} flex border-b col align-items-center`}
+          style={
+            pathname !== "/"
+              ? {
+                  background:
+                    "linear-gradient(270deg, #0C0E12 0.14%, #242C40 100%)",
+                }
+              : { background: "" }
+          }
         >
           <HeaderMenu commonLang={commonLang} />
           <Lang />
         </header>
         <div
           style={
-            pathname !== "/"
+            pathname !== "/" && pathname !== "/projects"
               ? { background: backgroundColor }
               : { background: "none" }
           }

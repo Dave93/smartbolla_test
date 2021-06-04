@@ -35,3 +35,73 @@
 .arrowLink {
   width: 1.1rem !important;
 }
+
+.border {
+  border: 2px solid #333333;
+  box-sizing: border-box;
+  filter: drop-shadow(-4.5px -4.5px 8px #fafbff),
+    drop-shadow(4.5px 4.5px 8px #a6abbd);
+}
+
+.title {
+  font-weight: 900;
+  position: absolute;
+  left: 136px;
+  font-size: 64px;
+  line-height: 62px;
+  color: #333333;
+  text-shadow: -16px -16px 32px #fafbff, 16px 16px 32px #a6abbd;
+  text-transform: uppercase;
+  margin-top: 20px;
+}
+
+.description {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 150%;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #333333;
+  margin-top: 100px;
+}
+
+.rightBlock {
+  background: #f2f2f2;
+  border: 0.5px solid #f2f2f2;
+  box-sizing: border-box;
+  box-shadow: -9px -9px 16px #fafbff, 9px 9px 16px #a6abbd;
+  border-radius: 64px 0px 0px 64px;
+  width: 500px;
+  height: 358px;
+  right: 0%;
+  top: 144px;
+  position: absolute;
+}
+
+.logoBox {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(90deg, #0a121c 0%, #1e2226 100%);
+  box-shadow: inset 11px 11px 10px #222930, inset -11px -11px 10px #070f16;
+  border-radius: 64px;
+  top: 29px;
+  left: 40px;
+  position: absolute;
+}
+
+.logoRight {
+  left: 40px;
+  position: absolute;
+  top: 12px;
+}
+.leftBlock {
+  color: #000000;
+  width: 600px;
+  margin-left: 20%;
+}
+
+.rectangle {
+  position: absolute;
+  top: 5%;
+  left: 0%
+}
