@@ -45,8 +45,8 @@
 
 .title1 {
   font-weight: 900;
-  position: absolute;
-  left: 136px;
+  position: relative;
+  left: -24px;
   font-size: 64px;
   line-height: 62px;
   color: #333333;
@@ -57,7 +57,7 @@
 
 .title2 {
   font-weight: 900;
-  position: absolute;
+  position: relative;
   left: -24px;
   font-size: 64px;
   line-height: 62px;
@@ -69,12 +69,11 @@
 
 .description {
   font-weight: bold;
-  font-size: 24px;
+  font-size: 13px;
   line-height: 150%;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #333333;
-  margin-top: 100px;
 }
 
 .rightBlock1 {
@@ -114,11 +113,10 @@
   border: 0.5px solid #f2f2f2;
   box-sizing: border-box;
   box-shadow: -9px -9px 16px #fafbff, 9px 9px 16px #a6abbd;
-  border-radius: 64px 0px 0px 64px;
-  transform: matrix(-1, 0, 0, 1, 0, 0);
+  border-radius: 0px 64px 64px 0px;
 }
 
-.logoBox {
+.logoBox1 {
   width: 300px;
   height: 300px;
   background: linear-gradient(90deg, #0a121c 0%, #1e2226 100%);
@@ -130,10 +128,20 @@
   cursor: pointer;
 }
 
-.logoRight {
-  left: 40px;
+.logoBox2 {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(90deg, #0a121c 0%, #1e2226 100%);
+  box-shadow: inset 11px 11px 10px #222930, inset -11px -11px 10px #070f16;
+  border-radius: 64px;
+  top: 29px;
+  left: 32%;
   position: absolute;
-  top: 12px;
+  cursor: pointer;
+}
+
+.logo {
+  padding: 22px!important;
 }
 
 .rectangle1 {

@@ -5,4 +5,8 @@ module.exports = {
     defaultLocale: "en",
     localePath: path.resolve("./public/static/locales"),
   },
+  react: {
+    useSuspense: false,
+    wait: true,
+  },
 };

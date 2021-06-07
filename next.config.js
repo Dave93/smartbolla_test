@@ -46,7 +46,7 @@ module.exports = withPWA({
     localeDetection: false,
   },
   images: {
-    domains: ["smartbolla.com", "api.smartbolla.com"],
+    domains: ["smartbolla.com", "api.smartbolla.com", "dev.smartbolla.com"],
   },
   pwa: {
     dest: "public",
