@@ -6,6 +6,7 @@ import { projectModal, youtubeModal } from "../index.module.css";
 import YouTube from "react-youtube";
 
 function Projects({ mainLayoutSocial, projects }) {
+  console.log(projects)
   const { t } = useTranslation("common");
   const [currentProject, setCurrentProject] = useState(null);
   const [youtubeId, setYoutubeId] = useState(null);
@@ -134,7 +135,7 @@ export async function getServerSideProps({ locale }) {
     },
   });
 
-  const resProjects = await fetch("https://api.smartbolla.com/api/", {
+  const resProjects = await fetch("https://dev.smartbolla.com/api/", {
     method: "POST",
     body: JSON.stringify({
       method: "get.projects.list",
