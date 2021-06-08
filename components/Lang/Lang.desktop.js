@@ -55,7 +55,7 @@ export default function Lang() {
           {Object.keys(locales)
             .filter((key) => key !== locale)
             .map((key) => (
-              <Link href={pathname} locale={key} key={key} scroll={false}>
+              <Link href={pathname} locale={key} key={key} scroll={false} prefetch={false}>
                 <a
                   className="block hover:bg-blue-800 px-4 py-2 text-gray-700"
                   role="menuitem"

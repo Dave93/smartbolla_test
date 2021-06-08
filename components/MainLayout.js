@@ -169,6 +169,12 @@ src="https://www.facebook.com/tr?id=949121602542823&ev=PageView&noscript=1"
 />`,
           }}
         />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="true"
+        />
+        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'></link>
       </Head>
       <CustomView condition={["browser", "tablet"].includes(deviceType)}>
         <header

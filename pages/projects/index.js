@@ -1,12 +1,11 @@
-import { useTranslation } from "react-i18next";
 import { MainLayout } from "../../components/MainLayout";
-import Project from "../../components/Project/Project.desktop";
+import Project from "../../components/Project/Project";
 import React, { useEffect, useState } from "react";
 import { projectModal, youtubeModal } from "../index.module.css";
 import YouTube from "react-youtube";
+import { useTranslation } from "react-i18next";
 
 function Projects({ mainLayoutSocial, projects }) {
-  console.log(projects)
   const { t } = useTranslation("common");
   const [currentProject, setCurrentProject] = useState(null);
   const [youtubeId, setYoutubeId] = useState(null);
@@ -111,7 +110,7 @@ function Projects({ mainLayoutSocial, projects }) {
               <YouTube
                 videoId={youtubeId}
                 opts={youtubeOptions}
-                className="m-auto"
+                className="m-auto h-screen"
               />
             </div>
           </div>
