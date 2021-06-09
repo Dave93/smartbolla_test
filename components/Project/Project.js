@@ -30,12 +30,12 @@ function Project({ project, onShowYoutube, onClick }) {
       {project.PROPERTY_POSITION_VALUE === "Левый" ? (
         <div
           key={project.ID}
-          className={`${styles.projectBody} overflow-hidden relative sm:container`}
+          className="flex justify-between flex-col md:flex-row"
         >
-          <div className={styles.leftBlock1}>
-            <div className={styles.border}>
+          <div className="text-black p-5 col md:col-6">
+            <div className="border-2 border-black">
               <div className={styles.title1}>{project.NAME}</div>
-              <div className={`${styles.description} p-3`}>
+              <div className="uppercase px-4 font-bold">
                 {project.PREVIEW_TEXT}
               </div>
             </div>
@@ -56,11 +56,11 @@ function Project({ project, onShowYoutube, onClick }) {
               );
             })}
           </div>
-          <div className={styles.rightBlock1}>
-            <div className={styles.logoBox1}>
+          <div className="w-7/12">
+            <div className="align-items-md-center bg-gray-100 flex md:max-h-96 md:ml-auto md:mt-40 md:rounded-l-3xl md:shadow-lg shadow w-8/12">
               {project.PROPERTY_YOUTUBE_LINK_VALUE && (
                 <div
-                  className="absolute"
+                  className="bg-black m-5 rounded-3xl flex"
                   onClick={() => {
                     onShowYoutube(project.PROPERTY_YOUTUBE_LINK_VALUE);
                   }}
@@ -70,23 +70,19 @@ function Project({ project, onShowYoutube, onClick }) {
                     alt="Logo"
                     width={300}
                     height={300}
-                    className={styles.logo}
+                    className="p-3 cursor-pointer"
                   />
-                  <FontAwesomeIcon
-                    icon={faYoutube}
-                    size="lg"
-                    className={styles.youtube}
-                  />
+                  {/* <FontAwesomeIcon icon={faYoutube} size="lg" className="" /> */}
                 </div>
               )}
             </div>
           </div>
-          <div>
+          {/* <div>
             <Rectangle
               className={styles.rectangle1}
               style={{ background: project.PROPERTY_BACKGROUND_COLOR_VALUE }}
             />
-          </div>
+          </div> */}
         </div>
       ) : (
         <div
@@ -142,12 +138,12 @@ function Project({ project, onShowYoutube, onClick }) {
               );
             })}
           </div>
-          <div>
+          {/* <div>
             <Rectangle
               className={styles.rectangle2}
               style={{ background: project.PROPERTY_BACKGROUND_COLOR_VALUE }}
             />
-          </div>
+          </div> */}
         </div>
       )}
     </div>
