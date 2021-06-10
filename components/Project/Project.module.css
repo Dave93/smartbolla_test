@@ -9,7 +9,6 @@
   font-weight: 900;
   position: relative;
   left: -24px;
-  font-size: 64px;
   line-height: 62px;
   color: #333333;
   text-shadow: -16px -16px 32px #fafbff, 16px 16px 32px #a6abbd;
@@ -114,7 +113,7 @@
   position: absolute;
   width: 108%;
   left: -4%;
-  /* top: 68%; */
+  top: auto;
 }
 
 .rectangle2 {
@@ -125,7 +124,7 @@
   position: absolute;
   width: 108%;
   left: -4%;
-  top: 68%;
+  top: auto;
 }
 
 .projectBody {
