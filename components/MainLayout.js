@@ -37,10 +37,7 @@ export function MainLayout({
       <Head>
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        <meta
-          name="viewport"
-          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
-        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="Smartbolla. IT. Innovations" />
         <meta
           name="keywords"
@@ -174,7 +171,10 @@ src="https://www.facebook.com/tr?id=949121602542823&ev=PageView&noscript=1"
           href="https://fonts.gstatic.com"
           crossOrigin="true"
         />
-        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'></link>
+        <link
+          href="https://fonts.googleapis.com/css?family=Montserrat"
+          rel="stylesheet"
+        ></link>
       </Head>
       <CustomView condition={["browser", "tablet"].includes(deviceType)}>
         <header
