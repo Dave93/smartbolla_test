@@ -24,7 +24,6 @@ function Project({ project, onShowYoutube, onClick }) {
       controls.start("hidden");
     }
   }, [controls, inView]);
-  console.log(project.PROPERTY_POSITION_VALUE);
 
   return (
     <div ref={ref}>
@@ -37,13 +36,13 @@ function Project({ project, onShowYoutube, onClick }) {
             <div
               className={`${
                 project.PROPERTY_POSITION_VALUE === "Правый"
-                  ? "align-items-md-center bg-gray-100 flex md:max-h-96 md:ml-auto md:mt-40 md:rounded-l-3xl md:shadow-lg shadow md:w-8/12"
-                  : "align-items-md-center bg-gray-100 flex md:max-h-96 md:mt-40 md:rounded-r-3xl md:shadow-lg shadow md:w-8/12 md:justify-end"
+                  ? "align-items-md-center bg-gray-100 flex mx-auto ml-auto md:mr-0 max-h-96 mt-40 rounded-3xl md:rounded-l-3xl shadow w-56 md:w-8/12 md:rounded-r-none"
+                  : "align-items-md-center bg-gray-100 flex mx-auto md:ml-0 max-h-96 mt-40  md:rounded-r-3xl rounded-3xl md:rounded-l-none shadow justify-end w-56 md:w-8/12"
               }`}
             >
               {project.PROPERTY_YOUTUBE_LINK_VALUE && (
                 <div
-                  className="bg-black m-5 rounded-3xl flex"
+                  className="bg-black md:m-5 rounded-3xl flex m-3"
                   onClick={() => {
                     onShowYoutube(project.PROPERTY_YOUTUBE_LINK_VALUE);
                   }}
@@ -63,11 +62,11 @@ function Project({ project, onShowYoutube, onClick }) {
           <div
             className={`${
               project.PROPERTY_POSITION_VALUE === "Правый"
-                ? "md:order-first text-black p-5 col md:col-6"
-                : "text-black p-5 col md:col-6"
+                ? "md:order-first text-black p-5 md:w-3/5  m-10"
+                : "text-black p-5 m-10 md:w-3/5"
             }`}
           >
-            <div className="border-2 border-black">
+            <div className="border-2 border-black mb-3">
               <div className={`${styles.title1} text-4xl md:text-5xl`}>
                 {project.NAME}
               </div>
