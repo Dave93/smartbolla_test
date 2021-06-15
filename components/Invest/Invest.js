@@ -1,9 +1,9 @@
+import CircularSlider from "@fseehawer/react-circular-slider";
 import { useState } from "react";
-import styles from "./ProductsSlider.module.css";
+import CircleIcon from "../../public/img/circleDragIcon.svg";
+import styles from "./Invest.module.css";
 import { useRouter } from "next/router";
 import { useCookies } from "react-cookie";
-import { useTranslation } from "next-i18next";
-import Link from "next/link";
 
 function thousands_separators(num) {
   var num_parts = num.toString().split(".");
@@ -11,14 +11,16 @@ function thousands_separators(num) {
   return num_parts.join(".");
 }
 
-export default function ProductsSliderDesktop({ products, investLang }) {
+export default function Invest({ products, investLang }) {
   const router = useRouter();
-  const { t: translation } = useTranslation("indexPage");
 
   const idsByPrice = {};
   products.map((product) => {
     idsByPrice[thousands_separators(+product.PRICE)] = product;
   });
+  const sliderValues = products.map((product) =>
+    thousands_separators(+product.PRICE)
+  );
 
   const [currentSliderValue, setcurrentSliderValue] = useState(100);
 
@@ -30,7 +32,9 @@ export default function ProductsSliderDesktop({ products, investLang }) {
   const addBasket = async () => {
     if (!isLoadingBasket) {
       setisLoadingBasket(true);
-      setCartItem("cartItem", currentProduct.ID);
+      setCartItem("cartItem", currentProduct.ID, {
+        path: "/",
+      });
       setisLoadingBasket(false);
       router.push("/order/", undefined, {
         shallow: true,
@@ -38,19 +42,48 @@ export default function ProductsSliderDesktop({ products, investLang }) {
     }
   };
 
+  let sliderCount = sliderValues.length;
+  const RenderCircular = () => {
+    if (sliderCount > 0) {
+      sliderCount--;
+      return (
+        <div>
+          <RenderCircular />
+        </div>
+      );
+    } else {
+      return null;
+    }
+  };
+
   return (
-    <div className={`flex flex-col m-auto relative top-20`}>
-      <div className={`${styles.textbackg} col-4 p-4 `}>
-        <div className="uppercase text-2xl mb-3">smartbolla</div>
-        Non sit amet sunt tempor veniam voluptate sint est cupidatat sit nulla
-        Non sit amet sunt tempor veniam voluptate sint est cupidatat sit nulla
-        Non sit amet sunt tempor veniam voluptate sint est cupidatat sit nulla
-        Non sit amet sunt tempor veniam voluptate sint est cupidatat sit nulla
-        Non sit amet sunt tempor veniam voluptate sint est cupidatat sit nulla
-        Non sit amet sunt tempor veniam voluptate sint est cupidatat sit nulla
-      </div>
+    <div className={`${styles.roundSlider} flex flex-col m-auto relative`}>
+      <CircularSlider
+        label=" &nbsp;&nbsp;"
+        prependToValue="$"
+        labelColor="#005a58"
+        valueFontSize="4rem"
+        knobColor="#c4c4c4"
+        knobPosition="bottom"
+        progressColorFrom="#ff8500"
+        progressColorTo="#a15400"
+        verticalOffset="1rem"
+        progressSize={8}
+        trackColor="#eeeeee"
+        trackSize={20}
+        data={sliderValues} //...
+        dataIndex={0}
+        onChange={(value) => {
+          setcurrentSliderValue(value);
+        }}
+      >
+        <CircleIcon x="22" y="22" width="28px" height="28px" />
+      </CircularSlider>
       <button
-        className="btn-danger btn-lg col-4 mt-3 uppercase"
+        style={{
+          backgroundColor: currentProduct ? currentProduct.COLOR : "#c2c2c2",
+        }}
+        className="uppercase flex justify-center text-black font-bold mt-5 py-2 px-4 rounded"
         onClick={() => {
           addBasket();
         }}
@@ -79,20 +112,6 @@ export default function ProductsSliderDesktop({ products, investLang }) {
         )}
         {!isLoadingBasket && investLang}
       </button>
-      <div className="col-8">
-        <Link href="/about">
-          <button
-            className={`${styles.textbackg} col-3 ml-lg-n3 ml-md-n3 mr-3 mt-3 uppercase`}
-          >
-            {translation("about")}
-          </button>
-        </Link>
-        <Link href="/tokens">
-          <button className={`${styles.textbackg} col-3 mr-3 mt-3 uppercase`}>
-            {translation("aboutTokens")}
-          </button>
-        </Link>
-      </div>
       {/*<div className={styles.circle}>
           <RenderCircular />
         </div>*/}

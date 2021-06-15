@@ -30,7 +30,7 @@ function Project({ project, onShowYoutube, onClick }) {
       {project.PROPERTY_POSITION_VALUE && (
         <div
           key={project.ID}
-          className="flex justify-between flex-col md:flex-row"
+          className="flex justify-between flex-col md:flex-row mt-52"
         >
           <div className="md:w-7/12">
             <div
@@ -54,7 +54,6 @@ function Project({ project, onShowYoutube, onClick }) {
                     height={300}
                     className="p-3 cursor-pointer"
                   />
-                  {/* <FontAwesomeIcon icon={faYoutube} size="lg" className="" /> */}
                 </div>
               )}
             </div>
@@ -93,16 +92,16 @@ function Project({ project, onShowYoutube, onClick }) {
           </div>
         </div>
       )}
-      {/* <div>
+      <div>
         <Rectangle
           className={`${
             project.PROPERTY_POSITION_VALUE === "Левый"
-              ? styles.rectangle1
-              : styles.rectangle2
+              ? "-m-12 -rotate-12 h-20 opacity-50 transform"
+              : "md:rotate-12 -m-12 -rotate-12 h-20 transform opacity-50"
           }`}
           style={{ background: project.PROPERTY_BACKGROUND_COLOR_VALUE }}
         />
-      </div> */}
+      </div>
     </div>
   );
 }

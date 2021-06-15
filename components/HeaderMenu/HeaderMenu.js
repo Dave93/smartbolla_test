@@ -31,7 +31,7 @@ export default function HeaderMenu({ commonLang }) {
   const { pathname } = useRouter();
   return (
     <>
-      <nav className="flex flex-auto justify-content-between">
+      <nav className="flex justify-between w-1/2">
         <div>
           <Link href="/" prefetch={false}>
             <a className="flex flex-row items-center text-decoration-none">
@@ -44,14 +44,15 @@ export default function HeaderMenu({ commonLang }) {
             </a>
           </Link>
         </div>
-        <ul className="flex">
+        <ul className="md:flex items-center hidden">
           {navButtons.map((button) => (
-            <li className={`${styles.headerMenuItem} h-full`} key={button.path}>
+            <li className={`relative text-white`} key={button.path}>
               <Link href={button.path} prefetch={false}>
                 <a
                   className={`${
                     pathname === button.path ? styles.isActive : ""
-                  } text-decoration-none h-full items-end flex font-extralight uppercase mr-3`}
+                    }  uppercase mr-3`}
+                  style={pathname === button.path ? {color: '#f6c886'} : {}}
                 >
                   <span>{button.label}</span>
                 </a>
