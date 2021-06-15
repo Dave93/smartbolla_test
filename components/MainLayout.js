@@ -1,21 +1,15 @@
-import Link from "next/link";
 import Head from "next/head";
-import MainLeftSide from "./MainLeftSide/MainLeftSide";
 import HeaderMenu from "./HeaderMenu/HeaderMenu";
 import { useSelector } from "react-redux";
 import Lang from "./Lang/Lang";
-import MainRightSide from "./MainRightSide/MainRightSide";
-import styles from "./MainLayout.module.css";
 import Social from "./Social/Social";
 import { useRouter } from "next/router";
 import Footer from "./Footer/Footer";
 import FullPageSectionTitle from "./FullPageSectionTitle/FullPageSectionTitle";
-import { deviceType, CustomView } from "react-device-detect";
 import React, { useEffect } from "react";
 import ReactGA from "react-ga";
 import { YMInitializer } from "react-yandex-metrika";
 import getConfig from "next/config";
-import MainLeftLogo from "./MainLeftLogo/MainLeftLogo";
 
 const { publicRuntimeConfig } = getConfig();
 
@@ -176,68 +170,35 @@ src="https://www.facebook.com/tr?id=949121602542823&ev=PageView&noscript=1"
           rel="stylesheet"
         ></link>
       </Head>
-      <CustomView condition={["browser", "tablet"].includes(deviceType)}>
-        <header
-          className={`${styles.headerBack} flex border-b col align-items-center`}
-          style={
-            pathname !== "/"
-              ? {
-                  background:
-                    "linear-gradient(270deg, #0C0E12 0.14%, #242C40 100%)",
-                }
-              : { background: "" }
-          }
-        >
-          <HeaderMenu commonLang={commonLang} />
-          <Lang />
-        </header>
-        <div
-          style={
-            pathname !== "/" && pathname !== "/projects"
-              ? { background: backgroundColor }
-              : { background: "none" }
-          }
-          className="text-white"
-        >
-          {pathname !== "/" && <FullPageSectionTitle title={title} />}
-          {children}
-          {pathname != "/contacts" && (
-            <Social mainLayoutSocial={mainLayoutSocial} />
-          )}
-        </div>
-      </CustomView>
-      <CustomView condition={!["browser", "tablet"].includes(deviceType)}>
-        <header
-          className={`${styles.headerMob} flex flex-row items-end justify-around w-full z-10`}
-        >
-          <Link href="/" prefetch={false}>
-            <a className="flex flex-row items-center">
-              <MainLeftLogo />
-              <div className="font-bold ml-3 text-white uppercase text-2x1">
-                SmartBolla
-              </div>
-            </a>
-          </Link>
-          <Lang />
-        </header>
-        <div
-          className={`main-content ${pathname == "/" ? "" : "pt-10"} ${
-            pathname == "/contacts" ? "" : ""
-          }`}
-          style={{ background: backgroundColor }}
-        >
-          {pathname !== "/" && (
-            <div className="pt-10 m-auto col-10 pb-2">
-              {pathname !== "/" && <FullPageSectionTitle title={title} />}
-            </div>
-          )}
-          {children}
-          {pathname != "/contacts" && (
-            <Social mainLayoutSocial={mainLayoutSocial} />
-          )}
-        </div>
-        <Footer footerLang={footerLang} commonLang={commonLang} />
-      </CustomView>
+      <header
+        className={`flex justify-between items-center`}
+        style={
+          pathname !== "/"
+            ? {
+                background:
+                  "linear-gradient(270deg, #0C0E12 0.14%, #242C40 100%)",
+              }
+            : { background: "" }
+        }
+      >
+        <HeaderMenu commonLang={commonLang} />
+        <Lang />
+      </header>
+      <div
+        style={
+          pathname !== "/" && pathname !== "/projects"
+            ? { background: backgroundColor }
+            : { background: "none" }
+        }
+        className="text-white overflow-hidden"
+      >
+        {pathname !== "/" && <FullPageSectionTitle title={title} />}
+        {children}
+        {pathname != "/contacts" && (
+          <Social mainLayoutSocial={mainLayoutSocial} />
+        )}
+      </div>
+      <Footer footerLang={footerLang} commonLang={commonLang} />
       <style jsx global>{`
         html,
         body {

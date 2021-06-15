@@ -1,6 +1,7 @@
 import { MainLayout } from "../components/MainLayout";
 import React, { useEffect, useState } from "react";
 import ProductsSlider from "../components/ProductsSlider/ProductsSlider";
+import Invest from "../components/Invest/Invest";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Project from "../components/Project/Project";
@@ -25,12 +26,12 @@ function Home({ products, mainLayoutSocial, projects }) {
     allRightsRes: t("allRightsRes"),
     weWoldLike: t("weWoldLike"),
   };
-  
+
   let youtubeOptions = {
     height: "80%",
     width: "90%",
   };
-  
+
   const [youtubeId, setYoutubeId] = useState(null);
   const [currentProject, setCurrentProject] = useState(null);
 
@@ -45,7 +46,10 @@ function Home({ products, mainLayoutSocial, projects }) {
         footerLang={footerLang}
         mainLayoutSocial={mainLayoutSocial}
       >
-        <ProductsSlider products={products} investLang={t("invest")} />
+        <div className="md:flex">
+          <ProductsSlider products={products} investLang={t("invest")} />
+          <Invest products={products} investLang={t("invest")} />
+        </div>
         <div className={styles.projects}>
           {projects.map((project) => (
             <div key={project.ID}>
@@ -90,7 +94,7 @@ function Home({ products, mainLayoutSocial, projects }) {
             <div className="z-[9999] text-black fixed w-full h-full top-0 left-0 flex items-center justify-center">
               <div className="modal-overlay absolute w-full h-full bg-gray-900 opacity-50 z-[10000]"></div>
 
-              <div className="modal-container w-full mx-auto rounded z-[20000]">
+              <div className="modal-container mx-auto rounded z-[20000]">
                 <div
                   onClick={() => {
                     setYoutubeId(null);
