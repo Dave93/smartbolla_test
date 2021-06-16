@@ -39,26 +39,24 @@ export default function ProductsSlider({ products, investLang }) {
   };
 
   return (
-    <div className={`relative top-20 md:w-4/12 m-16`}>
+    <div className={`md:w-2/6 uppercase`}>
       <div className={`${styles.textbackg}  `}>
         <div className="uppercase text-2xl mb-3">smartbolla</div>
-        Non sit amet sunt tempor veniam voluptate sint est cupidatat sit nulla
-        Non sit amet sunt tempor veniam voluptate sint est cupidatat sit nulla
-        Non sit amet sunt tempor veniam voluptate sint est cupidatat sit nulla
-        Non sit amet sunt tempor veniam voluptate sint est cupidatat sit nulla
-        Non sit amet sunt tempor veniam voluptate sint est cupidatat sit nulla
-        Non sit amet sunt tempor veniam voluptate sint est cupidatat sit nulla
+        Мы - международная инновационная ИТ-компания, базирующаяся в ОАЭ, Дубай,
+        с нашим особым алгоритмом, который произведет революцию в области
+        технологий, принося вам огромные удобства в вашей жизни. Мы получили
+        лицензию от DMCC Free Zone, созданной в 2002 году правительством Дубая
+        для обеспечения физической, рыночной и финансовой инфраструктуры,
+        необходимой для создания центра глобальной торговли товарами и бизнеса.
       </div>
-      <div className="col-8">
+      <div className="flex justify-between mt-2">
         <Link href="/about">
-          <button
-            className={`${styles.textbackg} col-3 ml-lg-n3 ml-md-n3 mr-3 mt-3 uppercase`}
-          >
+          <button className={`${styles.textbackg} uppercase w-64`}>
             {translation("about")}
           </button>
         </Link>
         <Link href="/tokens">
-          <button className={`${styles.textbackg} col-3 mr-3 mt-3 uppercase`}>
+          <button className={`${styles.textbackg} uppercase w-64`}>
             {translation("aboutTokens")}
           </button>
         </Link>

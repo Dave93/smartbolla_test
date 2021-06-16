@@ -31,14 +31,14 @@ export default function HeaderMenu({ commonLang }) {
   const { pathname } = useRouter();
   return (
     <>
-      <nav className="flex justify-between w-1/2">
+      <nav className="flex justify-between w-full">
         <div>
           <Link href="/" prefetch={false}>
             <a className="flex flex-row items-center text-decoration-none">
               <div>
                 <Image src="/img/main-logo.png" width={50} height={50} />
               </div>
-              <div className="font-bold ml-3 text-white uppercase text-2x1">
+              <div className="font-bold ml-3 text-white uppercase text-2x1 relative">
                 SmartBolla
               </div>
             </a>
