@@ -98,11 +98,9 @@ function AuthPage({ mainLayoutSocial }) {
       footerLang={footerLang}
     >
       <div
-        className={`${isAjaxLoading ? styles.isAuthLoading : ""} ${
-          isMobile
-            ? "col col-11 h-screen"
-            : "items-center mt-16 mx-auto w-25 relative h-screen"
-        } `}
+        className={`${
+          isAjaxLoading ? styles.isAuthLoading : "m-auto w-96"
+        }`}
       >
         <Formik
           initialValues={{ phone: "", password: "" }}
@@ -135,7 +133,7 @@ function AuthPage({ mainLayoutSocial }) {
             handleSubmit,
             isSubmitting,
           }) => (
-            <form className="mt-4" onSubmit={handleSubmit}>
+            <form className="" onSubmit={handleSubmit}>
               {submitErrors.length > 0 && (
                 <div className="text-red-500">{submitErrors}</div>
               )}
@@ -146,7 +144,7 @@ function AuthPage({ mainLayoutSocial }) {
                   ))}
                 </div>
               )}
-              <div className="mb-6 text-black">
+              <div className="text-black">
                 <label className="block mb-3 text-white" htmlFor="">
                   {t("typingPhone")}
                 </label>
@@ -161,7 +159,7 @@ function AuthPage({ mainLayoutSocial }) {
                   }}
                   onBlur={handleBlur}
                   autoComplete="off"
-                  inputClass="w-100"
+                  inputClass="w-full"
                 />
                 <label className="block mb-3 mt-3 text-white" htmlFor="">
                   {t("password")}
@@ -173,9 +171,9 @@ function AuthPage({ mainLayoutSocial }) {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.password}
-                  className="text-black w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500"
+                  className="px-3 py-2 w-full"
                 />
-                <div className="flex justify-end my-2">
+                <div className="my-2 text-white">
                   <Link href={resetRoute}>
                     <a>{t("resetPass")}</a>
                   </Link>

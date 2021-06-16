@@ -33,7 +33,7 @@ function Socials({ mainLayoutSocial }) {
           >
             <a href={item.LINK}>
               <FontAwesomeIcon
-                size="xs"
+                size="lg"
                 icon={["fab", item.ICON]}
                 className={`${styles.faStack1x} text-white`}
               />

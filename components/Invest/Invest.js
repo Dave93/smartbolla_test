@@ -57,7 +57,7 @@ export default function Invest({ products, investLang }) {
   };
 
   return (
-    <div className={`${styles.roundSlider} flex flex-col m-auto relative`}>
+    <div className={`inline-block mt-10 mx-16`}>
       <CircularSlider
         label=" &nbsp;&nbsp;"
         prependToValue="$"
@@ -83,7 +83,7 @@ export default function Invest({ products, investLang }) {
         style={{
           backgroundColor: currentProduct ? currentProduct.COLOR : "#c2c2c2",
         }}
-        className="uppercase flex justify-center text-black font-bold mt-5 py-2 px-4 rounded"
+        className="flex p-4 relative text-white w-full rounded-2xl justify-center uppercase shadow"
         onClick={() => {
           addBasket();
         }}
