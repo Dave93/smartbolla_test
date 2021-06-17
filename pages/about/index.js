@@ -33,38 +33,20 @@ function About({ aboutText, mainLayoutSocial, team, cofounder }) {
       mainLayoutSocial={mainLayoutSocial}
     >
       <AboutPage aboutText={aboutText} />
-      {["browser", "tablet"].includes(deviceType) ? (
-        <div>
-          <div className="m-auto">
-            <div className="pb-2">
-              <FullPageSectionTitle title={t("cofounders")} />
-            </div>
-            <Slider slides={cofounder} />
+      <div>
+        <div className="m-auto">
+          <div className="pb-2">
+            <FullPageSectionTitle title={t("cofounders")} />
           </div>
-          <div className="m-auto">
-            <div className="pb-2">
-              <FullPageSectionTitle title={t("team")} />
-            </div>
-            <Slider slides={team} />
-          </div>
+          <Slider slides={cofounder} />
         </div>
-      ) : (
-        <div>
-          <div className="m-auto col-10">
-            <div className="pb-2">
-              <FullPageSectionTitle title={t("cofounders")} />
-            </div>
-            <Slider slides={cofounder} />
+        <div className="m-auto">
+          <div className="pb-2">
+            <FullPageSectionTitle title={t("team")} />
           </div>
-
-          <div className="m-auto col-10 pb-20">
-            <div className="pb-2">
-              <FullPageSectionTitle title={t("team")} />
-            </div>
-            <Slider slides={team} />
-          </div>
+          <Slider slides={team} />
         </div>
-      )}
+      </div>
     </MainLayout>
   );
 }

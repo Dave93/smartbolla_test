@@ -1,20 +1,86 @@
-import SliderMobile from "./Slider.mobile";
-import SliderDesktop from "./Slider.desktop";
-import { deviceType, CustomView } from "react-device-detect";
-import { useRouter } from "next/router";
+import Image from "next/image";
+import SwiperCore, {
+  EffectCoverflow,
+  Navigation,
+  Lazy,
+  Autoplay,
+  Virtual,
+} from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import InView, { useInView } from "react-intersection-observer";
+import Delayed from "../Delayed/Delayed";
+import chunk from "../../helpers/chunk";
+import styles from "./Slider.module.css";
+import React from "react";
+SwiperCore.use([EffectCoverflow, Navigation, Lazy, Autoplay, Virtual]);
 
-function Slider({ slides }) {
-  const router = useRouter();
-  const locale = router.locale.toUpperCase();
+function Slider({ slides, locale }) {
+  const { ref, inView } = useInView();
+  const resSlides = chunk(slides, 8);
   return (
-    <>
-      <CustomView condition={!["browser", "tablet"].includes(deviceType)}>
-        <SliderMobile slides={slides} locale={locale} />
-      </CustomView>
-      <CustomView condition={["browser", "tablet"].includes(deviceType)}>
-        <SliderDesktop slides={slides} locale={locale} />
-      </CustomView>
-    </>
+    <div ref={ref}>
+      {InView && (
+        <Delayed>
+          <Swiper
+            slidesPerView={1}
+            loop={true}
+            spaceBetween={2}
+            pagination={{ clickable: true }}
+            grabCursor={true}
+            navigation
+            autoplay={{
+              delay: 3000,
+            }}
+          >
+            {resSlides.map((item, i) => {
+              const rows = chunk(item, 4);
+              return (
+                <SwiperSlide className="" key={i}>
+                  {rows.map(
+                    (
+                      row,
+                      rowIndex // Davay v botim, chtobi rasskazal ideyu
+                    ) => (
+                      <div
+                        className={`md:flex justify-center ${
+                          rowIndex == 0 ? "mb-5" : "left-20 position-relative"
+                        }`}
+                        key={rowIndex}
+                      >
+                        {row.map((slide, i) => (
+                          <div className="" key={i}>
+                            <Image
+                              src={
+                                slide.PREVIEW_PICTURE
+                                  ? `${slide.PREVIEW_PICTURE}`
+                                  : "/"
+                              }
+                              width={375}
+                              height={375}
+                              className={styles.sliderImg}
+                            />
+                            <div>{slide.NAME}</div>
+                            <div className="">
+                              <div className="text-xs font-medium tracking-wide mt-1 font-mono">
+                                {
+                                  slide[
+                                    `PROPERTY_POSITION_NEW_PROPERTY_${locale}_VALUE`
+                                  ]
+                                }
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    )
+                  )}
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+        </Delayed>
+      )}
+    </div>
   );
 }
 

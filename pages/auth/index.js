@@ -73,7 +73,7 @@ function AuthPage({ mainLayoutSocial }) {
     const { data, error } = await res.json();
 
     if (!data.result) {
-        setSubmitError(t("incorrect")); // TODO: Show lang message "Phone not found or password is incorrect"
+      setSubmitError(t("incorrect")); // TODO: Show lang message "Phone not found or password is incorrect"
     } else {
       setUserAuthToken("userAuthToken", data.token, {
         path: "/",
@@ -98,9 +98,7 @@ function AuthPage({ mainLayoutSocial }) {
       footerLang={footerLang}
     >
       <div
-        className={`${
-          isAjaxLoading ? styles.isAuthLoading : "m-auto w-96"
-        }`}
+        className={`${isAjaxLoading ? styles.isAuthLoading : "m-auto md:w-96"}`}
       >
         <Formik
           initialValues={{ phone: "", password: "" }}
@@ -133,7 +131,7 @@ function AuthPage({ mainLayoutSocial }) {
             handleSubmit,
             isSubmitting,
           }) => (
-            <form className="" onSubmit={handleSubmit}>
+            <form className="shadow p-10 rounded" onSubmit={handleSubmit}>
               {submitErrors.length > 0 && (
                 <div className="text-red-500">{submitErrors}</div>
               )}
@@ -145,7 +143,7 @@ function AuthPage({ mainLayoutSocial }) {
                 </div>
               )}
               <div className="text-black">
-                <label className="block mb-3 text-white" htmlFor="">
+                <label className="block mb-3 " htmlFor="">
                   {t("typingPhone")}
                 </label>
                 <PhoneInput
@@ -159,9 +157,9 @@ function AuthPage({ mainLayoutSocial }) {
                   }}
                   onBlur={handleBlur}
                   autoComplete="off"
-                  inputClass="w-full"
+                  inputClass="w-full h-10"
                 />
-                <label className="block mb-3 mt-3 text-white" htmlFor="">
+                <label className="block mb-3 mt-3" htmlFor="">
                   {t("password")}
                 </label>
                 <input
@@ -171,11 +169,11 @@ function AuthPage({ mainLayoutSocial }) {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.password}
-                  className="px-3 py-2 w-full"
+                  className="px-3 py-2 w-full rounded"
                 />
-                <div className="my-2 text-white">
+                <div className="my-2 ">
                   <Link href={resetRoute}>
-                    <a>{t("resetPass")}</a>
+                    <a className="leading-10 font-bold">{t("resetPass")}</a>
                   </Link>
                 </div>
               </div>

@@ -38,7 +38,7 @@ export default function HeaderMenu({ commonLang }) {
               <div>
                 <Image src="/img/main-logo.png" width={50} height={50} />
               </div>
-              <div className="font-bold ml-3 text-white uppercase text-2x1 relative">
+              <div className="font-bold ml-3  uppercase text-2x1 relative">
                 SmartBolla
               </div>
             </a>
@@ -46,13 +46,13 @@ export default function HeaderMenu({ commonLang }) {
         </div>
         <ul className="md:flex items-center hidden">
           {navButtons.map((button) => (
-            <li className={`relative text-white`} key={button.path}>
+            <li className={`relative `} key={button.path}>
               <Link href={button.path} prefetch={false}>
                 <a
                   className={`${
                     pathname === button.path ? styles.isActive : ""
-                    }  uppercase mr-3`}
-                  style={pathname === button.path ? {color: '#f6c886'} : {}}
+                  }  uppercase mr-3`}
+                  style={pathname === button.path ? { color: "#f6c886" } : {}}
                 >
                   <span>{button.label}</span>
                 </a>

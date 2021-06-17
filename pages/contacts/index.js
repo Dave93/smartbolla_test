@@ -12,7 +12,6 @@ import { YMaps, Map, Placemark } from "react-yandex-maps";
 import { Formik, Field, Form } from "formik";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { isMobile } from "react-device-detect";
 
 const mapData = {
   center: [25.068318, 55.145064],
@@ -55,14 +54,14 @@ function Contacts({ contactAddress, social }) {
           </Map>
         </YMaps>
       </div>
-      <div className={`${isMobile ? "col" : "grid grid-cols-2"}`}>
-        <div className={`${isMobile ? "col" : ""}`}>
+      <div className={`md:flex`}>
+        <div className={`md:w-2/4`}>
           <div className="flex p-4">
             <div className="flex">
               <FontAwesomeIcon
                 size="2x"
                 icon={faMapMarkerAlt}
-                className="mr-3 w-5 text-white"
+                className="mr-3 w-5 "
               />
             </div>
             <div>{contactAddress.ADDRESS}</div>
@@ -72,7 +71,7 @@ function Contacts({ contactAddress, social }) {
               <FontAwesomeIcon
                 size="2x"
                 icon={faPhoneAlt}
-                className="mr-3 w-5 text-white"
+                className="mr-3 w-5"
               />
             </div>
             <div
@@ -82,7 +81,10 @@ function Contacts({ contactAddress, social }) {
           </div>
           <div className="p-4">
             {social.SOC_ICONS.map((item) => (
-              <span key={item.LINK} className="nav-item social-icons">
+              <span
+                key={item.LINK}
+                className="nav-item social-icons text-white"
+              >
                 <span className={styles.faStack}>
                   <a target="_blank" href={item.LINK}>
                     <FontAwesomeIcon
@@ -92,7 +94,7 @@ function Contacts({ contactAddress, social }) {
                     <FontAwesomeIcon
                       size="xs"
                       icon={["fab", item.ICON]}
-                      className={`${styles.faStack1x} text-white`}
+                      className={`${styles.faStack1x} `}
                     />
                   </a>
                 </span>
@@ -100,7 +102,7 @@ function Contacts({ contactAddress, social }) {
             ))}
           </div>
         </div>
-        <div className={`${isMobile ? "col" : ""}`}>
+        <div className={`md:w-2/4`}>
           <Formik
             initialValues={{ name: "", email: "", message: "" }}
             validate={(values) => {

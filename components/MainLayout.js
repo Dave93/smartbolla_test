@@ -170,27 +170,16 @@ src="https://www.facebook.com/tr?id=949121602542823&ev=PageView&noscript=1"
           rel="stylesheet"
         ></link>
       </Head>
-      <header
-        className={`flex justify-between items-center`}
-        style={
-          pathname !== "/"
-            ? {
-                background:
-                  "linear-gradient(270deg, #0C0E12 0.14%, #242C40 100%)",
-              }
-            : { background: "" }
-        }
-      >
+      <header className={`flex justify-between items-center shadow`}>
         <HeaderMenu commonLang={commonLang} />
         <Lang />
       </header>
       <div
-        style={
-          pathname !== "/" && pathname !== "/projects"
-            ? { background: backgroundColor }
-            : { background: "none" }
-        }
-        className="md:text-white overflow-hidden"
+        className={`${
+          pathname != "/" && pathname != "/projects"
+            ? "overflow-hidden p-10"
+            : "overflow-hidden"
+        }`}
       >
         {pathname !== "/" && <FullPageSectionTitle title={title} />}
         {children}

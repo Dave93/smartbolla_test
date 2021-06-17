@@ -8,8 +8,9 @@ import { AnimateSharedLayout } from "framer-motion";
 import store from "../store/store";
 import { CookiesProvider } from "react-cookie";
 import { appWithTranslation } from "next-i18next";
+import React from "react";
 
-const app = function MyApp({ Component, pageProps }) {
+const app = React.memo(function MyApp({ Component, pageProps }) {
   return (
     <AnimateSharedLayout>
       <Provider store={store}>
@@ -19,7 +20,7 @@ const app = function MyApp({ Component, pageProps }) {
       </Provider>
     </AnimateSharedLayout>
   );
-};
+});
 
 const makeStore = () => store;
 const wrapper = createWrapper(makeStore);

@@ -3,16 +3,11 @@
   display: block;
   width: 1px;
   height: 15%;
-  background: #fff;
+  background: #ccccc;
   position: absolute;
   right: 50%;
   top: 9%;
 }
-
-.a {
-  color: #fff;
-}
-
 .a:hover {
   text-decoration: none !important;
   color: #f6c886;

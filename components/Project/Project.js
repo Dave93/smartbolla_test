@@ -77,7 +77,7 @@ function Project({ project, onShowYoutube, onClick }) {
               return (
                 <div className={`${styles.border} mt-1 flex p-2`} key={i}>
                   <div>
-                    <div className="align-items-center flex">
+                    <div className="items-center flex">
                       <Image
                         src={project.PROPERTY_PHOTOS[i]}
                         width={64}
