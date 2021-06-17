@@ -61,11 +61,11 @@ export default function Invest({ products, investLang }) {
       <CircularSlider
         label=" &nbsp;&nbsp;"
         prependToValue="$"
-        labelColor="#005a58"
+        labelColor="#f6c886"
         valueFontSize="4rem"
-        knobColor="#c4c4c4"
+        knobColor="#f6c886"
         knobPosition="bottom"
-        progressColorFrom="#ff8500"
+        progressColorFrom="#f6c886"
         progressColorTo="#a15400"
         verticalOffset="1rem"
         progressSize={8}
@@ -83,14 +83,14 @@ export default function Invest({ products, investLang }) {
         style={{
           backgroundColor: currentProduct ? currentProduct.COLOR : "#c2c2c2",
         }}
-        className="flex p-4 relative text-white w-full rounded-2xl justify-center uppercase shadow"
+        className="flex p-4 relative  w-full rounded-2xl justify-center uppercase shadow outline-none"
         onClick={() => {
           addBasket();
         }}
       >
         {isLoadingBasket && (
           <svg
-            class="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+            class="animate-spin -ml-1 mr-3 h-5 w-5"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"

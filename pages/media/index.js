@@ -1,11 +1,8 @@
-import React, { useState, useCallback, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { MainLayout } from "../../components/MainLayout";
-import Gallery from "react-photo-gallery";
-import Carousel, { Modal, ModalGateway } from "react-images";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { MasonryScroller, useContainerPosition, usePositioner } from "masonic";
-import Image from "next/image";
 import { useWindowSize } from "@react-hook/window-size";
 import {
   mediaCard,

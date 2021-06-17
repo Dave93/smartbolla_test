@@ -51,12 +51,12 @@ export default function ProductsSlider({ products, investLang }) {
       </div>
       <div className="flex justify-between mt-2">
         <Link href="/about">
-          <button className={`${styles.textbackg} uppercase w-64`}>
+          <button className={`${styles.textbackg} uppercase w-64 outline-none`}>
             {translation("about")}
           </button>
         </Link>
         <Link href="/tokens">
-          <button className={`${styles.textbackg} uppercase w-64`}>
+          <button className={`${styles.textbackg} uppercase w-64 outline-none`}>
             {translation("aboutTokens")}
           </button>
         </Link>

@@ -90,11 +90,7 @@ function AuthPage({ mainLayoutSocial }) {
       footerLang={footerLang}
     >
       <div
-        className={`${isAjaxLoading ? styles.isAuthLoading : ""} ${
-          isMobile
-            ? "col col-11 h-screen"
-            : "items-center mt-16 mx-auto text-center w-25 relative"
-        } `}
+        className={`${isAjaxLoading ? styles.isAuthLoading : "m-auto md:w-96"}`}
       >
         <Formik
           initialValues={{ phone: "" }}
@@ -123,7 +119,7 @@ function AuthPage({ mainLayoutSocial }) {
             handleSubmit,
             isSubmitting,
           }) => (
-            <form className="mt-4 h-screen" onSubmit={handleSubmit}>
+            <form className="" onSubmit={handleSubmit}>
               {submitErrors.length > 0 && (
                 <div className="text-red-500">{submitErrors}</div>
               )}
@@ -149,7 +145,7 @@ function AuthPage({ mainLayoutSocial }) {
                   }}
                   onBlur={handleBlur}
                   autoComplete="off"
-                  inputClass="w-100"
+                  inputClass="w-full h-10"
                 />
               </div>
               <button type="submit" className={styles.formControlSubmitButton}>

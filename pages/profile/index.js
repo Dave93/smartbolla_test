@@ -37,8 +37,8 @@ function Profile({ mainLayoutSocial, balance }) {
       mainLayoutSocial={mainLayoutSocial}
       footerLang={footerLang}
     >
-      <div className={isMobile ? "col" : "grid grid-cols-3"}>
-        <div className={isMobile ? "" : "col-span-2"}>
+      <div className='md:flex justify-around items-center'>
+        <div className=''>
           <div>
             <div className="font-bold text-4xl py-5">{t("yourBalance")}</div>
             <div
@@ -56,7 +56,7 @@ function Profile({ mainLayoutSocial, balance }) {
               className={`${
                 isMobile
                   ? styles.profileTable
-                  : `${styles.profileTable} "table-fixed border-collapse w-full col"`
+                  : `${styles.profileTable} "table-fixed border-collapse w-full"`
               }`}
             >
               <Thead>
