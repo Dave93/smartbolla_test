@@ -42,22 +42,24 @@ function Slider({ slides, locale }) {
                       rowIndex // Davay v botim, chtobi rasskazal ideyu
                     ) => (
                       <div
-                        className={`md:flex justify-center ${
-                          rowIndex == 0 ? "mb-5" : "left-20 position-relative"
+                        className={`md:flex ${
+                          rowIndex == 0
+                            ? "mb-5 md:ml-40"
+                            : "left-20 position-relative justify-center"
                         }`}
                         key={rowIndex}
                       >
                         {row.map((slide, i) => (
-                          <div className="" key={i}>
+                          <div className="md:w-64" key={i}>
                             <Image
                               src={
                                 slide.PREVIEW_PICTURE
                                   ? `${slide.PREVIEW_PICTURE}`
                                   : "/"
                               }
-                              width={375}
-                              height={375}
-                              className={styles.sliderImg}
+                              width={500}
+                              height={500}
+                              className="p-2 rounded-3xl"
                             />
                             <div>{slide.NAME}</div>
                             <div className="">

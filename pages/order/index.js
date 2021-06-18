@@ -71,10 +71,10 @@ function Order({
       title={t("title")}
       mainLayoutSocial={mainLayoutSocial}
     >
-      <div className={`${isMobile ? "col-11 mt-4" : "grid grid-cols-3 mt-4"}`}>
-        <div className={`${isMobile ? "col" : "col-span-2 mr-5"}`}>
+      <div className="md:flex md:justify-around">
+        <div className="">
           <h7>{t("paymentInfoTitle")}</h7>
-          <div className={`${isMobile ? "pt-2" : "pt-2 w-8/12"}`}>
+          <div className="">
             <Formik
               initialValues={initialValues}
               validateOnChange={false}
@@ -496,7 +496,6 @@ export async function getServerSideProps({ locale, req, res }) {
   let { data: orderData } = await resOrder.json();
 
   let { data: mainLayoutSocial } = await socials.json();
-  console.log(cookieData);
   return {
     props: {
       mainLayoutSocial,
