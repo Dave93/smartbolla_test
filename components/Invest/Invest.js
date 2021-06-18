@@ -81,9 +81,9 @@ export default function Invest({ products, investLang }) {
       </CircularSlider>
       <button
         style={{
-          backgroundColor: currentProduct ? currentProduct.COLOR : "#c2c2c2",
+          backgroundColor: currentProduct ? "#f6c886" : "#a15400",
         }}
-        className="flex p-4 relative  w-full rounded-2xl justify-center uppercase shadow outline-none"
+        className="flex p-4 relative  w-full rounded-2xl justify-center uppercase shadow outline-none mt-10"
         onClick={() => {
           addBasket();
         }}

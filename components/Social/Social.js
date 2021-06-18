@@ -35,7 +35,7 @@ function Socials({ mainLayoutSocial }) {
               <FontAwesomeIcon
                 size="lg"
                 icon={["fab", item.ICON]}
-                className={`${styles.faStack1x} text-white`}
+                className={`${styles.faStack1x}`}
               />
             </a>
           </motion.li>
