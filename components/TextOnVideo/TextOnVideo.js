@@ -11,7 +11,7 @@ function thousands_separators(num) {
   return num_parts.join(".");
 }
 
-export default function ProductsSlider({ products, investLang }) {
+export default function TextOnVideo({ products, investLang }) {
   const router = useRouter();
   const { t: translation } = useTranslation("indexPage");
 
@@ -39,7 +39,7 @@ export default function ProductsSlider({ products, investLang }) {
   };
 
   return (
-    <div className={`md:w-2/6 uppercase`}>
+    <div className={`md:w-96 uppercase`}>
       <div className={`${styles.textbackg}  `}>
         <div className="uppercase text-2xl mb-3">smartbolla</div>
         Мы - международная инновационная ИТ-компания, базирующаяся в ОАЭ, Дубай,
@@ -49,21 +49,6 @@ export default function ProductsSlider({ products, investLang }) {
         для обеспечения физической, рыночной и финансовой инфраструктуры,
         необходимой для создания центра глобальной торговли товарами и бизнеса.
       </div>
-      <div className="flex justify-between mt-2">
-        <Link href="/about">
-          <button className={`${styles.textbackg} uppercase w-64 outline-none`}>
-            {translation("about")}
-          </button>
-        </Link>
-        <Link href="/tokens">
-          <button className={`${styles.textbackg} uppercase w-64 outline-none`}>
-            {translation("aboutTokens")}
-          </button>
-        </Link>
-      </div>
-      {/*<div className={styles.circle}>
-          <RenderCircular />
-        </div>*/}
     </div>
   );
 }

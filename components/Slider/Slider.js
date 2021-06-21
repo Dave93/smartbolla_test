@@ -44,7 +44,7 @@ function Slider({ slides, locale }) {
                       <div
                         className={`md:flex ${
                           rowIndex == 0
-                            ? "mb-5 md:ml-40"
+                            ? "mb-5 xl:ml-40"
                             : "left-20 position-relative justify-center"
                         }`}
                         key={rowIndex}

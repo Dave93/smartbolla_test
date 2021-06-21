@@ -30,7 +30,7 @@ function Project({ project, onShowYoutube, onClick }) {
       {project.PROPERTY_POSITION_VALUE && (
         <div
           key={project.ID}
-          className="flex justify-between flex-col md:flex-row mt-52"
+          className="md:flex justify-between"
         >
           <div className="md:w-7/12">
             <div

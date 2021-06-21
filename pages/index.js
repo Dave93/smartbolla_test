@@ -1,6 +1,6 @@
 import { MainLayout } from "../components/MainLayout";
 import React, { useEffect, useState } from "react";
-import ProductsSlider from "../components/ProductsSlider/ProductsSlider";
+import TextOnVideo from "../components/TextOnVideo/TextOnVideo";
 import Invest from "../components/Invest/Invest";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -37,7 +37,13 @@ function Home({ products, mainLayoutSocial, projects }) {
 
   return (
     <>
-      <video className="videoTag" autoPlay loop muted className="absolute">
+      <video
+        className="videoTag"
+        autoPlay
+        loop
+        muted
+        className="absolute hidden md:block"
+      >
         <source src="/sample.mp4/" type="video/mp4" />
       </video>
       <MainLayout
@@ -46,9 +52,13 @@ function Home({ products, mainLayoutSocial, projects }) {
         footerLang={footerLang}
         mainLayoutSocial={mainLayoutSocial}
       >
-        <div className="items-center md:flex md:mt-28 mt-48 justify-evenly">
-          <ProductsSlider products={products} investLang={t("invest")} />
-          <Invest products={products} investLang={t("invest")} />
+        <div className="md:flex md:mt-28 justify-around">
+          <div className="hidden md:block">
+            <TextOnVideo products={products} investLang={t("invest")} />
+          </div>
+          <div className="block mt-12 md:mt-0">
+            <Invest products={products} investLang={t("invest")} />
+          </div>
         </div>
         <div className={styles.projects}>
           {projects.map((project) => (
