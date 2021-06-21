@@ -11,6 +11,14 @@ function thousands_separators(num) {
   return num_parts.join(".");
 }
 
+const CircularLabel = function ({ size }) {
+  return (
+    <div className="absolute font-bold text-5xl text-center top-28 w-full text-yellow">
+      ${size}
+    </div>
+  );
+};
+
 export default function Invest({ products, investLang }) {
   const router = useRouter();
 
@@ -57,7 +65,7 @@ export default function Invest({ products, investLang }) {
   };
 
   return (
-    <div className={`inline-block mt-10 mx-16`}>
+    <div className={`w-min m-auto`}>
       <CircularSlider
         label=" &nbsp;&nbsp;"
         prependToValue="$"
@@ -76,6 +84,7 @@ export default function Invest({ products, investLang }) {
         onChange={(value) => {
           setcurrentSliderValue(value);
         }}
+        renderLabelValue={<CircularLabel size={currentSliderValue} />}
       >
         <CircleIcon x="22" y="22" width="28px" height="28px" />
       </CircularSlider>
