@@ -9,7 +9,7 @@ import styles from "./index.module.css";
 import { projectModal, youtubeModal } from "./index.module.css";
 import YouTube from "react-youtube";
 
-function Home({ products, mainLayoutSocial, projects }) {
+function Home({ products, mainLayoutSocial, projects, indexText }) {
   const { t } = useTranslation("projectsPage");
 
   const commonLang = {
@@ -54,7 +54,11 @@ function Home({ products, mainLayoutSocial, projects }) {
       >
         <div className="md:flex md:mt-28 justify-around">
           <div className="hidden md:block">
-            <TextOnVideo products={products} investLang={t("invest")} />
+            <TextOnVideo
+              products={products}
+              investLang={t("invest")}
+              text={indexText}
+            />
           </div>
           <div className="block mt-12 md:mt-0">
             <Invest products={products} investLang={t("invest")} />
@@ -244,15 +248,31 @@ export async function getServerSideProps({ locale }) {
     },
   });
 
+  const resIndexText = await fetch("https://api.smartbolla.com/api/", {
+    method: "POST",
+    body: JSON.stringify({
+      method: "get.index.text",
+      data: {
+        locale,
+      },
+    }),
+    headers: {
+      ApiToken: "e7r8uGk5KcwrzT6CanBqRbPVag8ILXFC",
+    },
+  });
+
   let { data: projects } = await resProjects.json();
   let { data: mainLayoutSocial } = await socials.json();
   let { data: products } = await resProducts.json();
+  let { data: indexText } = await resIndexText.json();
+
   return {
     props: {
       mainLayoutSocial,
       products,
       ...(await serverSideTranslations(locale, ["indexPage"])),
       projects,
+      indexText,
     },
   };
 }

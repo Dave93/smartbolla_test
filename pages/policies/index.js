@@ -2,7 +2,6 @@ import { MainLayout } from "../../components/MainLayout";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Link from 'next/link'
-import { isMobile } from "react-device-detect";
 
 export default function Policies({ mainLayoutSocial }) {
   const { t } = useTranslation("policiesPage");
@@ -20,26 +19,24 @@ export default function Policies({ mainLayoutSocial }) {
       mainLayoutSocial={mainLayoutSocial}
       title={t("title")}
     >
-      <div
-        className={`${isMobile ? "vh-100 col text-center" : "col text-center"}`}
-      >
+      <div className={`text-center uppercase`}>
         <Link href="/policies/payment">
-          <a>
+          <a className="hover:underline">
             <div>Payment policy of Smart Bolla DMCC</div>
           </a>
         </Link>
         <Link href="/policies/terms">
-          <a>
+          <a className="hover:underline">
             <div>Terms of service policy of Smart Bolla DMCC</div>
           </a>
         </Link>
         <Link href="/policies/privacy">
-          <a>
+          <a className="hover:underline">
             <div>Privacy policy of Smart Bolla DMCC</div>
           </a>
         </Link>
         <Link href="/policies/refund">
-          <a>
+          <a className="hover:underline">
             <div>Refund policy of Smart Bolla DMCC</div>
           </a>
         </Link>

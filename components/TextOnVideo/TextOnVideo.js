@@ -11,7 +11,7 @@ function thousands_separators(num) {
   return num_parts.join(".");
 }
 
-export default function TextOnVideo({ products, investLang }) {
+export default function TextOnVideo({ products, investLang, text }) {
   const router = useRouter();
   const { t: translation } = useTranslation("indexPage");
 
@@ -42,12 +42,7 @@ export default function TextOnVideo({ products, investLang }) {
     <div className={`md:w-96 uppercase`}>
       <div className={`${styles.textbackg}  `}>
         <div className="uppercase text-2xl mb-3">smartbolla</div>
-        Мы - международная инновационная ИТ-компания, базирующаяся в ОАЭ, Дубай,
-        с нашим особым алгоритмом, который произведет революцию в области
-        технологий, принося вам огромные удобства в вашей жизни. Мы получили
-        лицензию от DMCC Free Zone, созданной в 2002 году правительством Дубая
-        для обеспечения физической, рыночной и финансовой инфраструктуры,
-        необходимой для создания центра глобальной торговли товарами и бизнеса.
+        <div dangerouslySetInnerHTML={{__html: text}}></div>
       </div>
     </div>
   );

@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFileAlt } from "@fortawesome/free-solid-svg-icons";
-import styles from "./AboutPage.module.css";
 import { useTranslation } from "next-i18next";
 
 function About({ aboutText }) {

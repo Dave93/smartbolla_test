@@ -31,8 +31,9 @@
 
 .mediaIsotopeItemsSections__item {
   width: 130px;
-  background: #2f2c3d;
+  background: #0000008c;
   cursor: pointer;
+  color: #fff;
 }
 
 .mediaIsotopeItemsSections__item span {

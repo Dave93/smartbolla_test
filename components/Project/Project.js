@@ -92,7 +92,7 @@ function Project({ project, onShowYoutube, onClick }) {
           </div>
         </div>
       )}
-      <div>
+      {/* <div>
         <Rectangle
           className={`${
             project.PROPERTY_POSITION_VALUE === "Левый"
@@ -101,7 +101,7 @@ function Project({ project, onShowYoutube, onClick }) {
           }`}
           style={{ background: project.PROPERTY_BACKGROUND_COLOR_VALUE }}
         />
-      </div>
+      </div> */}
     </div>
   );
 }

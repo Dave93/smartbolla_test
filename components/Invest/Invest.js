@@ -13,7 +13,10 @@ function thousands_separators(num) {
 
 const CircularLabel = function ({ size }) {
   return (
-    <div className="absolute font-bold text-5xl text-center top-28 w-full text-yellow">
+    <div
+      className="absolute font-bold text-5xl text-center top-28 w-full"
+      style={{ color: "#f6c886" }}
+    >
       ${size}
     </div>
   );
