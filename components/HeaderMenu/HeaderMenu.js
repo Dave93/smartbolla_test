@@ -34,7 +34,7 @@ export default function HeaderMenu({ commonLang }) {
   const { pathname } = useRouter();
   return (
     <>
-      <nav className="flex justify-between w-full">
+      <nav className="flex justify-between w-full px-10">
         <div>
           <Link href="/" prefetch={false}>
             <a className="flex flex-row items-center text-decoration-none">

@@ -42,7 +42,7 @@ function Home({ products, mainLayoutSocial, projects, indexText }) {
         autoPlay
         loop
         muted
-        className="absolute hidden md:block"
+        className="absolute hidden md:block opacity-50"
       >
         <source src="/sample.mp4/" type="video/mp4" />
       </video>

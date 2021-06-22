@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { projectModal, youtubeModal } from "../index.module.css";
 import YouTube from "react-youtube";
 import { useTranslation } from "react-i18next";
+import Image from "next/image";
 
 function Projects({ mainLayoutSocial, projects }) {
   const { t } = useTranslation("common");
@@ -42,6 +43,12 @@ function Projects({ mainLayoutSocial, projects }) {
       footerLang={footerLang}
       mainLayoutSocial={mainLayoutSocial}
     >
+      <Image
+        src="/realizationStep.png"
+        alt="realizationStep"
+        width={2000}
+        height={800}
+      />
       {projects.map((project) => (
         <div key={project.ID}>
           <Project
@@ -52,6 +59,12 @@ function Projects({ mainLayoutSocial, projects }) {
           />
         </div>
       ))}
+      <Image
+        src="/realizationStep1.png"
+        alt="realizationStep"
+        width={2000}
+        height={800}
+      />
       {currentProject && (
         <div className="z-[9999] text-black fixed w-full h-full top-0 left-0 flex items-center justify-center">
           <div className="modal-overlay absolute w-full h-full bg-gray-900 opacity-50 z-[10000]"></div>
