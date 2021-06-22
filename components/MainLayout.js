@@ -1,12 +1,11 @@
+import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import HeaderMenu from "./HeaderMenu/HeaderMenu";
-import { useSelector } from "react-redux";
 import Lang from "./Lang/Lang";
 import Social from "./Social/Social";
 import { useRouter } from "next/router";
 import Footer from "./Footer/Footer";
 import FullPageSectionTitle from "./FullPageSectionTitle/FullPageSectionTitle";
-import React, { useEffect } from "react";
 import ReactGA from "react-ga";
 import { YMInitializer } from "react-yandex-metrika";
 import getConfig from "next/config";
@@ -20,12 +19,30 @@ export function MainLayout({
   commonLang,
   footerLang,
 }) {
-  const { backgroundColor } = useSelector((state) => state.mainConfig);
   const { pathname } = useRouter();
   ReactGA.initialize("G-CP82ML0245", { standardImplementation: true });
   useEffect(() =>
     ReactGA.pageview(window.location.pathname + window.location.search)
   );
+
+  const [className, setClassName] = useState("");
+
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", changeClass);
+    }
+  }, []);
+
+  const changeClass = () => {
+    console.log('changeClass')
+    if (window.pageYOffset > 400) {
+      setClassName("bg-white");
+    } else {
+      setClassName("");
+    }
+  };
+
   return (
     <>
       <Head>
@@ -170,15 +187,17 @@ src="https://www.facebook.com/tr?id=949121602542823&ev=PageView&noscript=1"
           rel="stylesheet"
         ></link>
       </Head>
-      <header className={`flex justify-between items-center shadow`}>
+      <header
+        className={`${className} flex justify-between items-center shadow fixed w-full z-10`}
+      >
         <HeaderMenu commonLang={commonLang} />
         <Lang />
       </header>
       <div
         className={`${
           pathname != "/" && pathname != "/projects"
-            ? "overflow-hidden p-10 mb-10"
-            : "overflow-hidden"
+            ? "overflow-hidden p-10 mb-12"
+            : "overflow-hidden mb-12"
         }`}
       >
         {pathname !== "/" && <FullPageSectionTitle title={title} />}

@@ -30,7 +30,7 @@ function Project({ project, onShowYoutube, onClick }) {
       {project.PROPERTY_POSITION_VALUE && (
         <div
           key={project.ID}
-          className="md:flex justify-between"
+          className={`${project.PROPERTY_BACKGROUND_COLOR_VALUE} md:flex justify-between`}
         >
           <div className="md:w-7/12">
             <div
@@ -42,7 +42,7 @@ function Project({ project, onShowYoutube, onClick }) {
             >
               {project.PROPERTY_YOUTUBE_LINK_VALUE && (
                 <div
-                  className="bg-black md:m-5 rounded-3xl flex m-3"
+                  className="md:m-5 rounded-3xl flex m-3"
                   onClick={() => {
                     onShowYoutube(project.PROPERTY_YOUTUBE_LINK_VALUE);
                   }}

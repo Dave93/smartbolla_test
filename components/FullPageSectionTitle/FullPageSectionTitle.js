@@ -30,7 +30,10 @@ export default function FullPageSectionTitle({ title }) {
   };
 
   return (
-    <div ref={ref} className={`${pathname == "/projects" ? "pl-10" : "pb-2"}`}>
+    <div
+      ref={ref}
+      className={`${pathname == "/projects" ? "pl-10 mt-16" : "pb-2 mt-16"}`}
+    >
       <motion.h1
         initial="hidden"
         transition={{ duration: 0.6 }}

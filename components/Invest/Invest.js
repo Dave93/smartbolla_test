@@ -15,7 +15,7 @@ const CircularLabel = function ({ size }) {
   return (
     <div
       className="absolute font-bold text-5xl text-center top-28 w-full"
-      style={{ color: "#f6c886" }}
+      // style={{ color: "#f6c886" }}
     >
       ${size}
     </div>
@@ -80,7 +80,7 @@ export default function Invest({ products, investLang }) {
         progressColorTo="#a15400"
         verticalOffset="1rem"
         progressSize={8}
-        trackColor="#eeeeee"
+        trackColor="#000000"
         trackSize={20}
         data={sliderValues} //...
         dataIndex={0}
