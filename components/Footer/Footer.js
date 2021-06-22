@@ -56,7 +56,7 @@ export default function Footer({ commonLang }) {
   return (
     <div
       id="bottom-navigation"
-      className="block fixed inset-x-0 bottom-0 z-10 shadow md:hidden relative"
+      className="block fixed inset-x-0 bottom-0 z-10 shadow md:hidden"
       style={{
         background: "linear-gradient(270deg, #0C0E12 0.14%, #242C40 100%)",
       }}

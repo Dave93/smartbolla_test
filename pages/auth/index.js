@@ -8,7 +8,6 @@ import { useCookies } from "react-cookie";
 import "react-phone-input-2/lib/style.css";
 import styles from "./Auth.module.css";
 import { useRouter } from "next/router";
-import { isMobile } from "react-device-detect";
 import Link from "next/link";
 
 let timerInvetval = null;
@@ -157,7 +156,7 @@ function AuthPage({ mainLayoutSocial }) {
                   }}
                   onBlur={handleBlur}
                   autoComplete="off"
-                  inputClass="w-full h-10"
+                  inputClass="w-full h-10 bg-gray-200"
                 />
                 <label className="block mb-3 mt-3" htmlFor="">
                   {t("password")}
@@ -169,7 +168,7 @@ function AuthPage({ mainLayoutSocial }) {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.password}
-                  className="px-3 py-2 w-full rounded"
+                  className="bg-gray-200 border border-gray-300 px-3 py-2 rounded w-full"
                 />
                 <div className="my-2 ">
                   <Link href={resetRoute}>

@@ -50,7 +50,7 @@ function Slider({ slides, locale }) {
                         key={rowIndex}
                       >
                         {row.map((slide, i) => (
-                          <div className="md:w-64" key={i}>
+                          <div className="md:w-64 p-2" key={i}>
                             <Image
                               src={
                                 slide.PREVIEW_PICTURE
@@ -59,7 +59,7 @@ function Slider({ slides, locale }) {
                               }
                               width={500}
                               height={500}
-                              className="p-2 rounded-3xl"
+                              className="rounded-3xl"
                             />
                             <div>{slide.NAME}</div>
                             <div className="">

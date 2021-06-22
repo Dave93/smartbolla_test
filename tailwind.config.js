@@ -14,9 +14,6 @@ module.exports = {
     fontFamily: {
       sans: ["Montserrat", ...defaultTheme.fontFamily.sans],
     },
-    colors: {
-      yellow: "#f6c886",
-    },
   },
   important: true,
 };

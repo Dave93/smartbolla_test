@@ -177,7 +177,7 @@ src="https://www.facebook.com/tr?id=949121602542823&ev=PageView&noscript=1"
       <div
         className={`${
           pathname != "/" && pathname != "/projects"
-            ? "overflow-hidden p-10"
+            ? "overflow-hidden p-10 mb-10"
             : "overflow-hidden"
         }`}
       >
