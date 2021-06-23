@@ -42,7 +42,9 @@ function Projects({ mainLayoutSocial, projects }) {
       footerLang={footerLang}
       mainLayoutSocial={mainLayoutSocial}
     >
-      <img src="/realizationStep.png" alt="realizationStep" />
+      <div className="p-14">
+        <img src="/realizationStep.png" alt="realizationStep" />
+      </div>
       {projects.map((project) => (
         <div key={project.ID}>
           <Project
@@ -53,7 +55,9 @@ function Projects({ mainLayoutSocial, projects }) {
           />
         </div>
       ))}
-      <img src="/realizationStep1.png" alt="realizationStep" />
+      <div className="p-14">
+        <img src="/realizationStep1.png" alt="realizationStep" />
+      </div>
       {currentProject && (
         <div className="z-[9999] text-black fixed w-full h-full top-0 left-0 flex items-center justify-center">
           <div className="modal-overlay  w-full h-full bg-gray-900 opacity-50 z-[10000]"></div>

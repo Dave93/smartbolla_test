@@ -36,8 +36,8 @@ function Project({ project, onShowYoutube, onClick }) {
             <div
               className={`${
                 project.PROPERTY_POSITION_VALUE === "Правый"
-                  ? "align-items-md-center bg-gray-100 flex mx-auto ml-auto md:mr-0 max-h-96 mt-40 rounded-3xl md:rounded-l-3xl shadow w-56 md:w-8/12 md:rounded-r-none"
-                  : "align-items-md-center bg-gray-100 flex mx-auto md:ml-0 max-h-96 mt-40  md:rounded-r-3xl rounded-3xl md:rounded-l-none shadow justify-end w-56 md:w-8/12"
+                  ? "align-items-md-center bg-gray-100 flex mx-auto ml-auto md:mr-0 max-h-96 md:mt-40 rounded-3xl md:rounded-l-3xl shadow w-56 md:w-8/12 md:rounded-r-none"
+                  : "align-items-md-center bg-gray-100 flex mx-auto md:ml-0 max-h-96 md:mt-40  md:rounded-r-3xl rounded-3xl md:rounded-l-none shadow justify-end w-56 md:w-8/12"
               }`}
             >
               {project.PROPERTY_YOUTUBE_LINK_VALUE && (
