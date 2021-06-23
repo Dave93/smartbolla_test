@@ -35,7 +35,6 @@ export function MainLayout({
   }, []);
 
   const changeClass = () => {
-    console.log('changeClass')
     if (window.pageYOffset > 400) {
       setClassName("bg-white");
     } else {

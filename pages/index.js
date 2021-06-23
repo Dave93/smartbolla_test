@@ -1,24 +1,24 @@
 import { MainLayout } from "../components/MainLayout";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import TextOnVideo from "../components/TextOnVideo/TextOnVideo";
 import Invest from "../components/Invest/Invest";
-import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Project from "../components/Project/Project";
 import styles from "./index.module.css";
-import { projectModal, youtubeModal } from "./index.module.css";
+import { youtubeModal } from "./index.module.css";
 import YouTube from "react-youtube";
+import { useTranslation } from "next-i18next";
 
 function Home({ products, mainLayoutSocial, projects, indexText }) {
-  const { t } = useTranslation("projectsPage");
-
+  const { t } = useTranslation("indexPage");
+  
   const commonLang = {
-    projects: t("projects"),
     about: t("about"),
     media: t("media"),
     contact: t("contact"),
     profile: t("profile"),
     investors: t("investors"),
+    projectsLabel: t("projects"),
     policies: t("policies"),
   };
 
@@ -33,7 +33,6 @@ function Home({ products, mainLayoutSocial, projects, indexText }) {
   };
 
   const [youtubeId, setYoutubeId] = useState(null);
-  const [currentProject, setCurrentProject] = useState(null);
 
   return (
     <>

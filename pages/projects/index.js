@@ -1,23 +1,22 @@
 import { MainLayout } from "../../components/MainLayout";
 import Project from "../../components/Project/Project";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { projectModal, youtubeModal } from "../index.module.css";
 import YouTube from "react-youtube";
 import { useTranslation } from "react-i18next";
-import Image from "next/image";
 
 function Projects({ mainLayoutSocial, projects }) {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation("projectsPage");
   const [currentProject, setCurrentProject] = useState(null);
   const [youtubeId, setYoutubeId] = useState(null);
 
   const commonLang = {
-    projects: t("projects"),
     about: t("about"),
     media: t("media"),
     contact: t("contact"),
     profile: t("profile"),
     investors: t("investors"),
+    projects: t("projects"),
     policies: t("policies"),
   };
 
@@ -43,13 +42,7 @@ function Projects({ mainLayoutSocial, projects }) {
       footerLang={footerLang}
       mainLayoutSocial={mainLayoutSocial}
     >
-      <Image
-        src="/realizationStep.png"
-        alt="realizationStep"
-        width={2000}
-        height={800}
-        preload={true}
-      />
+      <img src="/realizationStep.png" alt="realizationStep" />
       {projects.map((project) => (
         <div key={project.ID}>
           <Project
@@ -60,13 +53,7 @@ function Projects({ mainLayoutSocial, projects }) {
           />
         </div>
       ))}
-      <Image
-        src="/realizationStep1.png"
-        alt="realizationStep"
-        width={2000}
-        height={800}
-        preload={true}
-      />
+      <img src="/realizationStep1.png" alt="realizationStep" />
       {currentProject && (
         <div className="z-[9999] text-black fixed w-full h-full top-0 left-0 flex items-center justify-center">
           <div className="modal-overlay  w-full h-full bg-gray-900 opacity-50 z-[10000]"></div>
