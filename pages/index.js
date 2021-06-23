@@ -42,7 +42,7 @@ function Home({ products, mainLayoutSocial, projects, indexText }) {
         autoPlay
         loop
         muted
-        className="absolute hidden md:block opacity-50"
+        className="absolute hidden md:block"
       >
         <source src="/sample.mp4/" type="video/mp4" />
       </video>
@@ -52,7 +52,7 @@ function Home({ products, mainLayoutSocial, projects, indexText }) {
         footerLang={footerLang}
         mainLayoutSocial={mainLayoutSocial}
       >
-        <div className="md:flex md:mt-28 justify-around">
+        <div className="md:flex md:mt-64 justify-around">
           <div className="hidden md:block">
             <TextOnVideo
               products={products}
@@ -60,7 +60,7 @@ function Home({ products, mainLayoutSocial, projects, indexText }) {
               text={indexText}
             />
           </div>
-          <div className="block mt-12 md:mt-0">
+          <div className="block mt-24 md:mt-0">
             <Invest products={products} investLang={t("invest")} />
           </div>
         </div>
