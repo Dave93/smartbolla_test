@@ -15,7 +15,7 @@ const CircularLabel = function ({ size }) {
   return (
     <div
       className="absolute font-bold text-5xl text-center top-28 w-full"
-      // style={{ color: "#f6c886" }}
+      style={{ color: "#f6c886" }}
     >
       ${size}
     </div>
@@ -80,7 +80,7 @@ export default function Invest({ products, investLang }) {
         progressColorTo="#a15400"
         verticalOffset="1rem"
         progressSize={8}
-        trackColor="#000000"
+        trackColor="#ffffff"
         trackSize={20}
         data={sliderValues} //...
         dataIndex={0}
@@ -95,7 +95,7 @@ export default function Invest({ products, investLang }) {
         style={{
           backgroundColor: currentProduct ? "#f6c886" : "#a15400",
         }}
-        className="flex p-4 relative  w-full rounded-2xl justify-center uppercase shadow outline-none mt-10"
+        className="flex text-3xl relative  w-full rounded-2xl justify-center uppercase shadow outline-none mt-5"
         onClick={() => {
           addBasket();
         }}

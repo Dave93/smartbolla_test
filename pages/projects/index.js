@@ -44,10 +44,11 @@ function Projects({ mainLayoutSocial, projects }) {
       mainLayoutSocial={mainLayoutSocial}
     >
       <Image
-        src="/realizationStep.png"
+        src="/realizationStep.webp"
         alt="realizationStep"
         width={2000}
         height={800}
+        priority={true}
       />
       {projects.map((project) => (
         <div key={project.ID}>
@@ -60,10 +61,11 @@ function Projects({ mainLayoutSocial, projects }) {
         </div>
       ))}
       <Image
-        src="/realizationStep1.png"
+        src="/realizationStep1.webp"
         alt="realizationStep"
         width={2000}
         height={800}
+        priority={true}
       />
       {currentProject && (
         <div className="z-[9999] text-black fixed w-full h-full top-0 left-0 flex items-center justify-center">
