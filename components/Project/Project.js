@@ -36,8 +36,8 @@ function Project({ project, onShowYoutube, onClick }) {
             <div
               className={`${
                 project.PROPERTY_POSITION_VALUE === "Правый"
-                  ? "align-items-md-center bg-gray-100 flex mx-auto ml-auto md:mr-0 max-h-96 mt-40 rounded-3xl md:rounded-l-3xl shadow w-56 md:w-8/12 md:rounded-r-none"
-                  : "align-items-md-center bg-gray-100 flex mx-auto md:ml-0 max-h-96 mt-40  md:rounded-r-3xl rounded-3xl md:rounded-l-none shadow justify-end w-56 md:w-8/12"
+                  ? "align-items-md-center bg-gray-100 flex mx-auto ml-auto md:mr-0 max-h-96 mt-40 rounded-3xl md:rounded-l-3xl shadow-inner w-56 md:w-8/12 md:rounded-r-none"
+                  : "align-items-md-center bg-gray-100 flex mx-auto md:ml-0 max-h-96 mt-40  md:rounded-r-3xl rounded-3xl md:rounded-l-none shadow-inner justify-end w-56 md:w-8/12"
               }`}
             >
               {project.PROPERTY_YOUTUBE_LINK_VALUE && (
@@ -52,7 +52,7 @@ function Project({ project, onShowYoutube, onClick }) {
                     alt="Logo"
                     width={300}
                     height={300}
-                    className="p-3 cursor-pointer"
+                    className="p-3 cursor-pointer shadow-2xl"
                   />
                 </div>
               )}
@@ -65,7 +65,7 @@ function Project({ project, onShowYoutube, onClick }) {
                 : "text-black p-5 m-10 md:w-3/5"
             }`}
           >
-            <div className="border-2 border-black mb-3">
+            <div className="border-2 rounded-lg border-green-900 mb-3 shadow-2xl">
               <div className={`${styles.title1} text-4xl md:text-5xl`}>
                 {project.NAME}
               </div>
@@ -75,7 +75,7 @@ function Project({ project, onShowYoutube, onClick }) {
             </div>
             {project.PROPERTY_PHOTOS_DESCRIPTION.map((desc, i) => {
               return (
-                <div className={`${styles.border} mt-1 flex p-2`} key={i}>
+                <div className={`${styles.border} rounded-lg border-green-900 shadow-2xl mt-1 flex p-2`} key={i}>
                   <div>
                     <div className="items-center flex">
                       <Image
