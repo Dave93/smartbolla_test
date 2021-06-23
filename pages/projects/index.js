@@ -44,11 +44,11 @@ function Projects({ mainLayoutSocial, projects }) {
       mainLayoutSocial={mainLayoutSocial}
     >
       <Image
-        src="/realizationStep.webp"
+        src="/realizationStep.png"
         alt="realizationStep"
         width={2000}
         height={800}
-        priority={true}
+        preload={true}
       />
       {projects.map((project) => (
         <div key={project.ID}>
@@ -61,17 +61,17 @@ function Projects({ mainLayoutSocial, projects }) {
         </div>
       ))}
       <Image
-        src="/realizationStep1.webp"
+        src="/realizationStep1.png"
         alt="realizationStep"
         width={2000}
         height={800}
-        priority={true}
+        preload={true}
       />
       {currentProject && (
         <div className="z-[9999] text-black fixed w-full h-full top-0 left-0 flex items-center justify-center">
-          <div className="modal-overlay absolute w-full h-full bg-gray-900 opacity-50 z-[10000]"></div>
+          <div className="modal-overlay  w-full h-full bg-gray-900 opacity-50 z-[10000]"></div>
 
-          <div className="modal-container w-full md:max-w-md mx-auto rounded shadow-lg  z-[20000]">
+          <div className="modal-container absolute w-full md:max-w-md mx-auto rounded shadow-lg  z-[20000]">
             <div
               onClick={() => {
                 setCurrentProject(null);
@@ -98,9 +98,9 @@ function Projects({ mainLayoutSocial, projects }) {
       )}
       {youtubeId && (
         <div className="z-[9999] text-black fixed w-full h-full top-0 left-0 flex items-center justify-center">
-          <div className="modal-overlay absolute w-full h-full bg-gray-900 opacity-50 z-[10000]"></div>
+          <div className="modal-overlay  w-full h-full bg-gray-900 opacity-50 z-[10000]"></div>
 
-          <div className="modal-container w-full mx-auto rounded z-[20000]">
+          <div className="modal-container w-full mx-auto rounded z-[20000] absolute">
             <div
               onClick={() => {
                 setYoutubeId(null);
@@ -125,7 +125,7 @@ function Projects({ mainLayoutSocial, projects }) {
               <YouTube
                 videoId={youtubeId}
                 opts={youtubeOptions}
-                className="m-auto h-screen"
+                className="m-auto"
               />
             </div>
           </div>
