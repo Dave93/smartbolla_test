@@ -95,7 +95,7 @@ export default function Invest({ products, investLang }) {
         style={{
           backgroundColor: currentProduct ? "#f6c886" : "#a15400",
         }}
-        className="flex text-3xl relative  w-full rounded-2xl justify-center uppercase shadow outline-none mt-5"
+        className="flex text-2xl relative  w-full rounded-2xl justify-center uppercase shadow outline-none mt-5"
         onClick={() => {
           addBasket();
         }}

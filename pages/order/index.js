@@ -72,7 +72,7 @@ function Order({
       mainLayoutSocial={mainLayoutSocial}
     >
       <div className="md:flex md:justify-around">
-        <div className="">
+        <div className="md:w-96">
           <h7>{t("paymentInfoTitle")}</h7>
           <div className="">
             <Formik
@@ -316,10 +316,10 @@ function Order({
                         <div
                           key={payment.ID}
                           className={`${
-                            isChecked && "bg-white shadow-md"
+                            isChecked && "bg-gray-200 shadow-md"
                           }  cursor-pointer flex p-3 hover:bg-white hover:shadow-md items-center rounded-2xl`}
                         >
-                          <label>
+                          <label className="h-full">
                             <Field
                               type="radio"
                               name="payment"
