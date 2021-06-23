@@ -1,13 +1,12 @@
 import Link from "next/link";
 import styles from "./HeaderMenu.module.css";
 import { useRouter } from "next/router";
-import { useTranslation } from "next-i18next";
 import Image from "next/image";
 
 export default function HeaderMenu({ commonLang }) {
   const navButtons = [
     {
-      label: commonLang.projects,
+      label: commonLang.projectsLabel,
       path: "/projects",
     },
     {

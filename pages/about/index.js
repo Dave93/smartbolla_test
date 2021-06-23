@@ -5,7 +5,6 @@ import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Slider from "../../components/Slider/Slider";
 import FullPageSectionTitle from "../../components/FullPageSectionTitle/FullPageSectionTitle";
-import { deviceType, CustomView } from "react-device-detect";
 
 function About({ aboutText, mainLayoutSocial, team, cofounder }) {
   const { t } = useTranslation("aboutPage");
