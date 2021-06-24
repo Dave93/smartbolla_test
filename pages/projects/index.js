@@ -140,7 +140,7 @@ export async function getServerSideProps({ locale }) {
     },
   });
 
-  const resProjects = await fetch("https://dev.smartbolla.com/api/", {
+  const resProjects = await fetch("https://api.smartbolla.com/api/", {
     method: "POST",
     body: JSON.stringify({
       method: "get.projects.list",
