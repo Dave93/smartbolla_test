@@ -14,6 +14,7 @@ function Investors({ aboutText, mainLayoutSocial, investors }) {
     media: t("media"),
     contact: t("contact"),
     profile: t("profile"),
+    projects: t("projects"),
     investors: t('investors'),
     policies: t("policies")
   };

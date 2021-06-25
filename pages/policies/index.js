@@ -11,6 +11,7 @@ export default function Policies({ mainLayoutSocial }) {
     contact: t("contact"),
     profile: t("profile"),
     investors: t("investors"),
+    projects: t("projects"),
     policies: t("policies")
   };
   return (

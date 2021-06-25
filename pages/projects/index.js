@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { projectModal, youtubeModal } from "../index.module.css";
 import YouTube from "react-youtube";
 import { useTranslation } from "react-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 function Projects({ mainLayoutSocial, projects }) {
   const { t } = useTranslation("projectsPage");
@@ -159,6 +160,7 @@ export async function getServerSideProps({ locale }) {
   return {
     props: {
       mainLayoutSocial,
+      ...(await serverSideTranslations(locale, ["projectsPage"])),
       projects,
     },
   };
