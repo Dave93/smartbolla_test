@@ -34,14 +34,11 @@ export default function HeaderMenu({ commonLang }) {
   return (
     <>
       <nav className="flex justify-between w-full px-10">
-        <div>
+        <div className="flex flex-row items-center text-decoration-none">
           <Link href="/" prefetch={false}>
-            <a className="flex flex-row items-center text-decoration-none">
+            <a>
               <div>
-                <Image src="/img/main-logo.png" width={50} height={50} />
-              </div>
-              <div className="font-bold ml-3  uppercase text-2x1 relative">
-                SmartBolla
+                <Image src="/img/main-logo.png" width={200} height={40} />
               </div>
             </a>
           </Link>
