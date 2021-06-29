@@ -87,7 +87,7 @@ function Project({ project, onShowYoutube }) {
                       <div className="ml-3">{desc}</div>
                     </div>
                   </div>
-                </div>
+                </div>                
               );
             })}
           </div>

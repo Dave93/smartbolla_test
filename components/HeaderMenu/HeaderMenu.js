@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function HeaderMenu({ commonLang }) {
   const navButtons = [
     {
-      label: commonLang.projectsLabel,
+      label: commonLang.projects,
       path: "/projects",
     },
     {
@@ -28,6 +28,10 @@ export default function HeaderMenu({ commonLang }) {
     {
       label: commonLang.investors,
       path: "/investors",
+    },
+    {
+      label: commonLang.policies,
+      path: "/policies",
     },
   ];
   const { pathname } = useRouter();
