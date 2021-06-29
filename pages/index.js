@@ -60,11 +60,11 @@ function Home({ products, mainLayoutSocial, projects, indexText }) {
               text={indexText}
             />
           </div>
-          <div className="block p-14 md:p-0" style={{backgroundImage:`url("/money-3382555-3.jpg")`,backgroundPosition: "top"}}>
+          <div className="block p-14 md:p-0" style={{backgroundImage:`url("/consultores-especialistas-1024x683.jpg")`, backgroundPosition: "top", backgroundSize: "cover"}}>
             <Invest products={products} investLang={t("invest")} />
           </div>
         </div>
-        <div className=" md:mt-60 md:p-14 p-10">
+        <div className=" md:mt-60 md:p-14 p-2">
           <img src="/realizationStep.png" alt="realizationStep" />
         </div>
         {projects.map((project) => (
