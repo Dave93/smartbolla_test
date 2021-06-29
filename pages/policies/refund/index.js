@@ -15,6 +15,7 @@ export default function Refund({ mainLayoutSocial }) {
     contact: t("contact"),
     profile: t("profile"),
     investors: t("investors"),
+    projects: t("projects"),
     policies: t("policies"),
   };
   return (

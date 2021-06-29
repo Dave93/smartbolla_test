@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function HeaderMenu({ commonLang }) {
   const navButtons = [
     {
-      label: commonLang.projectsLabel,
+      label: commonLang.projects,
       path: "/projects",
     },
     {
@@ -29,19 +29,20 @@ export default function HeaderMenu({ commonLang }) {
       label: commonLang.investors,
       path: "/investors",
     },
+    {
+      label: commonLang.policies,
+      path: "/policies",
+    },
   ];
   const { pathname } = useRouter();
   return (
     <>
       <nav className="flex justify-between w-full px-10">
-        <div>
+        <div className="flex flex-row items-center text-decoration-none">
           <Link href="/" prefetch={false}>
-            <a className="flex flex-row items-center text-decoration-none">
+            <a>
               <div>
-                <Image src="/img/main-logo.png" width={50} height={50} />
-              </div>
-              <div className="font-bold ml-3  uppercase text-2x1 relative">
-                SmartBolla
+                <Image src="/img/main-logo.png" width={200} height={40} />
               </div>
             </a>
           </Link>
