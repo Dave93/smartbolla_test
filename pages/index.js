@@ -18,7 +18,7 @@ function Home({ products, mainLayoutSocial, projects, indexText }) {
     contact: t("contact"),
     profile: t("profile"),
     investors: t("investors"),
-    projectsLabel: t("projects"),
+    projects: t("projects"),
     policies: t("policies"),
   };
 
@@ -44,7 +44,8 @@ function Home({ products, mainLayoutSocial, projects, indexText }) {
         className="absolute hidden md:block"
       >
         <source src="/sample.mp4/" type="video/mp4" />
-      </video>
+      </video>      
+      
       <MainLayout
         title={"Smartbolla"}
         commonLang={commonLang}
@@ -59,11 +60,11 @@ function Home({ products, mainLayoutSocial, projects, indexText }) {
               text={indexText}
             />
           </div>
-          <div className="block mt-24 md:mt-0">
+          <div className="block p-14 md:p-0" style={{backgroundImage:`url("/money-3382555-3.jpg")`,backgroundPosition: "top"}}>
             <Invest products={products} investLang={t("invest")} />
           </div>
         </div>
-        <div className="p-14 md:mt-60">
+        <div className=" md:mt-60 md:p-14 p-10">
           <img src="/realizationStep.png" alt="realizationStep" />
         </div>
         {projects.map((project) => (
