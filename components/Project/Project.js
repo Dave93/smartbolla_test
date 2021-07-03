@@ -31,14 +31,15 @@ function Project({ project, onShowYoutube }) {
       {project.PROPERTY_POSITION_VALUE && (
         <div
           key={project.ID}
-          className="md:flex justify-between"
+          className="md:flex justify-between mt-36"
         >
           <div className="md:w-7/12">
             <div
               className={`${
                 project.PROPERTY_POSITION_VALUE === "Правый"
-                  ? "align-items-md-center bg-gray-100 flex mx-auto ml-auto md:mr-0 max-h-96 md:my-auto md:mt-40 rounded-3xl md:rounded-l-3xl shadow w-56 md:w-8/12 md:rounded-r-none"
-                  : "align-items-md-center bg-gray-100 flex mx-auto md:ml-0 max-h-96 md:mt-40 md-my-auto md:rounded-r-3xl rounded-3xl md:rounded-l-none shadow justify-end w-56 md:w-8/12"
+
+                  ? "align-items-md-center bg-gray-100 flex mx-auto ml-auto md:mr-0 max-h-96 mt-40 rounded-3xl md:rounded-l-3xl shadow-inner w-56 md:w-8/12 md:rounded-r-none"
+                  : "align-items-md-center bg-gray-100 flex mx-auto md:ml-0 max-h-96 mt-40  md:rounded-r-3xl rounded-3xl md:rounded-l-none shadow-inner justify-end w-56 md:w-8/12"
               }`}
             >
               {project.PROPERTY_YOUTUBE_LINK_VALUE && (
@@ -53,7 +54,7 @@ function Project({ project, onShowYoutube }) {
                     alt="Logo"
                     width={300}
                     height={300}
-                    className="p-3 cursor-pointer"
+                    className="p-3 cursor-pointer shadow-2xl"
                   />
                 </div>
               )}
@@ -62,7 +63,7 @@ function Project({ project, onShowYoutube }) {
           <div
             className={`${
               project.PROPERTY_POSITION_VALUE === "Правый"
-                ? "md:order-first text-black p-5 md:w-3/5  m-10"
+                ? "md:order-first text-black p-5 md:w-3/5  m-30"
                 : "text-black p-5 m-10 md:w-3/5"
             }`}
           >
@@ -97,8 +98,8 @@ function Project({ project, onShowYoutube }) {
         <Rectangle
           className={`${
             project.PROPERTY_POSITION_VALUE === "Левый"
-              ? "-m-12 -rotate-12 h-20 opacity-50 transform"
-              : "md:rotate-12 -m-12 -rotate-12 h-20 transform opacity-50"
+              ? "-m-10 -rotate-6 h-16 opacity-60 transform"
+              : "md:rotate-6 m-14 -rotate-12 h-16 transform opacity-60"
           }`}
           style={{ background: project.PROPERTY_BACKGROUND_COLOR_VALUE }}
         />
