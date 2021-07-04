@@ -58,7 +58,7 @@ function Project({ project, onShowYoutube }) {
           <div
             className={`${
               project.PROPERTY_POSITION_VALUE === "Правый"
-                ? "md:order-first text-black p-5 md:w-3/5  m-30"
+                ? "md:order-first text-black p-5 md:w-3/5  m-10"
                 : "text-black p-5 m-10 md:w-3/5"
             }`}
           >

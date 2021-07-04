@@ -48,7 +48,7 @@ function Projects({ mainLayoutSocial, projects }) {
       </div>
 
       <div className="p-14">
-        <img src="/realizationStep.png" alt="realizationStep" />
+        <img src="/newRealizationStep.png" alt="newRealizationStep" />
       </div>
       {projects.map((project) => (
         <div key={project.ID}>

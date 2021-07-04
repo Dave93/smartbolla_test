@@ -1,7 +1,7 @@
 import { MainLayout } from "../../components/MainLayout";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import Link from 'next/link'
+import Link from "next/link";
 
 export default function Policies({ mainLayoutSocial }) {
   const { t } = useTranslation("policiesPage");
@@ -12,7 +12,7 @@ export default function Policies({ mainLayoutSocial }) {
     profile: t("profile"),
     investors: t("investors"),
     projects: t("projects"),
-    policies: t("policies")
+    policies: t("policies"),
   };
   return (
     <MainLayout
@@ -23,22 +23,22 @@ export default function Policies({ mainLayoutSocial }) {
       <div className={`text-center uppercase`}>
         <Link href="/policies/payment">
           <a className="hover:underline">
-            <div>Payment policy of Smart Bolla DMCC</div>
+            <div>Payment policy</div>
           </a>
         </Link>
         <Link href="/policies/terms">
           <a className="hover:underline">
-            <div>Terms of service policy of Smart Bolla DMCC</div>
+            <div>Terms of service policy</div>
           </a>
         </Link>
         <Link href="/policies/privacy">
           <a className="hover:underline">
-            <div>Privacy policy of Smart Bolla DMCC</div>
+            <div>Privacy policy</div>
           </a>
         </Link>
         <Link href="/policies/refund">
           <a className="hover:underline">
-            <div>Refund policy of Smart Bolla DMCC</div>
+            <div>Refund policy</div>
           </a>
         </Link>
       </div>
@@ -47,7 +47,6 @@ export default function Policies({ mainLayoutSocial }) {
 }
 
 export async function getServerSideProps({ locale }) {
-
   const socials = await fetch("https://api.smartbolla.com/api/", {
     method: "POST",
     body: JSON.stringify({
