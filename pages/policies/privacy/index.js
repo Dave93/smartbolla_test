@@ -25,7 +25,7 @@ export default function Privacy({ mainLayoutSocial }) {
       mainLayoutSocial={mainLayoutSocial}
     >
       <div className={`${isMobile ? "col-10 m-auto pb-20" : "mt-4"}`}>
-        <p>SMART BOLLA DMCC</p>
+        <p>"SMARTBOLLA SYSTEMS TECHNOLOGY" LLC</p>
         <p>
           Dubai, United Arab Emirates, Mazaya Business Avenue; Diamond Business
           Center; BB1 Tower, Level 18, Unit №1801-1808 PO BOX 26734, +971
@@ -41,8 +41,8 @@ export default function Privacy({ mainLayoutSocial }) {
         </p>
         <p>
           2. The user gives permission to the Site Administration to collect,
-          process and store his personal personal data, as well as to send text
-          and graphic information of an advertising nature.
+          process and store his personal data, as well as to send text and
+          graphic information of an advertising nature.
         </p>
         <p>
           3. The Parties undertake to comply with this agreement governing the

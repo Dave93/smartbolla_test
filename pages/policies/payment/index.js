@@ -25,13 +25,12 @@ export default function Payment({ mainLayoutSocial }) {
       mainLayoutSocial={mainLayoutSocial}
     >
       <div className={`${isMobile ? "col-10 m-auto pb-20" : "mt-4"}`}>
-        <h4>Payment Policy of SMART BOLLA DMCC</h4>
+        <h4>Payment Policy</h4>
         <div>
           <p>
             This Payment Policy (the „Agreement“) is an agreement between you or
-            the entity that you represent („Buyer“) and "Smart Bolla" DMCC
-            (registry code: DMCC189165, registered under the laws of Dubai, UAE)
-            („Seller“).
+            the entity that you represent („Buyer“) and "SmartBolla Systems
+            Technology" LLC („Seller“).
           </p>
 
           <p>
@@ -41,48 +40,50 @@ export default function Payment({ mainLayoutSocial }) {
           </p>
 
           <p>
-            Tokens represent the right to dividends of the "Smart Bolla" DMCC.
+            "Profit Participation" represent the right to dividends of the
+            "SmartBolla Systems Technology" LLC.
           </p>
 
           <p>The Buyer acknowledges, understands, and agrees that:</p>
 
           <p>
             (I) The Buyer reads the Agreement carefully and in its entirety. The
-            Buyer shall not buy SmartBolla Token if any of the risks provided in
-            the Agreement.
+            Buyer shall not buy "Profit Partication" if any of the risks
+            provided in the Agreement.
           </p>
 
           <p>
             (II) The Buyer is subject to and bound by this Agreement by virtue
-            of the Buyer's purchase of Tokens.
+            of the Buyer's purchase of "Profit Participation".
           </p>
 
           <p>
             (III) The Company does not have any obligation to recover any
-            SmartBolla Tokens. The Purchases of SmartBolla Tokens are
+            "Profit Participation". The Purchases of SmartBolla Tokens are
             non-refundable. The Buyer may lose all paid amounts.
           </p>
 
           <p>
             (IV) The Buyer does not hold any claims against the Company for any
             losses or any special, incidental, or consequential damages arising
-            from, or in any way connected, to the sale of SmartBolla Token,
-            including losses associated with the risks set in the Agreement.
+            from, or in any way connected, to the sale of "Profit
+            Participation", including losses associated with the risks set in
+            the Agreement.
           </p>
 
           <p>
-            (V) The Ownership of Tokens carries no rights, express or implied,
-            other than the right to use such Tokens as a means to enable usage
-            of the interaction with the Platform.
+            (V) The Ownership of "Profit Participation" carries no rights,
+            express or implied, other than the right to use such Tokens as a
+            means to enable usage of the interaction with the Platform.
           </p>
 
           <p>
-            (VI) Tokens do not represent any ownership right, share or security
-            or equivalent rights, shares, participate in the management,
-            intellectual property rights, or any other form of participation.
-            Tokens are during the entry into force of the Agreement not a
-            cryptocurrency, security, commodity, or any other kind of ﬁnancial
-            instrument.
+            (VI) "Profit Participation" do not represent any ownership right,
+            share or security or equivalent rights, shares, participate in the
+            management, intellectual property rights, or any other form of
+            participation. Tokens are during the entry into force of the
+            Agreement not a cryptocurrency, security, commodity, or any other
+            kind of ﬁnancial instrument.
           </p>
 
           <p>
@@ -98,14 +99,14 @@ export default function Payment({ mainLayoutSocial }) {
             (I)In accordance with this agreement, the “Buyer” has agreed that
             the "Seller" undertakes to transfer, and the "Buyer" undertakes to
             accept and complete the fund’s transfer in order to acquire the
-            Tokens of the company.
+            "Profit Participation" of the company.
           </p>
 
           <p>
-            (II)The “Seller” guarantees that the Tokens specified in this
-            “Agreement” belong to him on the right of ownership, they are not
-            seized, they are not pledged, and not encumbered with other rights
-            of third parties.
+            (II)The “Seller” guarantees that the "Profit Participation"
+            specified in this “Agreement” belong to him on the right of
+            ownership, they are not seized, they are not pledged, and not
+            encumbered with other rights of third parties.
           </p>
           <p>
             (III)The buyer receives dividends after the launch of all projects
@@ -135,19 +136,20 @@ export default function Payment({ mainLayoutSocial }) {
           </p>
 
           <p>
-            (VIII)The “Buyer” confirms that he has received Tokens of the
-            "Seller" in exchange for full payment of the purchase.{" "}
+            (VIII)The “Buyer” confirms that he has received "Profit
+            Participation" of the "Seller" in exchange for full payment of the
+            purchase.{" "}
           </p>
 
           <p>
             (IX)Refuse to execute the "Agreement" or terminate the "Agreement"
             if the "Buyer" in violation of the "Agreement" refuses to accept
-            and/or pay for possession of the Tokens.
+            and/or pay for possession of the "Profit Participation".
           </p>
 
           <p>
             (X)Refuse to execute the "Agreement" if the "Company" refuses to
-            transfer the sold Tokens to the "Buyer".{" "}
+            transfer the sold "Profit Participation" to the "Buyer".{" "}
           </p>
 
           <p>
@@ -160,26 +162,26 @@ export default function Payment({ mainLayoutSocial }) {
           </p>
 
           <p>
-            (I)In accordance with the agreement, the cost of 1 unit of the
-            Tokens is 100 (one hundred) US dollars, which is equal to 0.00001%.
+            (I)In accordance with the agreement, the cost of the "Profit
+            Participation" starts with 100 (one hundred) US dollars, which is
+            equal to 0.00001%.
           </p>
 
           <p>
             (II)Method of payment under the "Agreement": transfer by the "Buyer"
-            of monetary funds in US dollars, UAE dirhams, and British pounds
-            sterling to the bank credentials of the "Seller". In this case, the
-            obligations of the "Buyer" in terms of payment under the "Agreement"
-            are considered fulfilled from the date of transfer or another type
-            of transfer of funds from the "Buyer" to the bank credentials of the
-            "Seller".
+            of monetary funds in US dollars, UAE dirhams to the bank credentials
+            of the "Seller". In this case, the obligations of the "Buyer" in
+            terms of payment under the "Agreement" are considered fulfilled from
+            the date of transfer or another type of transfer of funds from the
+            "Buyer" to the bank credentials of the "Seller".
           </p>
 
           <p>
-            (III)Tokens can be returned to the "Seller" by mutual agreement of
-            the "Parties", as well as unilaterally at the written request of one
-            of the "Parties" on the grounds provided for by law, as well as in
-            case of violation of the requirements established and specified in
-            the rules of this "Agreement".
+            (III)The "Profit Participation" can be returned to the "Seller" by
+            mutual agreement of the "Parties", as well as unilaterally at the
+            written request of one of the "Parties" on the grounds provided for
+            by law, as well as in case of violation of the requirements
+            established and specified in the rules of this "Agreement".
           </p>
 
           <p>
@@ -206,8 +208,8 @@ export default function Payment({ mainLayoutSocial }) {
           <p>
             (VI)The "Party" that cannot fulfill the obligations under the
             "Agreement" must promptly, but no later than the Force majeure
-            notice period of calendar days after the occurrence of force majeure
-            circumstances, notify the other "Party" in writing, with the
+            notice period of 5 calendar days after the occurrence of force
+            majeure circumstances, notify the other "Party" in writing, with the
             provision of supporting documents issued by the competent
             authorities.{" "}
           </p>
@@ -230,12 +232,13 @@ export default function Payment({ mainLayoutSocial }) {
           </p>
 
           <p>
-            (II)Services and products include "Smart Bolla" DMCC (to be found at
-            https://www.smartbolla.com.) The Services may also be provided
-            through third party websites and/or applications. The "Seller"
-            Services enable you to buy Tokens of the company through the
-            web-application. The "Seller" takes the responsibility to provide
-            the “Buyer” latest upgrades upon the activity of the company.
+            (II)Services and products include "SmartBolla Systems Technology"
+            LLC (to be found at https://www.smartbolla.com.) The Services may
+            also be provided through the third party websites and/or
+            applications. The "Seller" Services enable you to buy the "Profit
+            Participation" of the company through the web-application. The
+            "Seller" takes the responsibility to provide the “Buyer” latest
+            upgrades upon the activity of the company.
           </p>
 
           <p>
@@ -246,8 +249,8 @@ export default function Payment({ mainLayoutSocial }) {
 
           <p>
             (IV)Under this Agreement, the "Seller" permits “The Buyer” access
-            and usepersonal cabinet on the https://www.smartbolla.com web-site
-            for personal use and allows the printing of a copy of the
+            and usage to the personal cabinet on the https://www.smartbolla.com
+            web-site for personal use and allows the printing of a copy of the
             information displayed in all media and information channels related
             to the "Seller".
           </p>
@@ -261,24 +264,10 @@ export default function Payment({ mainLayoutSocial }) {
           </p>
 
           <p>
-            (VI)The "Seller" does not guarantee that the prices of Tokens, terms
-            and conditions of the agreement and availability of the possibility
-            will not change during the further action taken by the "Seller".
-          </p>
-
-          <p>
-            (VII) This Agreement is available in English, Arabic, Russian,
-            French, Spanish, Chinese and Uzbek. In the event of any
-            inconsistency between the text versions of this Agreement and
-            English versions of this Agreement, the English version shall
-            prevail.
-          </p>
-
-          <p>
             (VIII)The "Seller" is not involved in any transactions between “The
             Buyer” and any other third-party in terms of payment issues or
-            transferring Tokens as the proportions could be sold only to the
-            "Seller".
+            transferring the "Profit Participation" as the proportions could be
+            sold only to the "Seller".
           </p>
 
           <p>
@@ -288,32 +277,6 @@ export default function Payment({ mainLayoutSocial }) {
             providers) from claims, demands and damages of every kind and
             nature, known and unknown, suspected and unsuspected, disclosed and
             undisclosed.
-          </p>
-
-          <p>
-            (X)Any controversy or claim arising out of or relating to this
-            Agreement or the Services will be settled by binding arbitration in
-            accordance with the UAE Commercial laws.
-          </p>
-
-          <p>
-            (XI)This Agreement shall be governed by the laws of the United Arab
-            Emirates without regard to its conflict of law provisions. Failure
-            of the "Seller" to exercise or enforce any right or provision of the
-            Agreement will not be deemed to be a waiver of such right or
-            provision.
-          </p>
-
-          <p>(XII)The arbitration must be conducted in Dubai, UAE.</p>
-
-          <p>
-            <strong>Death</strong>
-          </p>
-
-          <p>
-            (I)If The "Buyer” is deceased, Tokens rights will be transferred
-            according to the internal legislation of the citizenship state of
-            “the Buyer”.
           </p>
           <Link href={"/policies"}>
             <a>

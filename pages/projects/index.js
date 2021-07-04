@@ -44,6 +44,10 @@ function Projects({ mainLayoutSocial, projects }) {
       mainLayoutSocial={mainLayoutSocial}
     >
       <div className="p-14">
+        <img />
+      </div>
+
+      <div className="p-14">
         <img src="/realizationStep.png" alt="realizationStep" />
       </div>
       {projects.map((project) => (

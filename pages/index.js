@@ -44,8 +44,8 @@ function Home({ products, mainLayoutSocial, projects, indexText }) {
         className="absolute hidden md:block"
       >
         <source src="/sample.mp4/" type="video/mp4" />
-      </video>      
-      
+      </video>
+
       <MainLayout
         title={"Smartbolla"}
         commonLang={commonLang}
@@ -60,11 +60,24 @@ function Home({ products, mainLayoutSocial, projects, indexText }) {
               text={indexText}
             />
           </div>
-          <div className="block p-14 md:p-0" style={{backgroundImage:`url("/money-3382555-3.jpg")`,backgroundPosition: "top"}}>
+          <div
+            className="block p-14 md:p-0"
+            style={{
+              backgroundImage: `url("/money-3382555-3.jpg")`,
+              backgroundPosition: "top",
+            }}
+          >
             <Invest products={products} investLang={t("invest")} />
           </div>
         </div>
-        <div className=" md:mt-60 md:p-14 p-10">
+        <div className="pt-60" id="movie">
+          <YouTube
+            videoId={youtubeId}
+            opts={youtubeOptions}
+            className="m-auto"
+          />
+        </div>
+        <div className=" md:mt-30 md:p-10 p-10">
           <img src="/realizationStep.png" alt="realizationStep" />
         </div>
         {projects.map((project) => (
@@ -115,6 +128,7 @@ function Home({ products, mainLayoutSocial, projects, indexText }) {
             </div>
           </div>
         )}
+
         <style jsx global>
           {`
             #fp-nav {

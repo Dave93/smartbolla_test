@@ -25,7 +25,7 @@ export default function Terms({ mainLayoutSocial }) {
       mainLayoutSocial={mainLayoutSocial}
     >
       <div className={`${isMobile ? "col-10 m-auto pb-20" : "mt-4"}`}>
-        <p>SMART BOLLA DMCC</p>
+        <p>"SMARTBOLLA SYSTEMS TECHNOLOGY" DMCC</p>
         <p>
           Dubai, United Arab Emirates, Mazaya Business Avenue; Diamond Business
           Center; BB1 Tower, Level 18, Unit №1801-1808 PO BOX 26734, +971
