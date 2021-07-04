@@ -70,12 +70,8 @@ function Home({ products, mainLayoutSocial, projects, indexText }) {
             <Invest products={products} investLang={t("invest")} />
           </div>
         </div>
-        <div className="pt-60" id="movie">
-          <YouTube
-            videoId={youtubeId}
-            opts={youtubeOptions}
-            className="m-auto"
-          />
+        <div className="pt-64 bg-blue-100 pb-10" id="movie">
+          <YouTube videoId={youtubeId} className="m-auto" />
         </div>
         <div className=" md:mt-30 md:p-10 p-10">
           <img src="/realizationStep.png" alt="realizationStep" />

@@ -12,7 +12,7 @@ import Image from "next/image";
 library.add(faYoutube, faArrowLeft);
 
 function Project({ project, onShowYoutube }) {
-  console.log(project)
+  console.log(project);
   const controls = useAnimation();
   const { ref, inView } = useInView();
 
@@ -29,15 +29,11 @@ function Project({ project, onShowYoutube }) {
   return (
     <div ref={ref}>
       {project.PROPERTY_POSITION_VALUE && (
-        <div
-          key={project.ID}
-          className="md:flex justify-between mt-36"
-        >
+        <div key={project.ID} className="md:flex justify-between mt-36">
           <div className="md:w-7/12">
             <div
               className={`${
                 project.PROPERTY_POSITION_VALUE === "Правый"
-
                   ? "align-items-md-center bg-gray-100 flex mx-auto ml-auto md:mr-0 max-h-96 mt-40 rounded-3xl md:rounded-l-3xl shadow-inner w-56 md:w-8/12 md:rounded-r-none"
                   : "align-items-md-center bg-gray-100 flex mx-auto md:ml-0 max-h-96 mt-40  md:rounded-r-3xl rounded-3xl md:rounded-l-none shadow-inner justify-end w-56 md:w-8/12"
               }`}
@@ -67,7 +63,9 @@ function Project({ project, onShowYoutube }) {
                 : "text-black p-5 m-10 md:w-3/5"
             }`}
           >
-            <div className={`${project.PROPERTY_BACKGROUND_COLOR_VALUE} border-none rounded-2xl shadow-lg mb-3`}>
+            <div
+              className={`${project.PROPERTY_BACKGROUND_COLOR_VALUE} border-none rounded-2xl shadow-lg mb-3`}
+            >
               <div className={`${styles.title1} text-4xl md:text-5xl`}>
                 {project.NAME}
               </div>
@@ -77,7 +75,10 @@ function Project({ project, onShowYoutube }) {
             </div>
             {project.PROPERTY_PHOTOS_DESCRIPTION.map((desc, i) => {
               return (
-                <div className={`${project.PROPERTY_BACKGROUND_COLOR_VALUE} mt-1 flex p-2 border-none shadow-lg rounded-2xlщ`} key={i}>
+                <div
+                  className={`${project.PROPERTY_BACKGROUND_COLOR_VALUE} mt-1 flex p-2 border-none shadow-lg rounded-2xl`}
+                  key={i}
+                >
                   <div>
                     <div className="items-center flex">
                       <Image
@@ -88,7 +89,7 @@ function Project({ project, onShowYoutube }) {
                       <div className="ml-3">{desc}</div>
                     </div>
                   </div>
-                </div>                
+                </div>
               );
             })}
           </div>
