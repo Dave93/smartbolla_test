@@ -12,7 +12,6 @@ import Image from "next/image";
 library.add(faYoutube, faArrowLeft);
 
 function Project({ project, onShowYoutube }) {
-  console.log(project);
   const controls = useAnimation();
   const { ref, inView } = useInView();
 
