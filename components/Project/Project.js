@@ -58,12 +58,12 @@ function Project({ project, onShowYoutube }) {
           <div
             className={`${
               project.PROPERTY_POSITION_VALUE === "Правый"
-                ? "md:order-first text-black p-5 md:w-3/5  m-30"
+                ? "md:order-first text-black p-5 md:w-3/5  m-10"
                 : "text-black p-5 m-10 md:w-3/5"
             }`}
           >
             <div
-              className={`${project.PROPERTY_BACKGROUND_COLOR_VALUE} border-none rounded-2xl shadow-lg mb-3`}
+              className={`${project.PROPERTY_BACKGROUND_COLOR_VALUE} border rounded-2xl shadow-lg mb-3 bg-gradient-to-l from-blue-100 to-green-50`}
             >
               <div className={`${styles.title1} text-4xl md:text-5xl`}>
                 {project.NAME}
@@ -75,7 +75,7 @@ function Project({ project, onShowYoutube }) {
             {project.PROPERTY_PHOTOS_DESCRIPTION.map((desc, i) => {
               return (
                 <div
-                  className={`${project.PROPERTY_BACKGROUND_COLOR_VALUE} mt-1 flex p-2 border-none shadow-lg rounded-2xl`}
+                  className={`${project.PROPERTY_BACKGROUND_COLOR_VALUE} mt-1 flex p-2 border shadow-lg rounded-2xl bg-gradient-to-l from-blue-100 to-green-50`}
                   key={i}
                 >
                   <div>

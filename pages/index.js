@@ -74,7 +74,7 @@ function Home({ products, mainLayoutSocial, projects, indexText }) {
           <YouTube videoId={youtubeId} className="m-auto" />
         </div>
         <div className=" md:mt-30 md:p-10 p-10">
-          <img src="/realizationStep.png" alt="realizationStep" />
+          <img src="/newRealizationStep.png" alt="realizationStep" />
         </div>
         {projects.map((project) => (
           <div key={project.ID}>
