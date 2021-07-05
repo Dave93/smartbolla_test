@@ -63,15 +63,15 @@ function Home({ products, mainLayoutSocial, projects, indexText }) {
           <div
             className="block p-14 md:p-0"
             style={{
-              backgroundImage: `url("/money-3382555-3.jpg")`,
+              backgroundImage: `url("/consultores-especialistas-1024x683.jpg")`,
               backgroundPosition: "top",
             }}
           >
             <Invest products={products} investLang={t("invest")} />
           </div>
         </div>
-        <div className="lg:pt-64 p-12 bg-blue-100 pb-10" id="movie">
-          <YouTube opts={youtubeOptions} className="m-auto" />
+        <div className="mt-0 md:pt-64 pt-10 md:mt-16 bg-blue-100 pb-10" id="movie">
+          <YouTube videoId={youtubeId} className="m-auto" />
         </div>
         <div className=" md:mt-30 md:p-10 p-10">
           <img src="/newRealizationStep.png" alt="realizationStep" />

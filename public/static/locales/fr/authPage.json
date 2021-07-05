@@ -10,6 +10,7 @@
   "weWoldLike": "Nous aimerions recevoir vos commentaires",
   "phoneFilled": "Le champ de téléphone est obligatoire",
   "typingPhone": "Entrez votre numéro de téléphone",
+  "typingEmail": "E-mail",
   "authRegText": "Si votre numéro est enregistré dans le système, il vous suffit de saisir le mot de passe, sinon nous vous enregistrerons.",
   "signIn": "Entrer",
   "sendSms": "Un SMS avec un code d'autorisation a été envoyé à votre numéro.",
