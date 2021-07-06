@@ -1,8 +1,10 @@
 import { MainLayout } from "../../components/MainLayout";
 import { parseCookies } from "../../helpers/";
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import Cookies from "js-cookie";
+import { useRouter } from "next/router";
 
 const setInnerHTML = (elm, html) => {
   elm.innerHTML = html;
@@ -16,9 +18,14 @@ const setInnerHTML = (elm, html) => {
   });
 };
 
-function OrderPayment({ mainLayoutSocial, orderData }) {
+function OrderPayment({ mainLayoutSocial }) {
   const { t } = useTranslation("profilePage");
+  const router = useRouter();
+  const { locale } = router;
+  const { id } = router.query;
   const paymentRef = useRef(null);
+  const [orderData, setOrderData] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
   const commonLang = {
     about: t("about"),
     media: t("media"),
@@ -32,10 +39,34 @@ function OrderPayment({ mainLayoutSocial, orderData }) {
     weWoldLike: t("weWoldLike"),
   };
 
+  const fetchData = async () => {
+    const resOrder = await fetch("https://api.smartbolla.com/api/", {
+      method: "POST",
+      body: JSON.stringify({
+        method: "get.existing.order.data",
+        data: {
+          locale,
+          authToken: Cookies.get("userAuthToken"),
+          id,
+        },
+      }),
+      headers: {
+        ApiToken: "e7r8uGk5KcwrzT6CanBqRbPVag8ILXFC",
+      },
+    });
+
+    let { data: orderData } = await resOrder.json();
+    setOrderData(orderData?.data);
+    setInnerHTML(
+      paymentRef.current,
+      orderData?.data?.PAY_SYSTEM.BUFFERED_OUTPUT
+    );
+  };
+
   useEffect(() => {
-    setInnerHTML(paymentRef.current, orderData.PAY_SYSTEM.BUFFERED_OUTPUT);
+    fetchData();
     return () => {};
-  }, [orderData.PAY_SYSTEM]);
+  }, []);
 
   return (
     <MainLayout
@@ -44,53 +75,57 @@ function OrderPayment({ mainLayoutSocial, orderData }) {
       title={"Order Detail"}
       mainLayoutSocial={mainLayoutSocial}
     >
-      <div>
-        {orderData.ORDER && (
-          <>
-            <div className="py-6">
-              Your order № {orderData.ORDER.ID} of {orderData.ORDER.DATE_INSERT}{" "}
-              has been created successfully.
-            </div>
+      {isLoading ? (
+        <div></div>
+      ) : (
+        <div>
+          {orderData.ORDER && (
+            <>
+              <div className="py-6">
+                Your order № {orderData.ORDER.ID} of{" "}
+                {orderData.ORDER.DATE_INSERT} has been created successfully.
+              </div>
 
-            <h2>Order Payment</h2>
-            <div
-              className="w-2/12"
-              dangerouslySetInnerHTML={{
-                __html: orderData.PAY_SYSTEM.DESCRIPTION,
-              }}
-            ></div>
-            <div
-              className="w-2/12"
-              ref={paymentRef}
-              // dangerouslySetInnerHTML={{
-              //   __html: orderData.PAY_SYSTEM.BUFFERED_OUTPUT,
-              // }}
-            ></div>
-          </>
-        )}
-        {!orderData.ORDER && <h3>Order is not found</h3>}
-        <style jsx global>{`
-          #cardVue button {
-            display: inline-block;
-            width: 100%;
-            height: 3.125rem;
-            border: 1px solid #f6c886;
-            border-radius: 0.375rem;
-            background-color: #f6c886;
-            color: #0d0f13;
-            font: 600 1.5rem/0 "Open Sans", sans-serif;
-            cursor: pointer;
-            transition: all 0.2s;
-            border-radius: 0.3rem;
-          }
+              <h2>Order Payment</h2>
+              <div
+                className="w-2/12"
+                dangerouslySetInnerHTML={{
+                  __html: orderData.PAY_SYSTEM.DESCRIPTION,
+                }}
+              ></div>
+              <div
+                className="w-2/12"
+                ref={paymentRef}
+                // dangerouslySetInnerHTML={{
+                //   __html: orderData.PAY_SYSTEM.BUFFERED_OUTPUT,
+                // }}
+              ></div>
+            </>
+          )}
+          {!orderData.ORDER && <h3>Order is not found</h3>}
+          <style jsx global>{`
+            #cardVue button {
+              display: inline-block;
+              width: 100%;
+              height: 3.125rem;
+              border: 1px solid #f6c886;
+              border-radius: 0.375rem;
+              background-color: #f6c886;
+              color: #0d0f13;
+              font: 600 1.5rem/0 "Open Sans", sans-serif;
+              cursor: pointer;
+              transition: all 0.2s;
+              border-radius: 0.3rem;
+            }
 
-          #cardVue button:hover {
-            border: 1px solid #f6c886;
-            background-color: transparent;
-            color: #f6c886;
-          }
-        `}</style>
-      </div>
+            #cardVue button:hover {
+              border: 1px solid #f6c886;
+              background-color: transparent;
+              color: #f6c886;
+            }
+          `}</style>
+        </div>
+      )}
     </MainLayout>
   );
 }
@@ -112,28 +147,11 @@ export async function getServerSideProps({ locale, req, query }) {
     },
   });
 
-  const resOrder = await fetch("https://api.smartbolla.com/api/", {
-    method: "POST",
-    body: JSON.stringify({
-      method: "get.existing.order.data",
-      data: {
-        locale,
-        authToken: cookieData.userAuthToken,
-        id,
-      },
-    }),
-    headers: {
-      ApiToken: "e7r8uGk5KcwrzT6CanBqRbPVag8ILXFC",
-    },
-  });
-
-  let { data: orderData } = await resOrder.json();
   let { data: mainLayoutSocial } = await socials.json();
   return {
     props: {
       mainLayoutSocial,
       cookieData,
-      orderData: orderData.data,
       authToken: cookieData.userAuthToken,
       productId: cookieData.cartItem,
       ...(await serverSideTranslations(locale, ["profilePage"])),
