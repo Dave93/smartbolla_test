@@ -34,6 +34,8 @@ function Home({ products, mainLayoutSocial, projects, indexText }) {
 
   const [youtubeId, setYoutubeId] = useState(null);
 
+  const mainVideoId = "2IyQj7weVuE";
+
   return (
     <>
       <video
@@ -70,8 +72,20 @@ function Home({ products, mainLayoutSocial, projects, indexText }) {
             <Invest products={products} investLang={t("invest")} />
           </div>
         </div>
-        <div className="mt-0 md:pt-64 pt-10 md:mt-16 bg-blue-100 pb-10" id="movie">
-          <YouTube videoId={youtubeId} className="m-auto" />
+        <div
+          className="mt-0 md:pt-64 pt-10 md:mt-16 bg-blue-100 pb-10"
+          id="movie"
+        >
+          <YouTube
+            videoId={mainVideoId}
+            opts={{
+              playerVars: {
+                showinfo: 0,
+                rel: 0,
+              },
+            }}
+            className="m-auto"
+          />
         </div>
         <div className=" md:mt-30 md:p-10 p-10">
           <img src="/newRealizationStep.png" alt="realizationStep" />
@@ -90,10 +104,10 @@ function Home({ products, mainLayoutSocial, projects, indexText }) {
           <img src="/realizationStep1.png" alt="realizationStep" />
         </div>
         {youtubeId && (
-          <div className="z-[9999] text-black fixed w-full h-full top-0 left-0 flex items-center justify-center">
-            <div className="modal-overlay absolute w-full h-full bg-gray-900 opacity-50 z-[10000]"></div>
+          <div className="z-20 text-black fixed w-full h-full top-0 left-0 flex items-center justify-center">
+            <div className="modal-overlay absolute w-full h-full bg-gray-900 opacity-50 z-30"></div>
 
-            <div className="modal-container mx-auto rounded z-[20000]">
+            <div className="modal-container mx-auto rounded z-40">
               <div
                 onClick={() => {
                   setYoutubeId(null);

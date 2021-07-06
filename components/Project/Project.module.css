@@ -102,7 +102,7 @@
 }
 
 .logo {
-  padding: 22px!important;
+  padding: 22px !important;
 }
 
 .rectangle1 {
@@ -118,7 +118,7 @@
 
 .rectangle2 {
   height: 6%;
-  background: #ED0889;
+  background: #ed0889;
   opacity: 0.2;
   transform: rotate(16.22deg);
   position: absolute;
@@ -138,4 +138,11 @@
   color: red;
   font-size: 50px;
   opacity: 0.7;
+}
+
+@media screen and (max-width: 500px) {
+  .title1 {
+    left: 0;
+    text-align: center;
+  }
 }
