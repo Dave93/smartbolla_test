@@ -60,7 +60,7 @@ function OrderPayment({ mainLayoutSocial, orderData }) {
               }}
             ></div>
             <div
-              className="w-2/12"
+              className="w-5/12"
               ref={paymentRef}
               // dangerouslySetInnerHTML={{
               //   __html: orderData.PAY_SYSTEM.BUFFERED_OUTPUT,
