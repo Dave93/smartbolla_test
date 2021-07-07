@@ -84,7 +84,7 @@ function Home({ products, mainLayoutSocial, projects, indexText }) {
                 rel: 0,
               },
             }}
-            className="m-auto"
+            className="m-auto w-10/12"
           />
         </div>
         <div className=" md:mt-30 md:p-10 p-10">
