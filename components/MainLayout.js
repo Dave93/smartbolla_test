@@ -27,7 +27,6 @@ export function MainLayout({
 
   const [className, setClassName] = useState("");
 
-
   useEffect(() => {
     if (typeof window !== "undefined") {
       window.addEventListener("scroll", changeClass);
@@ -127,20 +126,6 @@ export function MainLayout({
         <meta name="msapplication-TileColor" content="#ffffff" />
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
         <meta name="theme-color" content="#ffffff" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-          rel="preload"
-          href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-          as="style"
-          onLoad="this.onload=null;this.rel='stylesheet'"
-        />
-        <noscript>
-          <link
-            href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-            rel="stylesheet"
-            type="text/css"
-          />
-        </noscript>
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -184,7 +169,7 @@ src="https://www.facebook.com/tr?id=949121602542823&ev=PageView&noscript=1"
         <link
           href="https://fonts.googleapis.com/css?family=Montserrat"
           rel="stylesheet"
-        ></link>
+        />
       </Head>
       <header
         className={`${className} flex justify-between items-center shadow fixed w-full z-10`}

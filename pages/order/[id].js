@@ -16,7 +16,7 @@ const setInnerHTML = (elm, html) => {
   });
 };
 
-function OrderPayment({ mainLayoutSocial, orderData }) {
+function OrderPayment({ mainLayoutSocial, orderData, authToken }) {
   const { t } = useTranslation("profilePage");
   const paymentRef = useRef(null);
   const commonLang = {
@@ -32,10 +32,16 @@ function OrderPayment({ mainLayoutSocial, orderData }) {
     weWoldLike: t("weWoldLike"),
   };
 
-  useEffect(() => {
-    setInnerHTML(paymentRef.current, orderData.PAY_SYSTEM.BUFFERED_OUTPUT);
-    return () => {};
-  }, [orderData.PAY_SYSTEM]);
+  // useEffect(() => {
+  //   setInnerHTML(paymentRef.current, orderData.PAY_SYSTEM.BUFFERED_OUTPUT);
+  //   return () => {};
+  // }, [orderData.PAY_SYSTEM]);
+
+  const token = Buffer.from(
+    JSON.stringify({
+      t: authToken,
+    })
+  ).toString("base64");
 
   return (
     <MainLayout
@@ -47,28 +53,13 @@ function OrderPayment({ mainLayoutSocial, orderData }) {
       <div>
         {orderData.ORDER && (
           <>
-            <div className="py-6">
-              Your order № {orderData.ORDER.ID} of {orderData.ORDER.DATE_INSERT}{" "}
-              has been created successfully.
-            </div>
-
-            <h2>Order Payment</h2>
-            <div
-              className="w-2/12"
-              dangerouslySetInnerHTML={{
-                __html: orderData.PAY_SYSTEM.DESCRIPTION,
-              }}
-            ></div>
-            <div
-              className="w-5/12"
-              ref={paymentRef}
-              // dangerouslySetInnerHTML={{
-              //   __html: orderData.PAY_SYSTEM.BUFFERED_OUTPUT,
-              // }}
-            ></div>
+            <iframe
+              className="h-80 w-10/12"
+              src={`https://api.smartbolla.com/order/?ORDER_ID=${orderData.ORDER.ID}&kalit=${token}`}
+            ></iframe>
           </>
         )}
-        {!orderData.ORDER && <h3>Order is not found</h3>}
+        {/* {!orderData.ORDER && <h3>Order is not found</h3>} */}
         <style jsx global>{`
           #cardVue button {
             display: inline-block;
