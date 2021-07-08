@@ -65,8 +65,9 @@ function Home({ products, mainLayoutSocial, projects, indexText }) {
           <div
             className="block p-14 md:p-0"
             style={{
-              backgroundImage: `url("/consultores-especialistas-1024x683.jpg")`,
+              backgroundImage: `url("/img/mobileMain.jpg")`,
               backgroundPosition: "top",
+              backgroundSize: "cover"
             }}
           >
             <Invest products={products} investLang={t("invest")} />
