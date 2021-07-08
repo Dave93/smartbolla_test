@@ -66,7 +66,7 @@ function Home({ products, mainLayoutSocial, projects, indexText }) {
             className="block p-14 md:p-0"
             style={{
               backgroundImage: `url("/img/mobileMain.jpg")`,
-              backgroundPosition: "top",
+              backgroundPosition: "center",
               backgroundSize: "cover"
             }}
           >
