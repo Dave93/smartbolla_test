@@ -34,7 +34,7 @@ function Home({ products, mainLayoutSocial, projects, indexText }) {
 
   const [youtubeId, setYoutubeId] = useState(null);
 
-  const mainVideoId = "2IyQj7weVuE";
+  const mainVideoId = "x-3MrBAW6xc";
 
   return (
     <>
