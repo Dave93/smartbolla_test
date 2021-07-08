@@ -61,15 +61,15 @@ export default function Footer({ commonLang }) {
         background: "linear-gradient(270deg, #0C0E12 0.14%, #242C40 100%)",
       }}
     >
-      <div id="tabs" className="flex justify-around">
+      <div id="tabs" className="flex justify-around items-baseline">
         {navButtons.map((button, i) => (
           <Link href={button.path} key={i} prefetch={false}>
-            <a className="w-full focus:text-teal-500 hover:text-teal-500 justify-center inline-block text-center pt-2 pb-1 text-decoration-none">
+            <a className="focus:text-teal-500 hover:text-teal-500 justify-center inline-block text-center pt-2 pb-1 text-decoration-none">
               <FontAwesomeIcon
                 icon={button.icon}
                 className={`${
                   pathname === button.path ? "text-white" : styles.siteGoldColor
-                } w-10 m-auto`}
+                } w-10 h-6 m-auto`}
               />
               <span
                 className={`${
