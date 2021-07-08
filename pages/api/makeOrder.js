@@ -8,8 +8,8 @@ export default async function handler(req, res) {
         ApiToken: "e7r8uGk5KcwrzT6CanBqRbPVag8ILXFC",
       },
     });
-    // const text = await resCounter.text();
-    // console.log(text);
+    const text = await resCounter.text();
+    console.log(text);
     const result = await resCounter.json();
     return res.json(result);
   } catch (e) {

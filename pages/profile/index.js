@@ -37,17 +37,14 @@ function Profile({ mainLayoutSocial, balance }) {
       mainLayoutSocial={mainLayoutSocial}
       footerLang={footerLang}
     >
-      <div className='md:flex justify-around items-center'>
-        <div className=''>
+      <div className="md:flex justify-around items-center">
+        <div className="">
           <div>
             <div className="font-bold text-4xl py-5">{t("yourBalance")}</div>
             <div
               className={`${styles.tokenCount} bott flex-col items-center font-bold justify-center text-9xl`}
             >
-              <span>{balance.TOKENS_COUNT}</span>
-              <div className={`${styles.balanceColsText} font-bold text-4xl `}>
-                {t("coins")}
-              </div>
+              <span>{balance.TOTAL_PERCENT} %</span>
             </div>
           </div>
           <div>
@@ -63,7 +60,7 @@ function Profile({ mainLayoutSocial, balance }) {
                 <Tr>
                   <Th className="text-uppercase w-1/12">№</Th>
                   <Th className="text-uppercase w-1/6">{t("date")}</Th>
-                  <Th className="text-uppercase w-1/6">{t("coins")}</Th>
+                  <Th className="text-uppercase w-1/6">%</Th>
                   <Th className="text-uppercase w-1/6">{t("price")}</Th>
                   <Th className="text-uppercase w-1/6">{t("status")}</Th>
                   <Th className="text-uppercase w-1/6">{t("action")}</Th>
@@ -75,9 +72,7 @@ function Profile({ mainLayoutSocial, balance }) {
                     <Tr>
                       <Td>{order.ID}</Td>
                       <Td>{order.DATE_INSERT}</Td>
-                      <Td>
-                        {order.PROPERTIES.TOKEN_COUNTS.VALUE} {t("coins")}
-                      </Td>
+                      <Td>{order.PROPERTIES.TOKEN_COUNTS.VALUE} %</Td>
                       <Td>${+order.PRICE}</Td>
                       <Td>
                         {order.PAYED == "Y" ? (
@@ -119,15 +114,14 @@ function Profile({ mainLayoutSocial, balance }) {
 }
 
 export async function getServerSideProps({ locale, req, res }) {
-
   const cookieData = parseCookies(req);
   let authPage = "/auth?backUrl=/profile";
-  
+
   if (locale != "ru") {
     authPage =
       "/" + locale + authPage + "?backUrl=" + "/" + locale + "/profile";
   }
-  
+
   if (res && !cookieData.userAuthToken) {
     return {
       redirect: {
