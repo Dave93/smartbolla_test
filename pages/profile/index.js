@@ -72,7 +72,7 @@ function Profile({ mainLayoutSocial, balance }) {
                     <Tr>
                       <Td>{order.ID}</Td>
                       <Td>{order.DATE_INSERT}</Td>
-                      <Td>{order.PROPERTIES.TOKEN_COUNTS.VALUE} %</Td>
+                      <Td>{order.PROPERTIES.PERCENT.VALUE} %</Td>
                       <Td>${+order.PRICE}</Td>
                       <Td>
                         {order.PAYED == "Y" ? (
