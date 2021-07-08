@@ -16,3 +16,12 @@
 .projects {
   margin-top: 28%;
 }
+
+.modal-container {
+  position: relative;
+}
+
+.modal-container .modal-close {
+  padding: 12px 29px 0 0;
+  margin: 0;
+}
