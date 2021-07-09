@@ -80,7 +80,7 @@ export default function Invest({ products, investLang }) {
         progressColorTo="#a15400"
         verticalOffset="1rem"
         progressSize={8}
-        trackColor="#ffffff"
+        trackColor="#ffffff94"
         trackSize={20}
         data={sliderValues} //...
         dataIndex={0}
