@@ -52,6 +52,7 @@ export function MainLayout({
           name="keywords"
           content="Smartbolla,paycent,dancent,adcent,shopshock,sandychat,u-freelancer,u-design,virtual business"
         />
+        <meta name="facebook-domain-verification" content="s1t7pedgkad2s7v32ndk235z1sskdu" />
         <title>{title}</title>
         <link
           rel="apple-touch-icon"
