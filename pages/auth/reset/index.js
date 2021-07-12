@@ -2,16 +2,33 @@ import { MainLayout } from "../../../components/MainLayout";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import PhoneInput from "react-phone-input-2";
-import React, { useState } from "react";
+import React, { useState, Fragment } from "react";
 import { Formik } from "formik";
 import { useCookies } from "react-cookie";
 import "react-phone-input-2/lib/style.css";
 import styles from "../Auth.module.css";
 import { useRouter } from "next/router";
 import { isMobile } from "react-device-detect";
+import { Listbox, Transition } from "@headlessui/react";
+import { CheckIcon, SelectorIcon } from "@heroicons/react/solid";
 
 let timerInvetval = null;
 let intervalTime = 60;
+
+const authType = [
+  {
+    id: "email",
+    name: "E-mail",
+  },
+  {
+    id: "phone",
+    name: "Phone",
+  },
+];
+
+function classNames(...classes) {
+  return classes.filter(Boolean).join(" ");
+}
 
 function AuthPage({ mainLayoutSocial }) {
   const { t } = useTranslation("authPage");
@@ -22,7 +39,7 @@ function AuthPage({ mainLayoutSocial }) {
     profile: t("profile"),
     investors: t("investors"),
     policies: t("policies"),
-    phoneNotFound: t("phoneNotFound")
+    phoneNotFound: t("phoneNotFound"),
   };
 
   const footerLang = {
@@ -30,6 +47,7 @@ function AuthPage({ mainLayoutSocial }) {
     weWoldLike: t("weWoldLike"),
   };
 
+  const [authTypeSelect, setAuthTypeSelect] = useState(authType[0]);
   const [submitErrors, setSubmitError] = useState("");
 
   const [isAjaxLoading, setIsAjaxLoading] = useState(false);
@@ -52,14 +70,12 @@ function AuthPage({ mainLayoutSocial }) {
     }, 1000);
   };
 
-  const tryReset = async (phone, password) => {
+  const tryReset = async (phone, email) => {
     const res = await fetch("/api/auth", {
       method: "POST",
       body: JSON.stringify({
         method: "phone.auth.reset",
-        data: {
-          phone,
-        },
+        data: authTypeSelect.id == "email" ? { email } : { phone },
       }),
       headers: {
         ApiToken: "e7r8uGk5KcwrzT6CanBqRbPVag8ILXFC",
@@ -97,15 +113,19 @@ function AuthPage({ mainLayoutSocial }) {
           validate={(values) => {
             const errors = {};
 
-            if (!values.phone) {
+            if (authTypeSelect.id == "phone" && !values.phone) {
               errors.phone = t("phoneFilled");
+            }
+
+            if (authTypeSelect.id == "email" && !values.email) {
+              errors.phone = t("emailFilled");
             }
             return errors;
           }}
           onSubmit={async (values, { setSubmitting }) => {
             setIsAjaxLoading(true);
             setSubmitError("");
-            await tryReset(values.phone);
+            await tryReset(values.phone, values.email);
             setSubmitting(false);
             setIsAjaxLoading(false);
           }}
@@ -131,22 +151,119 @@ function AuthPage({ mainLayoutSocial }) {
                 </div>
               )}
               <div className="mb-6 text-black">
-                <label className="block mb-3 text-white" htmlFor="">
-                  {t("typingPhone")}
+                <label className="block mb-3 " htmlFor="">
+                  {authTypeSelect.id == "email"
+                    ? t("typingEmail")
+                    : t("typingPhone")}
                 </label>
-                <PhoneInput
-                  country={"us"}
-                  value={values.phone}
-                  inputProps={{
-                    name: "phone",
-                  }}
-                  onChange={(phone, rer, e) => {
-                    handleChange(e);
-                  }}
-                  onBlur={handleBlur}
-                  autoComplete="off"
-                  inputClass="w-full h-10"
-                />
+                <div className="flex items-center">
+                  <Listbox value={authTypeSelect} onChange={setAuthTypeSelect}>
+                    {({ open }) => (
+                      <>
+                        <div className="mr-2 relative">
+                          <Listbox.Button className="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                            <span className="flex items-center">
+                              <span className="ml-3 block truncate">
+                                {authTypeSelect.name}
+                              </span>
+                            </span>
+                            <span className="ml-3 absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
+                              <SelectorIcon
+                                className="h-5 w-5 text-gray-400"
+                                aria-hidden="true"
+                              />
+                            </span>
+                          </Listbox.Button>
+
+                          <Transition
+                            show={open}
+                            as={Fragment}
+                            leave="transition ease-in duration-100"
+                            leaveFrom="opacity-100"
+                            leaveTo="opacity-0"
+                          >
+                            <Listbox.Options
+                              static
+                              className="absolute z-10 mt-1 w-full bg-white shadow-lg max-h-56 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm"
+                            >
+                              {authType.map((person) => (
+                                <Listbox.Option
+                                  key={person.id}
+                                  className={({ active }) =>
+                                    classNames(
+                                      active
+                                        ? "text-white bg-indigo-600"
+                                        : "text-gray-900",
+                                      "cursor-default select-none relative py-2 pl-3 pr-9"
+                                    )
+                                  }
+                                  value={person}
+                                >
+                                  {({ selected, active }) => (
+                                    <>
+                                      <div className="flex items-center">
+                                        <span
+                                          className={classNames(
+                                            selected
+                                              ? "font-semibold"
+                                              : "font-normal",
+                                            "ml-3 block truncate"
+                                          )}
+                                        >
+                                          {person.name}
+                                        </span>
+                                      </div>
+
+                                      {selected ? (
+                                        <span
+                                          className={classNames(
+                                            active
+                                              ? "text-white"
+                                              : "text-indigo-600",
+                                            "absolute inset-y-0 right-0 flex items-center pr-4"
+                                          )}
+                                        >
+                                          <CheckIcon
+                                            className="h-5 w-5"
+                                            aria-hidden="true"
+                                          />
+                                        </span>
+                                      ) : null}
+                                    </>
+                                  )}
+                                </Listbox.Option>
+                              ))}
+                            </Listbox.Options>
+                          </Transition>
+                        </div>
+                      </>
+                    )}
+                  </Listbox>
+                  {authTypeSelect.id == "email" ? (
+                    <input
+                      type="email"
+                      name="email"
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      value={values.email}
+                      className="text-black w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500"
+                    />
+                  ) : (
+                    <PhoneInput
+                      country={"us"}
+                      value={values.phone}
+                      inputProps={{
+                        name: "phone",
+                      }}
+                      onChange={(phone, rer, e) => {
+                        handleChange(e);
+                      }}
+                      onBlur={handleBlur}
+                      autoComplete="off"
+                      inputClass="w-full h-10"
+                    />
+                  )}
+                </div>
               </div>
               <button type="submit" className={styles.formControlSubmitButton}>
                 {t("signIn")}

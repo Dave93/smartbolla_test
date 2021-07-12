@@ -9,6 +9,7 @@
   "allRightsRes": "All rights reserved.",
   "weWoldLike": "We would like to hear from you",
   "phoneFilled": "Phone field is required",
+  "emailFilled": "Phone field is required",
   "typingPhone": "Enter your phone number",
   "typingEmail": "Enter your Email",
   "authRegText": "If your number is registered in the system, you just have to enter the password, if not, we will register you.",
