@@ -357,7 +357,7 @@ function Order({
                   {showModal ? (
                     <>
                       <div className="justify-center text-black items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
-                        <div className="relative w-auto my-6 mx-auto max-w-3xl">
+                        <div className="relative my-6 mx-auto md:max-w-3xl w-full">
                           {/*content*/}
                           <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                             {/*header*/}
@@ -433,9 +433,9 @@ function Order({
           <h2>{t("summary")}</h2>
           <div className="bg-white p-10 rounded-md shadow-md sticky text-black top-20 tracking-wider uppercase">
             <ul>
-              <li>
+              {/* <li>
                 <b>{t("tokenCount")}: </b> {orderData.TOKEN_COUNT}
-              </li>
+              </li> */}
               <li>
                 <b>{t("totalSummary")}: </b> ${orderData.ORDER_PRICE}
               </li>
