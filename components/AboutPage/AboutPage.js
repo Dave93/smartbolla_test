@@ -21,12 +21,15 @@ function About({ aboutText }) {
             </div>
           </a>
           <a
-            href="https://api.smartbolla.com/upload/docs/Service_License.pdf"
+            href="https://api.smartbolla.com/upload/docs/business_plan.pdf"
             className="text-2xl"
           >
             <div className="lg:flex mt-2 hover:underline">
               <div>{translation("documentLicen")}</div>
-              <FontAwesomeIcon icon={faFileAlt} className="w-10 text-6xl mr-2" />
+              <FontAwesomeIcon
+                icon={faFileAlt}
+                className="w-10 text-6xl mr-2"
+              />
             </div>
           </a>
         </div>
