@@ -42,7 +42,7 @@ function Profile({ mainLayoutSocial, balance }) {
           <div>
             <div className="font-bold text-4xl py-5">{t("yourBalance")}</div>
             <div
-              className={`${styles.tokenCount} bott flex-col items-center font-bold justify-center text-9xl`}
+              className={`${styles.tokenCount} bott flex-col items-center font-bold justify-center md:text-9xl text-3xl`}
             >
               <span>{balance.TOTAL_PERCENT} %</span>
             </div>
