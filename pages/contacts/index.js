@@ -76,8 +76,9 @@ function Contacts({ contactAddress, social }) {
             </div>
             <div
               className={styles.phoneLink}
-              dangerouslySetInnerHTML={{ __html: contactAddress.PHONE }}
-            />
+            >
+              <a class="text-black" href={`tel:${contactAddress.PHONE}`}>{contactAddress.PHONE}</a>
+            </div>
           </div>
           <div className="p-4">
             {social.SOC_ICONS.map((item) => (

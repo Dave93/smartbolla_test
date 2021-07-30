@@ -6,5 +6,9 @@
   "projects": "Projets",
   "investors": "Investisseurs",
   "policies": "Stratégies",
-  "title": "Stratégies"
+  "title": "Stratégies",
+  "paymentPolicy": "Politique de paiement",
+  "termsPolicy": "Politique de conditions d'utilisation",
+  "privacyPolicy": "Politique de confidentialité",
+  "refundPolicy": "Politique de remboursement"
 }

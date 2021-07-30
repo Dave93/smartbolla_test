@@ -6,5 +6,9 @@
   "projects": "Иловалар",
   "investors": "Инвесторлар",
   "policies": "Сиёсат",
-  "title": "Сиёсат"
+  "title": "Сиёсат",
+  "paymentPolicy": "Тўлов сиёсати",
+  "termsPolicy": "Хизмат кўрсатиш сиёсати шартлари",
+  "privacyPolicy": "Махфийлик сиёсати",
+  "refundPolicy": "Қайтариш сиёсати"
 }

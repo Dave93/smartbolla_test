@@ -7,5 +7,9 @@
     "projects": "المشاريع",
     "investors": "المستثمرين",
     "policies": "سياسات",
-    "title": "سياسات"
-} 
+    "title": "سياسات",
+    "paymentPolicy": "الية الدفع",
+    "termsPolicy": "سياسة شروط الخدمة",
+    "privacyPolicy": "سياسة خاصة",
+    "refundPolicy": "سياسة الاسترجاع",
+}
