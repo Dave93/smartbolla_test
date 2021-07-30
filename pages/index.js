@@ -5,7 +5,7 @@ import Invest from "../components/Invest/Invest";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Project from "../components/Project/Project";
 import styles from "./index.module.css";
-import { youtubeModal } from "./index.module.css";
+import { youtubeModal, movieIframe } from "./index.module.css";
 import YouTube from "react-youtube";
 import { useTranslation } from "next-i18next";
 
@@ -38,15 +38,6 @@ function Home({ products, mainLayoutSocial, projects, indexText }) {
 
   return (
     <>
-      <video
-        className="videoTag"
-        autoPlay
-        loop
-        muted
-        className="absolute hidden md:block"
-      >
-        <source src="/sample.mp4/" type="video/mp4" />
-      </video>
 
       <MainLayout
         title={"Smartbolla"}
@@ -54,7 +45,16 @@ function Home({ products, mainLayoutSocial, projects, indexText }) {
         footerLang={footerLang}
         mainLayoutSocial={mainLayoutSocial}
       >
-        <div className="md:flex md:mt-64 justify-around">
+          <video
+              className="videoTag"
+              autoPlay
+              loop
+              muted
+              className="absolute hidden md:block  md:relative"
+          >
+              <source src="/sample.mp4/" type="video/mp4" />
+          </video>
+        <div className="sm:block md:hidden md:mt-64 justify-around">
           <div className="hidden md:block">
             <TextOnVideo
               products={products}
@@ -74,7 +74,7 @@ function Home({ products, mainLayoutSocial, projects, indexText }) {
           </div>
         </div>
         <div
-          className="mt-0 md:pt-64 pt-10 md:mt-16 bg-blue-100 pb-10"
+          className="pt-10 bg-blue-100 pb-10"
           id="movie"
         >
           <YouTube
@@ -85,7 +85,7 @@ function Home({ products, mainLayoutSocial, projects, indexText }) {
                 rel: 0,
               },
             }}
-            className="m-auto w-10/12"
+            className={`${movieIframe} sm:h-80 m-auto w-10/12`}
           />
         </div>
         <div className=" md:mt-30 md:p-10 p-10">

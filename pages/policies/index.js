@@ -13,6 +13,10 @@ export default function Policies({ mainLayoutSocial }) {
     investors: t("investors"),
     projects: t("projects"),
     policies: t("policies"),
+    paymentPolicy: t("paymentPolicy"),
+    termsPolicy: t("termsPolicy"),
+    privacyPolicy: t("privacyPolicy"),
+    refundPolicy: t("refundPolicy"),
   };
   return (
     <MainLayout
@@ -23,22 +27,22 @@ export default function Policies({ mainLayoutSocial }) {
       <div className={`text-center uppercase`}>
         <Link href="/policies/payment">
           <a className="hover:underline">
-            <div>Payment policy</div>
+            <div>{t('paymentPolicy')}</div>
           </a>
         </Link>
         <Link href="/policies/terms">
           <a className="hover:underline">
-            <div>Terms of service policy</div>
+            <div>{t("termsPolicy")}</div>
           </a>
         </Link>
         <Link href="/policies/privacy">
           <a className="hover:underline">
-            <div>Privacy policy</div>
+            <div>{t("privacyPolicy")}</div>
           </a>
         </Link>
         <Link href="/policies/refund">
           <a className="hover:underline">
-            <div>Refund policy</div>
+            <div>{t("refundPolicy")}</div>
           </a>
         </Link>
       </div>

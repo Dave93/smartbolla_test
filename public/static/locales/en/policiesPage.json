@@ -6,5 +6,9 @@
   "projects": "Projects",
   "investors": "Investors",
   "policies": "policies",
-  "title": "policies"
+  "title": "policies",
+  "paymentPolicy": "Payment policy",
+  "termsPolicy": "Terms of service policy",
+  "privacyPolicy": "Privacy policy",
+  "refundPolicy": "Refund policy"
 }

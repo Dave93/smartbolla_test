@@ -280,7 +280,7 @@ export default function Payment({ mainLayoutSocial }) {
           </p>
           <Link href={"/policies"}>
             <a>
-              <FontAwesomeIcon icon={faArrowLeft} />
+              <FontAwesomeIcon class="w-5" icon={faArrowLeft} />
             </a>
           </Link>
         </div>
