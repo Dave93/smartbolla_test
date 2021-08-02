@@ -54,7 +54,7 @@ function Home({ products, mainLayoutSocial, projects, indexText }) {
           >
               <source src="/sample.mp4/" type="video/mp4" />
           </video>
-        <div className="sm:block md:flex md:mt-64 md:mb-44 justify-around">
+        <div className="sm:block md:flex md:mt-64 md:mb-64 justify-around">
           <div className="hidden md:block">
             <TextOnVideo
               products={products}
