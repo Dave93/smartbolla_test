@@ -50,11 +50,11 @@ function Home({ products, mainLayoutSocial, projects, indexText }) {
               autoPlay
               loop
               muted
-              className="absolute hidden md:block  md:relative"
+              className="absolute hidden md:block"
           >
               <source src="/sample.mp4/" type="video/mp4" />
           </video>
-        <div className="sm:block md:hidden md:mt-64 justify-around">
+        <div className="sm:block md:flex md:mt-64 justify-around">
           <div className="hidden md:block">
             <TextOnVideo
               products={products}
