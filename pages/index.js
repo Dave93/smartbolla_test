@@ -54,7 +54,7 @@ function Home({ products, mainLayoutSocial, projects, indexText }) {
           >
               <source src="/sample.mp4/" type="video/mp4" />
           </video>
-        <div className="sm:block md:flex md:mt-64 justify-around">
+        <div className="sm:block md:flex md:mt-64 md:mb-44 justify-around">
           <div className="hidden md:block">
             <TextOnVideo
               products={products}
@@ -74,7 +74,7 @@ function Home({ products, mainLayoutSocial, projects, indexText }) {
           </div>
         </div>
         <div
-          className="pt-10 bg-blue-100 pb-10"
+          className="pt-10 md:pt-20 bg-blue-100 pb-10"
           id="movie"
         >
           <YouTube
