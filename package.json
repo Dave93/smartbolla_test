@@ -44,6 +44,7 @@
     "react-flags-select": "^2.1.2",
     "react-ga": "^3.3.0",
     "react-images": "^1.2.0-beta.6",
+    "react-input-checkbox": "^0.1.6",
     "react-intersection-observer": "^8.31.0",
     "react-measure": "^2.5.2",
     "react-phone-input-2": "^2.13.9",

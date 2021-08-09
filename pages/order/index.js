@@ -14,6 +14,7 @@ import readAsDataURL from "../../helpers/file_to_string";
 import { useRouter } from "next/router";
 import { isMobile } from "react-device-detect";
 import { useCookies } from "react-cookie";
+import { Checkbox } from "react-input-checkbox";
 
 function Order({
   cookieData,
@@ -344,12 +345,16 @@ function Order({
                       setShowModal(true);
                     }}
                   >
-                    <Field
+                    {/* <Field
                       type="checkbox"
                       name="agreement"
                       value="Y"
                       checked={isAgreementChecked}
-                    />
+                    /> */}
+                    <Checkbox
+                      theme="fancy-checkbox"
+                      value={isAgreementChecked}
+                    ></Checkbox>
                     <div className="cursor-pointer ml-2">
                       {t("agreenetInputText")}
                     </div>
