@@ -20,11 +20,11 @@ export default function Footer({ commonLang }) {
       path: "/about",
       icon: faAddressCard,
     },
-    {
-      label: commonLang.media,
-      path: "/media",
-      icon: faPhotoVideo,
-    },
+    // {
+    //   label: commonLang.media,
+    //   path: "/media",
+    //   icon: faPhotoVideo,
+    // },
     {
       label: commonLang.contact,
       path: "/contacts",
@@ -40,17 +40,17 @@ export default function Footer({ commonLang }) {
       path: "/investors",
       icon: faUsers,
     },
-    {
-      label: commonLang.projects,
-      path: "/projects",
-      icon: faProjectDiagram,
-    },
+    // {
+    //   label: commonLang.projects,
+    //   path: "/projects",
+    //   icon: faProjectDiagram,
+    // },
 
-    {
-      label: commonLang.policies,
-      path: "/policies",
-      icon: faUserShield,
-    },
+    // {
+    //   label: commonLang.policies,
+    //   path: "/policies",
+    //   icon: faUserShield,
+    // },
   ];
   const { pathname } = useRouter();
   return (
