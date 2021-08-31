@@ -56,6 +56,7 @@ function OrderPayment({ mainLayoutSocial, orderData, authToken }) {
             <iframe
               className="md:h-80 md:w-10/12 h-96"
               src={`https://api.smartbolla.com/order/?ORDER_ID=${orderData.ORDER.ID}&kalit=${token}`}
+              sandbox="allow-same-origin allow-top-navigation allow-scripts allow-forms"
             ></iframe>
           </>
         )}
