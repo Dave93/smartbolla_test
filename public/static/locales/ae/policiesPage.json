@@ -1,15 +1,15 @@
 
 {
-    "about": "معلومات عنا",
-    "media": "وسائط",
+    "about": "عن الشركة",
+    "media": "لوسائط",
     "contact": "اتصل بنا",
-    "profile": "حساب تعريفي",
+    "profile": "نبذة عنا",
     "projects": "المشاريع",
-    "investors": "المستثمرين",
-    "policies": "سياسات",
+    "investors": "المستثمرون",
+    "policies": "السياسات",
     "title": "سياسات",
     "paymentPolicy": "الية الدفع",
     "termsPolicy": "سياسة شروط الخدمة",
     "privacyPolicy": "سياسة خاصة",
-    "refundPolicy": "سياسة الاسترجاع",
+    "refundPolicy": "سياسة الاسترجاع"
 }

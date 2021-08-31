@@ -1,9 +1,9 @@
 {
-    "about": "معلومات عنا",
-    "media": "وسائط",
+    "about": "عن الشركة",
+    "media": "لوسائط",
     "contact": "اتصل بنا",
-    "profile": "حساب تعريفي",
+    "profile": "نبذة عنا",
     "projects": "المشاريع",
-    "investors": "المستثمرين",
-    "policies": "سياسات"
+    "investors": "المستثمرون",
+    "policies": "السياسات"
 }

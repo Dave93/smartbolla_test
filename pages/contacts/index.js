@@ -183,7 +183,7 @@ function Contacts({ contactAddress, social }) {
                 />
                 <textarea
                   name="message"
-                  placeholder={t("messagaPlaceholder")}
+                  placeholder={t("messagePlaceholder")}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.message}

@@ -1,22 +1,21 @@
 {
-  "about": "معلومات عنا",
-  "media": "وسائط",
+  "about": "عن الشركة",
+  "media": "لوسائط",
   "contact": "اتصل بنا",
+  "profile": "نبذة عنا",
   "projects": "المشاريع",
-  "profile": "حساب تعريفي",
-  "investors": "المستثمرين",
+  "investors": "المستثمرون",
+  "policies": "السياسات",
   "yourTime": "وقتك.",
   "yourGoals": "أهدافك.",
   "yourBoss": "أنت الزعيم.",
   "yourInvest": "استثمر في مستقبلك.",
-  "invest": "استثمار",
+  "invest": "استثمر",
   "title": "مؤشراتنا",
-  "team": "فريق",
+  "team": "الفريق",
   "applications": "التطبيقات",
-  "cofounders": "المؤسسون المشاركون",
+  "cofounders": "المؤسسين",
   "allRightsRes": "تم استلام جميع الحقوق.",
   "weWoldLike": "نود أن نسمع منك",
-  "aboutTokens": "حول الرموز",
-  "policies": "سياسات"
-  
+  "aboutTokens": "حول الرموز"
 }

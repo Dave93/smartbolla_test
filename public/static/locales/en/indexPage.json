@@ -1,9 +1,11 @@
 {
   "about": "About us",
   "media": "Media",
-  "projects": "Projects",
   "contact": "Contact",
-  "profile": "Profle",
+  "profile": "Profile",
+  "projects": "Projects",
+  "investors": "Investors",
+  "policies": "Policies",
   "yourTime": "Your time.",
   "yourGoals": "Your goals.",
   "yourBoss": "You are the boss.",
@@ -12,10 +14,8 @@
   "title": "Our indicators",
   "team": "Team",
   "applications": "Applications",
-  "investors": "Investors",
   "cofounders": "Co-founders",
   "allRightsRes": "All rights reserved.",
   "weWoldLike": "We would like to hear from you",
-  "aboutTokens": "About tokens",
-  "policies": "policies"
+  "aboutTokens": "About tokens"
 }
