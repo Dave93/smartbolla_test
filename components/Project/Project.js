@@ -65,8 +65,28 @@ function Project({ project, onShowYoutube }) {
             <div
               className={`${project.PROPERTY_BACKGROUND_COLOR_VALUE} border rounded-2xl shadow-lg mb-3 bg-gradient-to-l from-blue-100 to-green-50`}
             >
-              <div className={`${styles.title1} text-4xl md:text-5xl`}>
-                {project.NAME}
+              <div className={`${styles.title1} flow-root text-4xl md:text-5xl`}>
+                <div className="float-left">{project.NAME}</div>
+                <div className="float-right">
+                  {project.PROPERTY_PLAYMARKET_LINK_VALUE && (
+                      <a href={project.PROPERTY_PLAYMARKET_LINK_VALUE} target="_blank" className="pr-3">
+                        <Image
+                            src="/playmarket.png"
+                            width={150}
+                            height={70}
+                        />
+                      </a>
+                  )}
+                  {project.PROPERTY_APPSTORE_LINK_VALUE && (
+                      <a href={project.PROPERTY_APPSTORE_LINK_VALUE} target="_blank">
+                        <Image
+                            src="/appstore.png"
+                            width={150}
+                            height={70}
+                        />
+                      </a>
+                  )}
+                </div>
               </div>
               <div className="uppercase px-4 font-bold">
                 {project.PREVIEW_TEXT}

@@ -160,7 +160,6 @@ export async function getServerSideProps({ locale }) {
 
   let { data: mainLayoutSocial } = await socials.json();
   let { data: projects } = await resProjects.json();
-
   return {
     props: {
       mainLayoutSocial,
