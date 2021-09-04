@@ -66,8 +66,8 @@ function Project({ project, onShowYoutube }) {
               className={`${project.PROPERTY_BACKGROUND_COLOR_VALUE} border rounded-2xl shadow-lg mb-3 bg-gradient-to-l from-blue-100 to-green-50`}
             >
               <div className={`${styles.title1} flow-root text-4xl md:text-5xl`}>
-                <div className="float-left">{project.NAME}</div>
-                <div className="float-right">
+                <div className="md:float-left">{project.NAME}</div>
+                <div className="md:float-right">
                   {project.PROPERTY_PLAYMARKET_LINK_VALUE && (
                       <a href={project.PROPERTY_PLAYMARKET_LINK_VALUE} target="_blank" className="pr-3">
                         <Image
