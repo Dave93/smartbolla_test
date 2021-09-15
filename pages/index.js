@@ -38,22 +38,21 @@ function Home({ products, mainLayoutSocial, projects, indexText }) {
 
   return (
     <>
-
       <MainLayout
         title={"Smartbolla"}
         commonLang={commonLang}
         footerLang={footerLang}
         mainLayoutSocial={mainLayoutSocial}
       >
-          <video
-              className="videoTag"
-              autoPlay
-              loop
-              muted
-              className="absolute hidden md:block"
-          >
-              <source src="/sample.mp4/" type="video/mp4" />
-          </video>
+        <video
+          className="videoTag"
+          autoPlay
+          loop
+          muted
+          className="absolute hidden md:block"
+        >
+          <source src="/sample.mp4/" type="video/mp4" />
+        </video>
         <div className="sm:block md:flex md:mt-64 md:mb-64 justify-around">
           <div className="hidden md:block">
             <TextOnVideo
@@ -63,20 +62,17 @@ function Home({ products, mainLayoutSocial, projects, indexText }) {
             />
           </div>
           <div
-            className="block p-14 md:p-0"
+            className="block p-14 md:p-0 min-h-screen md:min-h-0"
             style={{
-              backgroundImage: `url("/img/mobileMain.jpg")`,
+              backgroundImage: `url("/img/mobileBanner.jpg")`,
               backgroundPosition: "top",
-              backgroundSize: "cover"
+              backgroundSize: "cover",
             }}
           >
             <Invest products={products} investLang={t("invest")} />
           </div>
         </div>
-        <div
-          className="pt-10 md:pt-20 bg-blue-100 pb-10"
-          id="movie"
-        >
+        <div className="pt-10 md:pt-20 bg-blue-100 pb-10" id="movie">
           <YouTube
             videoId={mainVideoId}
             opts={{

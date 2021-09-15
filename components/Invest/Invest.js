@@ -69,7 +69,7 @@ export default function Invest({ products, investLang }) {
 
   return (
     <div className={`w-min m-auto`}>
-      <CircularSlider
+      {/* <CircularSlider
         label=" &nbsp;&nbsp;"
         prependToValue="$"
         labelColor="#f6c886"
@@ -123,7 +123,7 @@ export default function Invest({ products, investLang }) {
           </svg>
         )}
         {!isLoadingBasket && investLang}
-      </button>
+      </button> */}
       {/*<div className={styles.circle}>
           <RenderCircular />
         </div>*/}
