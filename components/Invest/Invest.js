@@ -71,7 +71,7 @@ export default function Invest({ products, investLang }) {
 
   return (
     <div className={`w-min m-auto`}>
-      {/* {locale == "en" && (
+      {locale == "en" && (
         <>
           <CircularSlider
             label=" &nbsp;&nbsp;"
@@ -129,7 +129,7 @@ export default function Invest({ products, investLang }) {
             {!isLoadingBasket && investLang}
           </button>
         </>
-      )} */}
+      )}
 
       {/*<div className={styles.circle}>
           <RenderCircular />
