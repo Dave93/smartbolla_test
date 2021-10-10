@@ -73,7 +73,13 @@ export default function Invest({ products, investLang }) {
     <div className={`w-min m-auto`}>
       {locale == "en" && (
         <>
-          <CircularSlider
+          <div
+            className="font-bold relative text-8xl text-center w-full"
+            style={{ color: "#f6c886" }}
+          >
+            $100
+          </div>
+          {/* <CircularSlider
             label=" &nbsp;&nbsp;"
             prependToValue="$"
             labelColor="#f6c886"
@@ -94,7 +100,7 @@ export default function Invest({ products, investLang }) {
             renderLabelValue={<CircularLabel size={currentSliderValue} />}
           >
             <CircleIcon x="22" y="22" width="28px" height="28px" />
-          </CircularSlider>
+          </CircularSlider> */}
           <button
             style={{
               backgroundColor: currentProduct ? "#f6c886" : "#a15400",

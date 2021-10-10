@@ -62,7 +62,7 @@ function Home({ products, mainLayoutSocial, projects, indexText }) {
             />
           </div>
           <div
-            className="block p-14 md:p-0 min-h-screen md:min-h-0"
+            className="block flex items-center jsx-1320929129 justify-center md:min-h-0 md:p-0 min-h-screen p-14"
             style={{
               backgroundImage: `url("/img/mobileBanner.jpg")`,
               backgroundPosition: "top",
@@ -71,18 +71,6 @@ function Home({ products, mainLayoutSocial, projects, indexText }) {
           >
             <Invest products={products} investLang={t("invest")} />
           </div>
-        </div>
-        <div className="pt-10 md:pt-20 bg-blue-100 pb-10" id="movie">
-          <YouTube
-            videoId={mainVideoId}
-            opts={{
-              playerVars: {
-                showinfo: 0,
-                rel: 0,
-              },
-            }}
-            className={`${movieIframe} sm:h-80 m-auto w-10/12`}
-          />
         </div>
         <div className=" md:mt-30 md:p-10 p-10">
           <img src="/newRealizationStep.png" alt="realizationStep" />
