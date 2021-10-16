@@ -5,7 +5,7 @@ import Invest from "../components/Invest/Invest";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Project from "../components/Project/Project";
 import styles from "./index.module.css";
-import { youtubeModal, movieIframe } from "./index.module.css";
+import { youtubeModal, mainBg } from "./index.module.css";
 import YouTube from "react-youtube";
 import { useTranslation } from "next-i18next";
 
@@ -44,30 +44,16 @@ function Home({ products, mainLayoutSocial, projects, indexText }) {
         footerLang={footerLang}
         mainLayoutSocial={mainLayoutSocial}
       >
-        <video
-          className="videoTag"
-          autoPlay
-          loop
-          muted
-          className="absolute hidden md:block"
-        >
-          <source src="/sample.mp4/" type="video/mp4" />
-        </video>
-        <div className="sm:block md:flex md:mt-64 md:mb-64 justify-around">
-          <div className="hidden md:block">
+        <div className="sm:block md:flex justify-around">
+          {/* <div className="hidden md:block">
             <TextOnVideo
               products={products}
               investLang={t("invest")}
               text={indexText}
             />
-          </div>
+          </div> */}
           <div
-            className="block flex items-center jsx-1320929129 justify-center md:min-h-0 md:p-0 min-h-screen p-14"
-            style={{
-              backgroundImage: `url("/img/mobileBanner.jpg")`,
-              backgroundPosition: "top",
-              backgroundSize: "cover",
-            }}
+            className={`${mainBg} block flex items-center jsx-1320929129 justify-center md:justify-end min-h-screen p-14 w-full`}
           >
             <Invest products={products} investLang={t("invest")} />
           </div>

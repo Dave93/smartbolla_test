@@ -25,7 +25,7 @@ export function MainLayout({
     ReactGA.pageview(window.location.pathname + window.location.search)
   );
 
-  const [className, setClassName] = useState("");
+  const [className, setClassName] = useState(" text-yellow-200");
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -37,7 +37,7 @@ export function MainLayout({
     if (window.pageYOffset > 80) {
       setClassName("bg-white");
     } else {
-      setClassName("");
+      setClassName(" text-yellow-200");
     }
   };
 
@@ -52,7 +52,10 @@ export function MainLayout({
           name="keywords"
           content="Smartbolla,paycent,dancent,adcent,shopshock,sandychat,u-freelancer,u-design,virtual business"
         />
-        <meta name="facebook-domain-verification" content="s1t7pedgkad2s7v32ndk235z1sskdu" />
+        <meta
+          name="facebook-domain-verification"
+          content="s1t7pedgkad2s7v32ndk235z1sskdu"
+        />
         <title>{title}</title>
         <link
           rel="apple-touch-icon"

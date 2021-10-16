@@ -70,11 +70,11 @@ export default function Invest({ products, investLang }) {
   };
 
   return (
-    <div className={`w-min m-auto`}>
+    <div className={`absolute bottom-16 m-auto w-min`}>
       {locale == "en" && (
         <>
           <div
-            className="font-bold relative text-8xl text-center w-full"
+            className="border-8 border-yellow-200 font-bold px-2 py-16 relative rounded-full text-8xl text-center w-full"
             style={{ color: "#f6c886" }}
           >
             $100
