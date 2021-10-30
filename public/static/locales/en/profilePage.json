@@ -21,5 +21,8 @@
   "logOut": "Logout",
   "allRightsRes": "All rights reserved.",
   "weWoldLike": "We would like to hear from you",
-  "pay": "Pay"
+  "pay": "Pay",
+  "referalsLabel": "My referrals",
+  "NAME": "Name",
+  "LAST_NAME": "Surname"
 }

@@ -15,6 +15,7 @@ import { useRouter } from "next/router";
 import { isMobile } from "react-device-detect";
 import { useCookies } from "react-cookie";
 import { Checkbox } from "react-input-checkbox";
+import Cookies from "js-cookie";
 
 function Order({
   cookieData,
@@ -64,7 +65,7 @@ function Order({
   const [showModal, setShowModal] = useState(false);
 
   const [userAuthToken, setUserAuthToken] = useCookies(["userAuthToken"]);
-
+  console.log(orderData);
   return (
     <MainLayout
       commonLang={commonLang}
@@ -119,6 +120,7 @@ function Order({
                 return errors;
               }}
               onSubmit={async (values, { setSubmitting }) => {
+                console.log(orderData);
                 try {
                   await asyncForEach(orderData.PROPERTIES, async (prop) => {
                     if (prop.TYPE == "FILE" && values[`prop_${prop.ID}`]) {
@@ -134,12 +136,12 @@ function Order({
                     values["prop_10"] = ref;
                   }
 
-                  let orderData = { ...values, authToken, productId };
+                  let orderFormData = { ...values, authToken, productId };
                   const res = await fetch("/api/makeOrder", {
                     method: "POST",
                     body: JSON.stringify({
                       method: "post.order.data",
-                      data: orderData,
+                      data: orderFormData,
                     }),
                     headers: {
                       ApiToken: "e7r8uGk5KcwrzT6CanBqRbPVag8ILXFC",
