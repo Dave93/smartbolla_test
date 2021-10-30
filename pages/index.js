@@ -1,5 +1,5 @@
 import { MainLayout } from "../components/MainLayout";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import TextOnVideo from "../components/TextOnVideo/TextOnVideo";
 import Invest from "../components/Invest/Invest";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -8,9 +8,12 @@ import styles from "./index.module.css";
 import { youtubeModal, mainBg } from "./index.module.css";
 import YouTube from "react-youtube";
 import { useTranslation } from "next-i18next";
+import { useRouter } from "next/router";
+import Cookies from "js-cookie";
 
 function Home({ products, mainLayoutSocial, projects, indexText }) {
   const { t } = useTranslation("indexPage");
+  const { query } = useRouter();
 
   const commonLang = {
     about: t("about"),
@@ -35,6 +38,15 @@ function Home({ products, mainLayoutSocial, projects, indexText }) {
   const [youtubeId, setYoutubeId] = useState(null);
 
   const mainVideoId = "x-3MrBAW6xc";
+
+  console.log(query);
+
+  useEffect(() => {
+    if (query.ref) {
+      Cookies.set("ref", query.ref);
+    }
+    return () => {};
+  }, []);
 
   return (
     <>

@@ -129,11 +129,17 @@ function Order({
                     }
                   });
 
+                  let ref = Cookies.get("ref");
+                  if (ref && ref.length > 1) {
+                    values["prop_10"] = ref;
+                  }
+
+                  let orderData = { ...values, authToken, productId };
                   const res = await fetch("/api/makeOrder", {
                     method: "POST",
                     body: JSON.stringify({
                       method: "post.order.data",
-                      data: { ...values, authToken, productId },
+                      data: orderData,
                     }),
                     headers: {
                       ApiToken: "e7r8uGk5KcwrzT6CanBqRbPVag8ILXFC",
