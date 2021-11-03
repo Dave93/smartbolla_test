@@ -65,7 +65,7 @@ function Home({ products, mainLayoutSocial, projects, indexText }) {
           <div
             className="block p-14 md:p-0"
             style={{
-              backgroundImage: `url("/img/mobileMain.jpg")`,
+              backgroundImage: `url("/img/mobileMain2.jpg")`,
               backgroundPosition: "top",
               backgroundSize: "cover"
             }}
