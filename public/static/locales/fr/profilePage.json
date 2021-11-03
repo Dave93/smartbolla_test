@@ -20,5 +20,8 @@
   "logOut": "Se déconnecter",
   "allRightsRes": "Tous droits reçus.",
   "weWoldLike": "Nous aimerions recevoir vos commentaires",
-  "pay": "Pay"
+  "pay": "Pay",
+  "referalsLabel": "Mes références",
+  "NAME": "Nom",
+  "LAST_NAME": "Nom de famille"
 }

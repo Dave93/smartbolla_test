@@ -1,9 +1,9 @@
-import { MainLayout } from "../../components/MainLayout";
-import ProfileMenu from "../../components/ProfileMenu/ProfileMenu";
-import styles from "./Profile.module.css";
+import { MainLayout } from "../../../components/MainLayout";
+import ProfileMenu from "../../../components/ProfileMenu/ProfileMenu";
+import styles from "../Profile.module.css";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { parseCookies } from "../../helpers/";
+import { parseCookies } from "../../../helpers/";
 import { isMobile } from "react-device-detect";
 import { Table, Thead, Tbody, Tr, Th, Td } from "react-super-responsive-table";
 import Link from "next/link";
@@ -41,15 +41,7 @@ function Profile({ mainLayoutSocial, balance }) {
       <div className="md:flex justify-around items-center">
         <div className="">
           <div>
-            <div className="font-bold text-4xl py-5">{t("yourBalance")}</div>
-            <div
-              className={`${styles.tokenCount} bott flex-col items-center font-bold justify-center md:text-9xl text-3xl`}
-            >
-              <span>{balance.TOTAL_PERCENT} %</span>
-            </div>
-          </div>
-          <div>
-            <div className="py-5 font-bold text-4xl">{t("tokenOrders")}</div>
+            <div className="py-5 font-bold text-4xl">{t("referalsLabel")}</div>
             <Table
               className={`${
                 isMobile
@@ -59,21 +51,18 @@ function Profile({ mainLayoutSocial, balance }) {
             >
               <Thead>
                 <Tr>
-                  <Th className="text-uppercase w-1/12">№</Th>
                   <Th className="text-uppercase w-1/6">{t("date")}</Th>
-                  <Th className="text-uppercase w-1/6">%</Th>
+                  <Th className="text-uppercase w-1/12">{t("NAME")}</Th>
                   <Th className="text-uppercase w-1/6">{t("price")}</Th>
                   <Th className="text-uppercase w-1/6">{t("status")}</Th>
-                  <Th className="text-uppercase w-1/6">{t("action")}</Th>
                 </Tr>
               </Thead>
               <Tbody>
                 {balance.ORDERS &&
                   balance.ORDERS.map((order) => (
                     <Tr>
-                      <Td>{order.ID}</Td>
                       <Td>{order.DATE_INSERT}</Td>
-                      <Td>{order.PROPERTIES.PERCENT.VALUE} %</Td>
+                      <Td>{order.PROPERTIES.NAME.VALUE}</Td>
                       <Td>${+order.PRICE}</Td>
                       <Td>
                         {order.PAYED == "Y" ? (
@@ -84,15 +73,6 @@ function Profile({ mainLayoutSocial, balance }) {
                           <div className="bg-red-400 font-semibold inline-flex leading-5 px-2 rounded-full text-red-900 text-xs">
                             {t("unpaid")}
                           </div>
-                        )}
-                      </Td>
-                      <Td>
-                        {order.PAYED == "N" && (
-                          <Link href={`/order/${order.ID}`}>
-                            <a className="active:shadow-none bg-green-100 font-semibold hover:shadow-md hover:text-green-800 inline-flex leading-5 px-5 py-2 rounded-2xl text-decoration-none text-green-800 text-xs">
-                              {t("pay")}
-                            </a>
-                          </Link>
                         )}
                       </Td>
                     </Tr>
@@ -159,7 +139,7 @@ export async function getServerSideProps({ locale, req, res }) {
   const profileBalance = await fetch("https://api.smartbolla.com/api/", {
     method: "POST",
     body: JSON.stringify({
-      method: "get.profile.balance",
+      method: "get.profile.referrals",
       data: {
         authToken: cookieData.userAuthToken,
         locale: locale,

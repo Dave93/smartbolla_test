@@ -1,16 +1,19 @@
 import { MainLayout } from "../components/MainLayout";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import TextOnVideo from "../components/TextOnVideo/TextOnVideo";
 import Invest from "../components/Invest/Invest";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Project from "../components/Project/Project";
 import styles from "./index.module.css";
-import { youtubeModal, movieIframe } from "./index.module.css";
+import { youtubeModal, mainBg } from "./index.module.css";
 import YouTube from "react-youtube";
 import { useTranslation } from "next-i18next";
+import { useRouter } from "next/router";
+import Cookies from "js-cookie";
 
 function Home({ products, mainLayoutSocial, projects, indexText }) {
   const { t } = useTranslation("indexPage");
+  const { query } = useRouter();
 
   const commonLang = {
     about: t("about"),
@@ -36,57 +39,37 @@ function Home({ products, mainLayoutSocial, projects, indexText }) {
 
   const mainVideoId = "x-3MrBAW6xc";
 
+  console.log(query);
+
+  useEffect(() => {
+    if (query.ref) {
+      Cookies.set("ref", query.ref);
+    }
+    return () => {};
+  }, []);
+
   return (
     <>
-
       <MainLayout
         title={"Smartbolla"}
         commonLang={commonLang}
         footerLang={footerLang}
         mainLayoutSocial={mainLayoutSocial}
       >
-          <video
-              className="videoTag"
-              autoPlay
-              loop
-              muted
-              className="absolute hidden md:block"
-          >
-              <source src="/sample.mp4/" type="video/mp4" />
-          </video>
-        <div className="sm:block md:flex md:mt-64 md:mb-64 justify-around">
-          <div className="hidden md:block">
+        <div className="sm:block md:flex justify-around">
+          {/* <div className="hidden md:block">
             <TextOnVideo
               products={products}
               investLang={t("invest")}
               text={indexText}
             />
-          </div>
+          </div> */}
           <div
-            className="block p-14 md:p-0"
-            style={{
-              backgroundImage: `url("/img/mobileMain2.jpg")`,
-              backgroundPosition: "top",
-              backgroundSize: "cover"
-            }}
+            className={`${mainBg} block flex items-center jsx-1320929129 justify-center md:justify-end min-h-screen p-14 w-full`}
           >
+            <div className="md:hidden text-3xl text-center mb-60 text-yellow-200 font-semibold">{t('investTourDubai')}</div>
             <Invest products={products} investLang={t("invest")} />
           </div>
-        </div>
-        <div
-          className="pt-10 md:pt-20 bg-blue-100 pb-10"
-          id="movie"
-        >
-          <YouTube
-            videoId={mainVideoId}
-            opts={{
-              playerVars: {
-                showinfo: 0,
-                rel: 0,
-              },
-            }}
-            className={`${movieIframe} sm:h-80 m-auto w-10/12`}
-          />
         </div>
         <div className=" md:mt-30 md:p-10 p-10">
           <img src="/newRealizationStep.png" alt="realizationStep" />

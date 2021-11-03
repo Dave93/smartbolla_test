@@ -21,5 +21,8 @@
   "logOut": "Чиқиш",
   "allRightsRes": "Барча ҳуқуқлар ҳимояланган.",
   "weWoldLike": "Сиздан хабар олишни истардик",
-  "pay": "Тўлаш"
+  "pay": "Тўлаш",
+  "referalsLabel": "Mening tavsiyalarim",
+  "NAME": "Исм",
+  "LAST_NAME": "Фамилия"
 }

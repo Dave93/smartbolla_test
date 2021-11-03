@@ -4,7 +4,7 @@ import styles from "./ProfileMenu.module.css";
 import { isMobile } from "react-device-detect";
 import { useCookies } from "react-cookie";
 
-function ProfileMenu({ balance, accountSetings, logOut }) {
+function ProfileMenu({ balance, accountSetings, logOut, referalsLabel }) {
   const router = useRouter();
   const { locale, pathname } = router;
 
@@ -16,6 +16,10 @@ function ProfileMenu({ balance, accountSetings, logOut }) {
     {
       label: accountSetings,
       path: "/profile/account",
+    },
+    {
+      label: referalsLabel,
+      path: "/profile/referals",
     },
   ];
 

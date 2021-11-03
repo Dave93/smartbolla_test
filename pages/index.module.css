@@ -16,25 +16,34 @@
   margin-top: 28%;
 }
 
-
 @media (min-width: 1024px) {
-
   .movieIframe {
     height: 40rem;
   }
 }
 
 @media (max-width: 640px) {
-
   .movieIframe {
     height: 15rem;
   }
 }
 
-
 @media (min-width: 1700px) {
-
   .movieIframe {
     height: 50rem;
+  }
+}
+
+.mainBg {
+  background-image: url("/img/cyber_mobile.webp");
+  background-position: center top;
+  background-size: cover;
+}
+
+@media (min-width: 1024px) {
+  .mainBg {
+    background-image: url("/img/cyber_desktop.webp");
+    background-position: center top;
+    background-size: cover;
   }
 }

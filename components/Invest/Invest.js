@@ -25,6 +25,8 @@ const CircularLabel = function ({ size }) {
 export default function Invest({ products, investLang }) {
   const router = useRouter();
 
+  const { locale } = router;
+
   const idsByPrice = {};
   products.map((product) => {
     idsByPrice[thousands_separators(+product.PRICE)] = product;
@@ -68,62 +70,73 @@ export default function Invest({ products, investLang }) {
   };
 
   return (
-    <div className={`w-min m-auto`}>
-      <CircularSlider
-        label=" &nbsp;&nbsp;"
-        prependToValue="$"
-        labelColor="#f6c886"
-        valueFontSize="4rem"
-        knobColor="#f6c886"
-        knobPosition="bottom"
-        progressColorFrom="#f6c886"
-        progressColorTo="#a15400"
-        verticalOffset="1rem"
-        progressSize={8}
-        trackColor="#ffffff94"
-        trackSize={20}
-        data={sliderValues} //...
-        dataIndex={0}
-        onChange={(value) => {
-          setcurrentSliderValue(value);
-        }}
-        renderLabelValue={<CircularLabel size={currentSliderValue} />}
-      >
-        <CircleIcon x="22" y="22" width="28px" height="28px" />
-      </CircularSlider>
-      <button
-        style={{
-          backgroundColor: currentProduct ? "#f6c886" : "#a15400",
-        }}
-        className="flex text-2xl relative  w-full rounded-2xl justify-center uppercase shadow outline-none mt-5"
-        onClick={() => {
-          addBasket();
-        }}
-      >
-        {isLoadingBasket && (
-          <svg
-            class="animate-spin -ml-1 mr-3 h-5 w-5"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
+    <div className={`absolute bottom-16 m-auto w-min`}>
+      {/* {locale == "en" && ( */}
+      <>
+        <div
+          className="border-8 border-yellow-200 font-bold px-2 py-16 relative rounded-full text-8xl text-center w-full"
+          style={{ color: "#f6c886" }}
+        >
+          $100
+        </div>
+        {/* <CircularSlider
+            label=" &nbsp;&nbsp;"
+            prependToValue="$"
+            labelColor="#f6c886"
+            valueFontSize="4rem"
+            knobColor="#f6c886"
+            knobPosition="bottom"
+            progressColorFrom="#f6c886"
+            progressColorTo="#a15400"
+            verticalOffset="1rem"
+            progressSize={8}
+            trackColor="#ffffff94"
+            trackSize={20}
+            data={sliderValues} //...
+            dataIndex={0}
+            onChange={(value) => {
+              setcurrentSliderValue(value);
+            }}
+            renderLabelValue={<CircularLabel size={currentSliderValue} />}
           >
-            <circle
-              class="opacity-25"
-              cx="12"
-              cy="12"
-              r="10"
-              stroke="currentColor"
-              stroke-width="4"
-            ></circle>
-            <path
-              class="opacity-75"
-              fill="currentColor"
-              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-            ></path>
-          </svg>
-        )}
-        {!isLoadingBasket && investLang}
-      </button>
+            <CircleIcon x="22" y="22" width="28px" height="28px" />
+          </CircularSlider> */}
+        <button
+          style={{
+            backgroundColor: currentProduct ? "#f6c886" : "#a15400",
+          }}
+          className="flex text-2xl relative  w-full rounded-2xl justify-center uppercase shadow outline-none mt-5"
+          onClick={() => {
+            addBasket();
+          }}
+        >
+          {isLoadingBasket && (
+            <svg
+              class="animate-spin -ml-1 mr-3 h-5 w-5"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <circle
+                class="opacity-25"
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                stroke-width="4"
+              ></circle>
+              <path
+                class="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+              ></path>
+            </svg>
+          )}
+          {!isLoadingBasket && investLang}
+        </button>
+      </>
+      {/* )} */}
+
       {/*<div className={styles.circle}>
           <RenderCircular />
         </div>*/}
