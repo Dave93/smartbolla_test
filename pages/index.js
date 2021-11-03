@@ -67,7 +67,7 @@ function Home({ products, mainLayoutSocial, projects, indexText }) {
           <div
             className={`${mainBg} block flex items-center jsx-1320929129 justify-center md:justify-end min-h-screen p-14 w-full`}
           >
-            <div className="md:hidden text-3xl text-center mb-60 text-yellow-200 font-semibold">{t('investTourDubai')}</div>
+            <div className="md:hidden text-3xl text-center mb-80 text-yellow-200 font-semibold">{t('investTourDubai')}</div>
             <Invest products={products} investLang={t("invest")} />
           </div>
         </div>
