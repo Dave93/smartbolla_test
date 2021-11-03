@@ -3,6 +3,10 @@
     height: 23px;
 }
 
-a:hover .faStack1x {
+a .faStack1x {
     color: #f6c886!important;
+}
+
+a:hover .faStack1x {
+    color: rgba(253,230,138,var(--tw-text-opacity))!important;
 }
